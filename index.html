@@ -198,6 +198,11 @@ select,.field{width:100%;min-height:46px;border:1px solid var(--line);border-rad
 .kv b{display:block;font-size:22px;font-family:var(--font-en)}
 .toast{position:fixed;left:50%;top:18px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font-weight:700;font-size:14px;z-index:50;box-shadow:var(--shadow-lg);animation:viewIn .2s}
 #fx{position:fixed;inset:0;pointer-events:none;z-index:60}
+#exitdlg{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(10,12,28,.55)}
+#exitdlg .box{background:var(--card);color:var(--ink);border-radius:var(--r);box-shadow:var(--shadow-lg);padding:24px 20px 18px;width:min(340px,100%);text-align:center}
+#exitdlg h3{margin:0 0 6px;font-size:18px;line-height:1.4;word-break:keep-all}
+#exitdlg .row2{display:flex;gap:10px;margin-top:18px}
+#exitdlg .row2 .btn{flex:1;min-height:48px}
 .green-flash{animation:gflash .5s}
 @keyframes gflash{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent)}100%{box-shadow:0 0 0 18px transparent}}
 a{color:var(--pri)}
@@ -1516,6 +1521,28 @@ function bindQuizSettings(){
   $$("[data-ql]").forEach(b=>b.onclick=()=>{st.set.qlevel=b.dataset.ql;save();SFX.play("tick");scrSettings()});
   $$("[data-qt]").forEach(b=>b.onclick=()=>{const t=b.dataset.qt,s=new Set(st.set.qtypes||[]);s.has(t)?s.delete(t):s.add(t);st.set.qtypes=[...s];save();SFX.play("tick");scrSettings()});
 }
+
+/* ---------- 뒤로가기 실수로 앱이 닫히지 않게: 종료 확인 창(예/아니오) ----------
+   모바일 Chrome 은 사용자 조작 없이 쌓은 기록을 뒤로가기에서 건너뛰므로, 첫 터치·키 입력 때 보호용 기록을 쌓고
+   "아니오"를 누를 때(사용자 조작) 다시 쌓는다. */
+const EXIT_NAME="스토리 일본어";
+let EXIT_ARMED=false,EXIT_OPEN=false,EXIT_LEAVING=false;
+function exitArm(){if(EXIT_ARMED)return;EXIT_ARMED=true;try{history.replaceState({g:"base"},"");history.pushState({g:"guard"},"")}catch(e){}}
+function exitClose(){const d=document.getElementById("exitdlg");if(d)d.remove();EXIT_OPEN=false}
+function exitStay(){exitClose();try{history.pushState({g:"guard"},"")}catch(e){}}
+function exitLeave(){EXIT_LEAVING=true;exitClose();history.back();setTimeout(()=>{try{window.close()}catch(e){}},300)}
+function exitAsk(){
+  if(EXIT_OPEN)return;EXIT_OPEN=true;
+  const d=document.createElement("div");d.id="exitdlg";d.setAttribute("role","alertdialog");d.setAttribute("aria-modal","true");d.setAttribute("aria-labelledby","exitq");
+  d.innerHTML=`<div class="box"><h3 id="exitq">정말로 ${EXIT_NAME}를 종료하시겠습니까?</h3>${typeof SES!=="undefined"&&SES?'<div class="sub">진행 중인 퀴즈 결과는 저장되지 않아요.</div>':""}<div class="row2"><button class="btn alt" id="exitno">아니오</button><button class="btn" id="exityes">예</button></div></div>`;
+  document.body.appendChild(d);
+  document.getElementById("exitno").onclick=exitStay;document.getElementById("exityes").onclick=exitLeave;
+  d.addEventListener("click",e=>{if(e.target===d)exitStay()});
+  document.getElementById("exitno").focus();
+}
+["pointerdown","touchstart","keydown"].forEach(t=>addEventListener(t,exitArm,{passive:true}));
+addEventListener("popstate",()=>{if(EXIT_LEAVING||!EXIT_ARMED)return;if(EXIT_OPEN){try{history.pushState({g:"guard"},"")}catch(e){}return}exitAsk()});
+addEventListener("keydown",e=>{if(EXIT_OPEN&&e.key==="Escape"){e.preventDefault();exitStay()}},true);
 
 TAB="home";tabs();scrHome();
 </script>
