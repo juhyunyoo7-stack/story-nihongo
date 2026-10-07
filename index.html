@@ -1,0 +1,1316 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>스토리 일본어</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#5b5bf0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="스토리 일본어">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f4fb;--bg2:#e9eaf7;--card:#ffffff;--card2:#f7f7fd;--ink:#171a2c;--sub:#626a85;--mute:#9aa1b8;--line:#e3e5f1;
+  --pri:#5b5bf0;--pri2:#8b5cf6;--pri-ink:#ffffff;--soft:#eeedff;--acc:#ff8a4c;--acc-soft:#fff1e8;
+  --ok:#12b886;--ok-soft:#e3f8ef;--no:#f0506e;--no-soft:#fde8ec;--warn:#f5a524;
+  --grad:linear-gradient(135deg,#5b5bf0 0%,#7c4dff 55%,#a855f7 100%);
+  --shadow:0 1px 2px rgba(23,26,44,.05),0 8px 24px rgba(60,58,140,.08);
+  --shadow-lg:0 2px 6px rgba(23,26,44,.06),0 18px 48px rgba(60,58,140,.16);
+  --glass:rgba(255,255,255,.72);--r:20px;
+  --font:"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-en:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;
+  --font-jp:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Meiryo","Noto Sans JP","Noto Sans CJK JP",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1020;--bg2:#151832;--card:#1a1d36;--card2:#20243f;--ink:#eef0fb;--sub:#a3a9c6;--mute:#6f7699;--line:#2a2e4d;
+  --pri:#8183ff;--pri2:#a78bfa;--soft:#262a52;--acc:#ff9d66;--acc-soft:#3a2a26;--ok:#34d39e;--ok-soft:#173a32;--no:#ff6b86;--no-soft:#41202b;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);--shadow-lg:0 2px 6px rgba(0,0,0,.35),0 18px 48px rgba(0,0,0,.4);--glass:rgba(26,29,54,.72)}}
+:root[data-theme="dark"]{
+  --bg:#0e1020;--bg2:#151832;--card:#1a1d36;--card2:#20243f;--ink:#eef0fb;--sub:#a3a9c6;--mute:#6f7699;--line:#2a2e4d;
+  --pri:#8183ff;--pri2:#a78bfa;--soft:#262a52;--acc:#ff9d66;--acc-soft:#3a2a26;--ok:#34d39e;--ok-soft:#173a32;--no:#ff6b86;--no-soft:#41202b;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);--shadow-lg:0 2px 6px rgba(0,0,0,.35),0 18px 48px rgba(0,0,0,.4);--glass:rgba(26,29,54,.72)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--font);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:-20% -10% auto;height:360px;background:radial-gradient(60% 60% at 30% 30%,rgba(124,77,255,.16),transparent 70%),radial-gradient(50% 50% at 80% 10%,rgba(255,138,76,.10),transparent 70%);pointer-events:none;z-index:0}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid color-mix(in srgb,var(--pri) 55%,transparent);outline-offset:2px}
+.jp{font-family:var(--font-jp)}
+rt{font-size:.45em;font-weight:600;color:var(--sub);letter-spacing:0}
+#app{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:16px 16px calc(104px + env(safe-area-inset-bottom));min-height:100vh}
+#app.session{padding-bottom:300px}
+.view{animation:viewIn .32s cubic-bezier(.2,.8,.2,1)}
+@keyframes viewIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+svg.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+/* top */
+.top{display:flex;align-items:center;gap:10px;margin:4px 0 14px}
+.top h1{font-size:22px;margin:0;flex:1;letter-spacing:-.3px}
+.chip{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:99px;background:var(--card);box-shadow:var(--shadow);font-weight:700;font-size:14px;border:0}
+.chip svg.i{width:18px;height:18px}
+.chip.fire{color:var(--acc)}
+.chip.lv{color:var(--pri)}
+/* cards */
+.card{background:var(--card);border-radius:var(--r);padding:18px;margin:12px 0;box-shadow:var(--shadow);position:relative}
+.card h3{margin:0 0 10px;font-size:16px;display:flex;align-items:center;gap:8px}
+.sub{color:var(--sub);font-size:14px}.mute{color:var(--mute);font-size:13px}
+.hero{background:var(--grad);color:#fff;border-radius:24px;padding:20px;box-shadow:0 14px 36px rgba(91,91,240,.35);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero .row{position:relative;z-index:1}
+.ring{position:relative;width:118px;height:118px;flex:none}
+.ring svg{width:118px;height:118px;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:11}
+.ring .bgc{stroke:rgba(255,255,255,.22)}.ring .fgc{stroke:#fff;stroke-linecap:round;transition:stroke-dashoffset 1s cubic-bezier(.2,.8,.2,1)}
+.ring .lbl{position:absolute;inset:0;display:grid;place-content:center;text-align:center;line-height:1.1}
+.ring .lbl b{font-size:26px;font-family:var(--font-en)}.ring .lbl span{font-size:12px;opacity:.85}
+.row{display:flex;gap:12px;align-items:center}.col{display:flex;flex-direction:column;gap:6px}.grow{flex:1;min-width:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px;position:relative;z-index:1}
+.stats div{background:rgba(255,255,255,.14);border-radius:14px;padding:10px 8px;text-align:center}
+.stats b{display:block;font-size:20px;font-family:var(--font-en)}.stats span{font-size:12px;opacity:.9}
+.bar{height:10px;background:var(--bg2);border-radius:99px;overflow:hidden}
+.bar>i{display:block;height:100%;width:0;background:var(--grad);border-radius:99px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.hero .bar{background:rgba(255,255,255,.22)}.hero .bar>i{background:#fff}
+/* buttons */
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;border:0;border-radius:16px;padding:12px 18px;font-weight:800;font-size:16px;background:var(--grad);color:#fff;box-shadow:0 6px 18px rgba(91,91,240,.32);transition:transform .12s,box-shadow .2s,opacity .2s}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.btn.alt{background:var(--card);color:var(--ink);box-shadow:var(--shadow);border:1px solid var(--line)}
+.btn.ghost{background:transparent;color:var(--pri);box-shadow:none}
+.btn.white{background:#fff;color:#4c3ee0;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+.btn.ok{background:var(--ok);box-shadow:0 6px 16px color-mix(in srgb,var(--ok) 40%,transparent)}
+.btn.no{background:var(--no);box-shadow:0 6px 16px color-mix(in srgb,var(--no) 40%,transparent)}
+.btn.sm{min-height:44px;font-size:14px;border-radius:12px;width:auto;padding:8px 14px}
+.ibtn{width:44px;height:44px;display:inline-grid;place-items:center;border-radius:14px;border:0;background:var(--soft);color:var(--pri);flex:none;transition:transform .12s}
+.ibtn:active{transform:scale(.92)}
+.ibtn.plain{background:transparent;color:var(--sub)}
+.btns{display:flex;gap:10px;margin-top:12px}.btns>*{flex:1}
+/* story list */
+.st{display:flex;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line);cursor:pointer;min-height:56px}
+.st:last-child{border-bottom:0}
+.st:hover{background:var(--card2)}
+.badge{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff;font-weight:800;font-family:var(--font-en);flex:none}
+.st .nm{font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st .bar{height:6px;margin-top:6px}
+.seg{display:flex;background:var(--bg2);border-radius:14px;padding:4px;gap:4px}
+.seg button{flex:1;border:0;background:transparent;border-radius:10px;min-height:40px;font-weight:700;color:var(--sub);font-size:14px}
+.seg button.on{background:var(--card);color:var(--pri);box-shadow:var(--shadow)}
+/* tabbar */
+.tabs{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(12px + env(safe-area-inset-bottom));width:min(448px,calc(100% - 24px));display:flex;background:var(--glass);backdrop-filter:blur(18px) saturate(1.6);-webkit-backdrop-filter:blur(18px) saturate(1.6);border:1px solid color-mix(in srgb,var(--line) 70%,transparent);border-radius:22px;box-shadow:var(--shadow-lg);padding:6px;z-index:20}
+.tabs button{flex:1;border:0;background:none;color:var(--mute);min-height:52px;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:11px;font-weight:700;transition:color .2s,background .2s}
+.tabs button.on{color:var(--pri);background:var(--soft)}
+.tabs[hidden]{display:none}
+/* session */
+.stop{display:flex;align-items:center;gap:10px;margin:4px 0 18px}
+.stop .bar{flex:1;height:12px}
+.combo{font-family:var(--font-en);font-weight:800;color:var(--acc);font-size:14px;min-width:44px;text-align:right;transition:transform .2s}
+.combo.bump{animation:bump .35s}
+@keyframes bump{50%{transform:scale(1.35)}}
+.kicker{font-size:13px;font-weight:800;color:var(--pri);letter-spacing:.3px;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.pos{display:inline-block;background:var(--soft);color:var(--pri);border-radius:8px;padding:2px 9px;font-size:12px;font-weight:800}
+.word{font-family:var(--font-jp);font-size:40px;font-weight:800;letter-spacing:0;line-height:1.3;margin:10px 0 6px;word-break:break-word}
+.word.md{font-size:32px}.word.sm{font-size:26px}
+.mean{font-size:24px;font-weight:800;line-height:1.35;word-break:keep-all}
+.ex{background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:14px;font-family:var(--font-jp);font-size:17px;line-height:1.7}
+.ex .src{display:block;font-family:var(--font);font-size:12px;color:var(--mute);margin-top:8px}
+.ex mark{background:linear-gradient(transparent 55%,color-mix(in srgb,var(--acc) 45%,transparent) 55%);color:inherit;font-weight:800;padding:0 1px}
+.stage{perspective:1400px;touch-action:pan-y;user-select:none}
+.drag{transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.flip{position:relative;height:min(480px,64vh);transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.flip.on{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:var(--card);border-radius:28px;box-shadow:var(--shadow-lg);padding:22px;display:flex;flex-direction:column;overflow:auto}
+.face.front{align-items:center;justify-content:center;text-align:center;background:linear-gradient(180deg,var(--card),var(--card2))}
+.face.back{transform:rotateY(180deg)}
+.hint{color:var(--mute);font-size:13px;display:flex;gap:6px;align-items:center;justify-content:center;margin-top:18px}
+.opts{display:grid;gap:10px;margin-top:16px}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;min-height:58px;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:10px 14px;font-size:17px;font-weight:700;box-shadow:0 2px 0 var(--line);transition:transform .1s,border-color .2s,background .2s}
+.opt:hover:not(:disabled){border-color:color-mix(in srgb,var(--pri) 45%,var(--line))}
+.opt:active:not(:disabled){transform:translateY(2px);box-shadow:none}
+.opt .k{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--bg2);color:var(--sub);font-size:13px;font-family:var(--font-en);flex:none}
+.opt.ok{border-color:var(--ok);background:var(--ok-soft);animation:pulse .6s}
+.opt.ok .k{background:var(--ok);color:#fff}
+.opt.no{border-color:var(--no);background:var(--no-soft);animation:shake .4s}
+.opt.no .k{background:var(--no);color:#fff}
+.opt:disabled{cursor:default}
+.opt.dim{opacity:.55}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 55%,transparent)}100%{box-shadow:0 0 0 14px transparent}}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.shake{animation:shake .4s}
+.qcard{background:var(--card);border-radius:24px;box-shadow:var(--shadow);padding:22px;text-align:center}
+.qcard .ex{text-align:left;margin-top:6px}
+.blank{display:inline-block;min-width:84px;border-bottom:3px solid var(--pri);margin:0 2px;height:1.1em;vertical-align:baseline}
+.spell{width:100%;font-family:var(--font-jp);font-size:24px;font-weight:700;text-align:center;padding:14px;border:2px solid var(--line);border-radius:16px;background:var(--card2);margin-top:14px;letter-spacing:.5px}
+.spell:focus{border-color:var(--pri);outline:0}
+.spell.ok{border-color:var(--ok);background:var(--ok-soft)}.spell.no{border-color:var(--no);background:var(--no-soft)}
+.big-play{width:88px;height:88px;border-radius:50%;border:0;background:var(--grad);color:#fff;display:inline-grid;place-items:center;box-shadow:0 10px 28px rgba(91,91,240,.4);margin:8px auto}
+.big-play svg.i{width:36px;height:36px}
+.sheet{position:fixed;left:50%;bottom:0;transform:translate(-50%,110%);width:min(480px,100%);background:var(--card);border-radius:24px 24px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.18);padding:18px 18px calc(18px + env(safe-area-inset-bottom));z-index:30;transition:transform .32s cubic-bezier(.2,.8,.2,1)}
+.sheet.show{transform:translate(-50%,0)}
+.sheet.ok{background:var(--ok-soft)}.sheet.no{background:var(--no-soft)}
+.sheet .ttl{font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.sheet.ok .ttl{color:var(--ok)}.sheet.no .ttl{color:var(--no)}
+/* list */
+.search{display:flex;align-items:center;gap:8px;background:var(--card);border-radius:14px;padding:0 12px;box-shadow:var(--shadow);min-height:48px}
+.search input{flex:1;border:0;background:transparent;font-size:16px;outline:0;min-height:44px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 0 4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.fchip{flex:none;border:1px solid var(--line);background:var(--card);border-radius:99px;min-height:38px;padding:0 14px;font-weight:700;font-size:14px;color:var(--sub)}
+.fchip.on{background:var(--pri);border-color:var(--pri);color:#fff}
+.wl{display:flex;align-items:center;gap:10px;padding:10px 2px;border-bottom:1px solid var(--line);min-height:58px;cursor:pointer}
+.wl:last-child{border-bottom:0}
+.wl b{font-family:var(--font-jp);font-size:16px}
+.wl .ko{color:var(--sub);font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--line);flex:none}
+.dot.l{background:var(--warn)}.dot.m{background:var(--ok)}.dot.w{background:var(--no)}
+.lv{display:flex;gap:3px}.lv i{width:6px;height:14px;border-radius:3px;background:var(--line)}.lv i.on{background:var(--pri)}
+.empty{text-align:center;color:var(--sub);padding:28px 8px}
+.empty svg.i{width:40px;height:40px;color:var(--mute);margin-bottom:6px}
+/* settings */
+.set{display:flex;align-items:center;gap:12px;min-height:56px;border-bottom:1px solid var(--line)}
+.set:last-child{border-bottom:0}
+.set .grow b{display:block;font-size:15px}
+.sw{position:relative;width:52px;height:32px;flex:none}
+.sw input{opacity:0;position:absolute;inset:0;margin:0;cursor:pointer;z-index:1}
+.sw span{position:absolute;inset:0;border-radius:99px;background:var(--line);transition:background .2s}
+.sw span::after{content:"";position:absolute;left:3px;top:3px;width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.2);transition:transform .2s}
+.sw input:checked+span{background:var(--pri)}
+.sw input:checked+span::after{transform:translateX(20px)}
+.sw input:focus-visible+span{outline:3px solid color-mix(in srgb,var(--pri) 55%,transparent);outline-offset:2px}
+input[type=range]{width:100%;accent-color:var(--pri);min-height:32px}
+select,.field{width:100%;min-height:46px;border:1px solid var(--line);border-radius:12px;background:var(--card2);padding:8px 12px;font-size:15px}
+.field:focus,select:focus{border-color:var(--pri);outline:0}
+.note{display:flex;gap:10px;align-items:flex-start;background:var(--soft);border-radius:14px;padding:12px;font-size:13.5px;color:var(--sub)}
+.note svg.i{color:var(--pri);width:20px;height:20px;margin-top:1px}
+.done-ico{width:96px;height:96px;border-radius:50%;margin:10px auto;background:var(--grad);display:grid;place-items:center;color:#fff;box-shadow:0 14px 34px rgba(91,91,240,.4);animation:bounce .8s cubic-bezier(.2,.8,.2,1.4)}
+.done-ico svg.i{width:48px;height:48px}
+@keyframes bounce{0%{transform:scale(.3)}100%{transform:scale(1)}}
+.kv{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:14px}
+.kv div{background:var(--card2);border-radius:14px;padding:12px;text-align:center}
+.kv b{display:block;font-size:22px;font-family:var(--font-en)}
+.toast{position:fixed;left:50%;top:18px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:99px;font-weight:700;font-size:14px;z-index:50;box-shadow:var(--shadow-lg);animation:viewIn .2s}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:60}
+.green-flash{animation:gflash .5s}
+@keyframes gflash{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent)}100%{box-shadow:0 0 0 18px transparent}}
+a{color:var(--pri)}
+.opt.trans{font-size:15.5px;font-weight:600;line-height:1.4}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.mcol{display:grid;gap:10px;align-content:start}
+.mcard{min-height:58px;border:2px solid var(--line);border-radius:14px;background:var(--card);padding:8px 10px;font-weight:700;font-size:14.5px;line-height:1.3;box-shadow:0 2px 0 var(--line);color:var(--ink);transition:transform .1s,border-color .2s,background .2s,opacity .3s}
+.mcard.sel{border-color:var(--pri);background:var(--soft);transform:translateY(-2px)}
+.mcard.done{border-color:var(--ok);background:var(--ok-soft);opacity:.45}
+.mcard.bad{border-color:var(--no);background:var(--no-soft);animation:shake .4s}
+.flip.tall{height:min(620px,72vh)}
+.dlg{margin-top:14px;padding-top:10px;border-top:1px dashed var(--line)}
+.bubble{max-width:88%;padding:10px 12px;border-radius:16px;margin:6px 0;font-family:var(--font-jp);font-size:15.5px;line-height:1.5}
+.bubble .src{display:block;font-family:var(--font);font-size:12.5px;color:var(--sub);margin-top:4px}
+.bubble b{font-size:12px;opacity:.6;margin-right:4px}
+.bubble.a{background:var(--soft);border-bottom-left-radius:4px}
+.bubble.b{background:var(--acc-soft);margin-left:auto;border-bottom-right-radius:4px}
+.badge svg.i{width:20px;height:20px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+@media (min-width:700px){#app{padding-top:28px}}
+</style>
+</head>
+<body>
+<main id="app" aria-live="polite"></main>
+<nav class="tabs" id="tabs" hidden aria-label="주 메뉴"></nav>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<script>
+"use strict";
+/* ==========================================================================
+   스토리 일본어 — 한국어 화자를 위한 일본어 실용 회화 학습 앱 (한 파일 PWA)
+   · 콘텐츠는 아래 3개 데이터 블록(마커 사이)에 들어 있고, tools/build.py가 content/*.txt로 통째로 교체합니다.
+   · 음성: audio/phrases/f|m/j<FNV-1a 64bit hex>.mp3 (미리 생성한 edge-tts) → 없으면 Web Speech(ja-JP) 폴백
+   ========================================================================== */
+/* 표현 — 형식: #카테고리키|이름  /  표현|読み|뜻|설명|예문1|번역1|예문2|번역2|대화A|대화B|대화번역(A / B)
+   예문의 [[ ]] = 표현이 문장에서 실제로 쓰인 부분(활용형 그대로). 아래는 엔진 검증용 샘플이며 빌드 때 교체됩니다. */
+/*CONV-START*/const CONV_RAW=`#greet|인사·기본 표현
+おはようございます|おはようございます|좋은 아침입니다|아침 인사의 정중체. 친한 사이나 가족에게는 반말인 「おはよう」를 쓴다. 직장에서는 오후에 처음 만나도 쓰는 경우가 있다.|エレベーターで部長に会って、[[おはようございます]]と挨拶した。|엘리베이터에서 부장님을 만나 "좋은 아침입니다"라고 인사했다.|隣の席の田中さんが笑顔で[[おはようございます]]と言ってくれた。|옆자리의 다나카 씨가 웃으며 아침 인사를 건네 주었다.|おはようございます。今日は早いですね。|おはようございます。電車が空いていたので。|안녕하세요. 오늘은 일찍 오셨네요. / 안녕하세요. 전철이 한산해서요.
+お久しぶりです|おひさしぶりです|오랜만입니다|한동안 못 만난 사람에게 쓰는 정중체. 친구끼리는 반말 「久しぶり」, 윗사람에게는 「ご無沙汰しています」가 더 격식 있다.|同窓会で昔の先生に[[お久しぶりです]]と声をかけた。|동창회에서 옛 은사님께 "오랜만입니다"라고 말을 걸었다.|三年ぶりに会った取引先の方に、[[お久しぶりです]]と頭を下げた。|3년 만에 만난 거래처 분께 "오랜만입니다"라며 고개를 숙였다.|あ、山本さん。お久しぶりです。|本当に、お久しぶりです。お変わりないですか。|아, 야마모토 씨. 오랜만입니다. / 정말 오랜만이에요. 별일 없으셨죠?
+はじめまして|はじめまして|처음 뵙겠습니다|첫 만남의 인사로 정중체. 보통 뒤에 이름과 「よろしくお願いします」를 잇는다. 인사말이라 히라가나로 쓰는 것이 일반적이다.|[[はじめまして]]、ユンと申します。韓国から来ました。|처음 뵙겠습니다, 윤이라고 합니다. 한국에서 왔습니다.|オンライン会議で初参加の方に[[はじめまして]]と言われた。|온라인 회의에서 처음 참석한 분이 "처음 뵙겠습니다"라고 인사하셨다.|はじめまして、佐藤です。|はじめまして、キムです。お会いできて光栄です。|처음 뵙겠습니다, 사토입니다. / 처음 뵙겠습니다, 김입니다. 만나 뵙게 되어 영광입니다.
+よろしくお願いします|よろしくおねがいします|잘 부탁드립니다|첫 만남, 일 부탁, 메일 맺음말까지 폭넓게 쓰는 정중체. 친한 사이는 「よろしくね」, 더 격식 있게는 「よろしくお願い申し上げます」.|来週から同じチームです。[[よろしくお願いします]]。|다음 주부터 같은 팀입니다. 잘 부탁드립니다.|資料の確認、[[よろしくお願いします]]。|자료 확인, 잘 부탁드립니다.|今日からお世話になります、イです。よろしくお願いします。|こちらこそ、よろしくお願いします。わからないことは何でも聞いてくださいね。|오늘부터 신세 지게 된 이입니다. 잘 부탁드립니다. / 저야말로 잘 부탁드려요. 모르는 건 뭐든 물어보세요.
+お元気ですか|おげんきですか|잘 지내십니까|안부를 묻는 정중체. 친한 사이는 「元気？」「元気にしてる？」. 매일 보는 사람에게는 잘 쓰지 않고 오랜만에 연락할 때 쓴다.|先生、[[お元気ですか]]。私は毎日楽しく過ごしています。|선생님, 잘 지내세요? 저는 매일 즐겁게 지내고 있어요.|手紙の書き出しに「[[お元気ですか]]」と書いた。|편지 첫머리에 "잘 지내십니까"라고 썼다.|山田さん、お元気ですか。|はい、おかげさまで元気です。そちらはいかがですか。|야마다 씨, 잘 지내세요? / 네, 덕분에 건강해요. 그쪽은 어떠세요?
+行ってきます|いってきます|다녀오겠습니다|집이나 직장을 나서며 남는 사람에게 하는 말. 답은 「いってらっしゃい」. 가족 사이에서도 일상적으로 쓰며 보다 공손하게는 「行ってまいります」.|玄関で靴をはいて、「[[行ってきます]]」と言った。|현관에서 신발을 신고 "다녀오겠습니다"라고 말했다.|ちょっと銀行まで[[行ってきます]]。|잠깐 은행에 다녀오겠습니다.|じゃあ、行ってきます！|いってらっしゃい。傘は持った？|그럼 다녀올게! / 잘 다녀와. 우산은 챙겼어?
+いってらっしゃい|いってらっしゃい|잘 다녀오세요|「行ってきます」에 대한 대답. 가족·동료 사이에서 두루 쓰는 약간 편한 정중체. 접객에서는 「いってらっしゃいませ」를 쓴다.|母は毎朝、笑顔で[[いってらっしゃい]]と送り出してくれる。|어머니는 매일 아침 웃으며 "잘 다녀와"라고 배웅해 주신다.|外回りに出る先輩に「[[いってらっしゃい]]」と声をかけた。|외근 나가는 선배에게 "다녀오세요"라고 인사했다.|今日は遅くなるから、先に寝てて。|わかった。いってらっしゃい、気をつけてね。|오늘은 늦을 테니까 먼저 자. / 알았어. 잘 다녀와, 조심하고.
+ただいま|ただいま|다녀왔어요|집에 돌아왔을 때 하는 말. 답은 「おかえり」. 가족 사이의 일상어이며 직장에서는 정중하게 「ただいま戻りました」라고 한다.|玄関のドアを開けて、「[[ただいま]]」と言った。|현관문을 열고 "다녀왔어"라고 말했다.|外出先から戻った課長が「[[ただいま]]」と席に着いた。|외근에서 돌아온 과장님이 "다녀왔어요" 하며 자리에 앉았다.|ただいま！今日は疲れた〜。|おかえり。ごはんもうすぐできるよ。|다녀왔어! 오늘은 피곤하다~ / 어서 와. 밥 곧 다 돼.
+おかえりなさい|おかえりなさい|어서 오세요|「ただいま」에 대한 정중한 대답. 가족끼리는 「おかえり」로 줄여 쓴다.|出張から戻った夫に「[[おかえりなさい]]」と言った。|출장에서 돌아온 남편에게 "어서 와요"라고 말했다.|「[[おかえりなさい]]、お疲れでしょう」と母が迎えてくれた。|"어서 와라, 피곤하겠구나" 하고 어머니가 맞아 주셨다.|ただいま戻りました。|おかえりなさい。出張はどうでしたか。|지금 돌아왔습니다. / 어서 오세요. 출장은 어땠어요?
+こんにちは|こんにちは|안녕하세요(낮 인사)|낮 시간에 쓰는 인사. 반말·정중체 구분 없이 쓰지만 직장 동료나 가족처럼 매일 보는 사이에는 잘 쓰지 않는다. 표기는 「は」로 쓰고 「わ」로 읽는다.|近所のおばあさんに「[[こんにちは]]」と声をかけた。|이웃 할머니께 "안녕하세요"라고 인사를 건넸다.|[[こんにちは]]。今日はいい天気ですね。|안녕하세요. 오늘은 날씨가 좋네요.|こんにちは。お出かけですか。|ええ、ちょっと買い物に。|안녕하세요. 어디 가세요? / 네, 잠깐 장 보러요.
+お邪魔します|おじゃまします|실례하겠습니다|남의 집이나 방에 들어갈 때 하는 인사. 정중체이며 친구 집에서는 「おじゃましまーす」처럼 가볍게 말한다. 나갈 때는 「お邪魔しました」.|友達の家の玄関で「[[お邪魔します]]」と小さく言った。|친구 집 현관에서 "실례합니다"라고 작게 말했다.|[[お邪魔しました]]、ありがとうございました。|실례했습니다, 감사했습니다.|どうぞ、上がって。|お邪魔します。素敵なお部屋ですね。|어서 들어와. / 실례합니다. 멋진 방이네요.
+いただきます|いただきます|잘 먹겠습니다|식사 전 인사. 반말과 정중체 구분 없이 쓴다. 음식과 만든 사람에 대한 감사의 뜻이 있다.|みんなで手を合わせて「[[いただきます]]」と言った。|다 같이 손을 모으고 "잘 먹겠습니다"라고 말했다.|「では、[[いただきます]]」と言って、先輩は箸を取った。|"그럼 잘 먹겠습니다" 하고 선배가 젓가락을 들었다.|さあ、冷めないうちにどうぞ。|ありがとう。いただきます！|자, 식기 전에 드세요. / 고마워. 잘 먹겠습니다!
+ごちそうさまでした|ごちそうさまでした|잘 먹었습니다|식사 후 인사로 정중체. 반말에 가까운 형태는 「ごちそうさま」. 대접받았을 때의 감사 인사로도 쓴다.|先輩におごってもらって、「[[ごちそうさまでした]]」と頭を下げた。|선배가 사 줘서 "잘 먹었습니다"라고 고개를 숙였다.|食べ終わったら、お店の人に[[ごちそうさまでした]]と声をかけて出る。|다 먹으면 가게 사람에게 "잘 먹었습니다"라고 말하고 나온다.|全部食べてくれたんだね。|おいしかった。ごちそうさまでした！|다 먹어 줬구나. / 맛있었어요. 잘 먹었습니다!
+おやすみなさい|おやすみなさい|안녕히 주무세요|자기 전 인사의 정중체. 친한 사이나 가족에게는 「おやすみ」라고 줄인다.|子どもたちに「[[おやすみなさい]]」と言って電気を消した。|아이들에게 "잘 자"라고 말하고 불을 껐다.|「[[おやすみなさい]]、また明日ね」とメッセージを送った。|"잘 자요, 내일 또 봐요" 하고 메시지를 보냈다.|明日も早いから、もう寝るね。|うん、おやすみなさい。いい夢を。|내일도 일찍 일어나야 해서 이제 잘게. / 응, 잘 자요. 좋은 꿈 꿔요.
+またね|またね|또 봐, 다음에 봐|친한 사이에서 헤어질 때 쓰는 반말. 「また明日ね」「またあとでね」처럼 늘려 쓰기도 한다. 윗사람에게는 「では、また」「失礼します」를 쓴다.|バス停で友達と別れるとき、「[[またね]]」と手を振った。|버스 정류장에서 친구와 헤어질 때 "또 봐"라며 손을 흔들었다.|楽しかった！[[またね]]、気をつけて帰ってね。|즐거웠어! 또 봐, 조심해서 들어가.|じゃあ、私こっちだから。|うん、またね。今度はうちにも遊びに来てよ。|그럼 나 이쪽이니까. / 응, 또 봐. 다음엔 우리 집에도 놀러 와.
+気をつけて|きをつけて|조심해, 조심히 가|헤어질 때나 위험할 때 쓰는 반말. 정중체는 「気をつけてください」, 부드럽게는 「気をつけてね」.|雪が降ってるから、運転は[[気をつけて]]ね。|눈이 오니까 운전 조심해.|夜道は暗いので、[[気をつけて]]帰ってくださいね。|밤길은 어두우니 조심해서 돌아가세요.|じゃあ、そろそろ帰るね。|うん、気をつけてね。着いたら連絡して。|그럼 이만 갈게. / 응, 조심해서 가. 도착하면 연락해.
+お大事に|おだいじに|몸조리 잘하세요|아프거나 다친 사람에게 하는 정중한 말. 반말로는 「お大事にね」. 병원이나 약국에서도 흔히 듣는다.|風邪をひいた同僚に「[[お大事に]]」と声をかけた。|감기에 걸린 동료에게 "몸조리 잘해"라고 말을 건넸다.|「どうぞ[[お大事に]]」と言われて病院を出た。|"부디 몸조리 잘하세요"라는 말을 듣고 병원을 나왔다.|熱があるので、今日は早退します。|それは大変。ゆっくり休んで、お大事に。|열이 있어서 오늘은 조퇴하겠습니다. / 저런, 푹 쉬고 몸조리 잘하세요.
+おめでとう|おめでとう|축하해|축하의 반말. 정중체는 「おめでとうございます」. 합격·결혼·출산·생일 등 좋은 일에 폭넓게 쓴다.|合格したって聞いたよ。[[おめでとう]]！|합격했다고 들었어. 축하해!|結婚の知らせに、心から「[[おめでとう]]」と返信した。|결혼 소식에 진심으로 "축하해"라고 답장했다.|実は、来月赤ちゃんが生まれるんだ。|えー、本当？おめでとう！|사실 다음 달에 아기가 태어나. / 와, 정말? 축하해!
+こんばんは|こんばんは|안녕하세요(저녁 인사)|해가 진 뒤에 쓰는 인사. 반말·정중체 구분 없이 쓴다. 「こんにちは」와 마찬가지로 「は」로 쓰고 「わ」로 읽는다.|夜、マンションの入り口で管理人さんに[[こんばんは]]と挨拶した。|밤에 아파트 입구에서 관리인에게 "안녕하세요"라고 인사했다.|「[[こんばんは]]、夜分にすみません」と隣の人が訪ねてきた。|"안녕하세요, 밤늦게 죄송합니다" 하며 옆집 사람이 찾아왔다.|こんばんは。遅くまでお疲れ様です。|こんばんは。今日は冷えますね。|안녕하세요. 늦게까지 수고 많으세요. / 안녕하세요. 오늘은 쌀쌀하네요.
+じゃあね|じゃあね|그럼 안녕, 또 봐|친한 사이에서 헤어질 때 쓰는 반말. 윗사람에게는 어울리지 않고 「失礼します」「では、また」를 쓴다.|駅の改札で友達に手を振って「[[じゃあね]]」と言った。|역 개찰구에서 친구에게 손을 흔들며 "그럼 안녕"이라고 했다.|「また明日。[[じゃあね]]！」と言って電話を切った。|"내일 또 봐. 안녕!" 하고 전화를 끊었다.|そろそろ行くね。|うん、じゃあね。連絡するよ。|이제 슬슬 갈게. / 응, 잘 가. 연락할게.
+調子はどう|ちょうしはどう|상태가 어때, 요즘 어때|상대의 몸이나 일의 상태를 묻는 편한 말. 반말은 끝을 올려 「調子はどう？」, 정중체는 「調子はいかがですか」.|最近、仕事の[[調子はどう]]？|요즘 일은 어때?|久しぶりに会った同僚に「体の[[調子はどう]]？」と聞いた。|오랜만에 만난 동료에게 "몸 상태는 어때?"라고 물었다.|先週は風邪だったんだって？|もうすっかり治ったよ。そっちこそ調子はどう？|지난주에 감기였다며? / 이제 다 나았어. 너야말로 요즘 어때?
+おかげさまで|おかげさまで|덕분에|안부나 근황을 물어 올 때 감사를 담아 대답하는 정중한 표현. 반말에 가깝게는 「おかげで」. 비즈니스에서 자주 쓴다.|「お仕事は順調ですか」と聞かれて、[[おかげさまで]]忙しいですと答えた。|"일은 순조로우세요?"라고 물어서 덕분에 바쁘다고 대답했다.|[[おかげさまで]]、無事に試験に合格しました。|덕분에 무사히 시험에 합격했습니다.|最近、お仕事はいかがですか。|おかげさまで、なんとか順調です。|요즘 일은 어떠세요? / 덕분에 그럭저럭 순조로워요.
+お会いできて嬉しいです|おあいできてうれしいです|뵙게 되어 기쁩니다|첫 만남이나 오랜만의 재회에서 쓰는 공손한 표현. 친한 사이는 「会えてうれしい」. 「お会いする」는 겸양 표현이다.|ずっとお話ししたかったので、[[お会いできて嬉しいです]]。|계속 이야기를 나누고 싶었기에 뵙게 되어 기쁩니다.|憧れの作家さんに「[[お会いできて嬉しいです]]」と伝えた。|동경하던 작가님께 "뵙게 되어 기쁩니다"라고 전했다.|はじめまして、ブログを読んでいます。|ありがとうございます。お会いできて嬉しいです。|처음 뵙겠습니다, 블로그 잘 읽고 있어요. / 감사합니다. 만나 뵙게 되어 기뻐요.
+どういたしまして|どういたしまして|천만에요|감사 인사에 대한 정중한 대답. 다소 딱딱하게 들려 일상에서는 「いえいえ」「大丈夫ですよ」도 자주 쓴다.|「ありがとう」と言われて、「[[どういたしまして]]」と笑った。|"고마워"라는 말에 "천만에"라며 웃었다.|道を教えたら、お礼を言われたので[[どういたしまして]]と答えた。|길을 알려 줬더니 고맙다고 해서 천만에요라고 답했다.|荷物を持ってくださって、ありがとうございました。|どういたしまして。お気をつけて。|짐을 들어 주셔서 감사했습니다. / 천만에요. 조심히 가세요.
+お先にどうぞ|おさきにどうぞ|먼저 하세요|엘리베이터나 문 앞 등에서 양보할 때 쓰는 정중체. 가볍게는 「先にどうぞ」「どうぞどうぞ」. 「お先に」만 말하면 '먼저 갈게요'라는 반대 뜻이 되니 주의.|エレベーターのドアを押さえて「[[お先にどうぞ]]」と言った。|엘리베이터 문을 잡고 "먼저 타세요"라고 말했다.|レジで「[[お先にどうぞ]]」と、前のお客さんが順番をゆずってくれた。|계산대에서 "먼저 하세요" 하며 앞 손님이 순서를 양보해 주었다.|あ、すみません、ぶつかりそうになって。|いえいえ、お先にどうぞ。|아, 죄송해요, 부딪힐 뻔했네요. / 아니에요, 먼저 가세요.
+#shop|쇼핑·식당·주문
+これをください|これをください|이거 주세요|가게에서 물건을 고를 때 쓰는 기본 정중체. 더 공손하게는 「これをお願いします」, 반말은 「これちょうだい」.|メニューを指さして「[[これをください]]」と注文した。|메뉴를 가리키며 "이거 주세요"라고 주문했다.|色違いも見たけど、やっぱり[[これをください]]。|다른 색도 봤지만 역시 이걸로 주세요.|いらっしゃいませ。お決まりですか。|はい、これをください。二つお願いします。|어서 오세요. 정하셨나요? / 네, 이거 주세요. 두 개 부탁드려요.
+おいくらですか|おいくらですか|얼마입니까|값을 묻는 정중체. 「いくらですか」보다 공손하다. 친구끼리는 「いくら？」.|すみません、この傘は[[おいくらですか]]。|저기요, 이 우산은 얼마인가요?|全部で[[おいくらですか]]。|전부 해서 얼마인가요?|このシャツ、おいくらですか。|税込みで三千円です。|이 셔츠 얼마예요? / 세금 포함 삼천 엔입니다.
+試着してもいいですか|しちゃくしてもいいですか|입어 봐도 될까요|허락을 구하는 「〜てもいいですか」 정중체. 더 공손하게는 「試着してもよろしいでしょうか」, 반말은 「試着していい？」.|この上着、[[試着してもいいですか]]。|이 윗옷, 입어 봐도 될까요?|ねえ、これ[[試着してもいい]]？|있잖아, 이거 입어 봐도 돼?|いらっしゃいませ。何かお探しですか。|このワンピースを試着してもいいですか。|어서 오세요. 찾으시는 게 있으세요? / 이 원피스를 입어 봐도 될까요?
+在庫はありますか|ざいこはありますか|재고 있나요|상품이 남아 있는지 묻는 정중체. 점원은 「在庫がございます」라고 답한다.|この靴の二十四センチ、[[在庫はありますか]]。|이 신발 240 사이즈, 재고 있나요?|人気の商品なので、念のため「[[在庫はありますか]]」と電話で聞いた。|인기 상품이라 혹시 몰라 재고가 있는지 전화로 물어봤다.|申し訳ありません、その色は売り切れです。|そうですか。ほかの色の在庫はありますか。|죄송합니다, 그 색은 품절입니다. / 그렇군요. 다른 색 재고는 있나요?
+安くなりませんか|やすくなりませんか|좀 깎아 줄 수 없나요|가격 흥정의 정중체. 일본의 일반 매장에서는 흥정이 드물고 가전 매장·벼룩시장 등에서 쓴다. 반말은 「安くならない？」.|まとめて買うので、もう少し[[安くなりませんか]]。|한꺼번에 살 테니 조금만 깎아 주실 수 없나요?|家電店で店員さんに[[安くなりませんか]]と聞いてみた。|가전 매장에서 점원에게 깎아 줄 수 없는지 물어봤다.|三点で一万五千円です。|うーん、もう少し安くなりませんか。|세 개에 만오천 엔입니다. / 음, 조금만 더 깎아 주실 수 없나요?
+袋は結構です|ふくろはけっこうです|봉투는 괜찮습니다|유료 봉투가 일반화되어 자주 쓰는 정중한 거절. 「結構です」는 문맥에 따라 '좋다'와 '필요 없다' 둘 다 되므로 주의.|レジで「[[袋は結構です]]」と言ってエコバッグを出した。|계산대에서 "봉투는 괜찮아요"라고 말하고 에코백을 꺼냈다.|一つだけなので、[[袋は結構です]]。そのままで大丈夫です。|하나뿐이라 봉투는 괜찮습니다. 그대로 괜찮아요.|袋はご利用ですか。|いえ、袋は結構です。|봉투 필요하세요? / 아니요, 봉투는 괜찮아요.
+お会計お願いします|おかいけいおねがいします|계산 부탁합니다|식당에서 계산할 때 점원을 부르며 하는 말. 정중체이며 「を」를 생략한 구어. 계산하는 장소(계산대)는 「レジ」라고 한다.|食べ終わって店員さんを呼び、「[[お会計お願いします]]」と言った。|다 먹고 점원을 불러 "계산 부탁합니다"라고 말했다.|すみません、[[お会計お願いします]]。カードで。|저기요, 계산 부탁해요. 카드로요.|そろそろ出ようか。|うん。すみません、お会計お願いします。|슬슬 나갈까? / 응. 저기요, 계산 부탁합니다.
+別々でお願いします|べつべつでおねがいします|따로따로 계산해 주세요|각자 계산할 때 쓰는 정중체. 일본에서는 「割り勘」보다 계산대에서 이렇게 요청하는 일이 많다.|会計は[[別々でお願いします]]。|계산은 따로 부탁드려요.|領収書は[[別々でお願いします]]。|영수증은 따로따로 부탁드립니다.|ご一緒のお会計でよろしいですか。|いえ、別々でお願いします。|함께 계산하시면 될까요? / 아니요, 따로따로 부탁드려요.
+お持ち帰り|おもちかえり|포장, 테이크아웃|음식을 포장해 가는 것. 점원은 「店内でお召し上がりですか、お持ち帰りですか」라고 묻는다. 반말은 「持ち帰りで」.|店員さんに「[[お持ち帰り]]ですか」と聞かれた。|점원이 "포장해 가시나요?"라고 물었다.|ケーキは[[お持ち帰り]]でお願いします。|케이크는 포장으로 부탁드려요.|こちらでお召し上がりですか。|いえ、お持ち帰りでお願いします。|여기서 드시고 가시나요? / 아니요, 포장으로 부탁드려요.
+注文いいですか|ちゅうもんいいですか|주문해도 될까요|점원을 불러 주문하려 할 때 쓰는 구어체. 「注文をしてもよろしいですか」보다 가볍고 흔하다.|すみません、[[注文いいですか]]。|저기요, 주문해도 될까요?|店員さんと目が合ったので、手を挙げて「[[注文いいですか]]」と声をかけた。|점원과 눈이 마주쳐서 손을 들고 "주문해도 될까요?"라고 말을 걸었다.|お待たせしました。|あ、注文いいですか。ビールを二つお願いします。|오래 기다리셨습니다. / 아, 주문할게요. 맥주 두 개 부탁합니다.
+おすすめは何ですか|おすすめはなんですか|추천 메뉴는 뭔가요|정중체. 가게에서 추천을 물을 때 쓴다. 반말은 「おすすめは？」. 줄여서 「おすすめありますか」도 흔하다.|このお店の[[おすすめは何ですか]]。|이 가게의 추천 메뉴는 뭔가요?|初めて来たので、[[おすすめは何ですか]]と店員さんに聞いた。|처음 와서 점원에게 추천 메뉴가 뭐냐고 물었다.|初めてなんですが、おすすめは何ですか。|当店では、特製の塩ラーメンが人気です。|처음인데요, 추천 메뉴는 뭔가요? / 저희 가게는 특제 소금라멘이 인기예요.
+取り皿|とりざら|앞접시|여럿이 나눠 먹을 때 각자 덜어 먹는 작은 접시. 가게에서는 「取り皿をください」「取り皿をお持ちしますね」처럼 쓴다.|すみません、[[取り皿]]をください。|저기요, 앞접시 주세요.|鍋が来る前に、人数分の[[取り皿]]が運ばれてきた。|전골이 나오기 전에 인원수만큼 앞접시가 나왔다.|唐揚げ、みんなで分けようよ。|いいね。店員さんに取り皿をもらおう。|닭튀김 다 같이 나눠 먹자. / 좋아. 점원에게 앞접시를 받자.
+満席|まんせき|만석, 빈자리 없음|식당·극장·열차 등에서 자리가 다 찼다는 뜻. 「満席です」「満席でした」처럼 쓰며 점원은 「ただいま満席でして」라고 한다.|土曜の夜だったので、どの店も[[満席]]だった。|토요일 밤이라 어느 가게나 만석이었다.|申し訳ございません、ただいま[[満席]]です。|죄송합니다, 지금은 만석입니다.|今から二人、入れますか。|申し訳ありません、ただいま満席なんです。|지금 두 명 들어갈 수 있나요? / 죄송합니다, 지금은 만석이에요.
+食べ放題|たべほうだい|무한 리필, 뷔페|정해진 시간 동안 마음껏 먹는 방식. 음료는 「飲み放題」. 「食べ放題コース」「時間制」 등으로 자주 쓴다.|九十分の[[食べ放題]]コースを予約した。|90분 무한 리필 코스를 예약했다.|肉の[[食べ放題]]だから、遠慮なくどんどん食べてね。|고기 무한 리필이니까 사양 말고 마음껏 먹어.|今日の夕食、どこにする？|焼き肉の食べ放題はどう？|오늘 저녁 어디로 할까? / 고기 무한 리필은 어때?
+おかわり|おかわり|한 그릇 더, 리필|같은 음식이나 음료를 한 번 더 먹는 것. 「おかわり自由」는 무제한 리필. 「おかわりください」처럼 쓴다.|ごはんを[[おかわり]]してもいいですか。|밥을 더 먹어도 될까요?|このお店はコーヒーが[[おかわり]]自由だ。|이 가게는 커피 리필이 자유롭다.|お茶、おかわりしますか。|はい、おかわりをお願いします。|차 더 드릴까요? / 네, 리필 부탁드려요.
+辛いのが苦手|からいのがにがて|매운 것을 못 먹음|「苦手」는 '서툴다, 별로 좋아하지 않는다'. 「辛いのが苦手なんです」처럼 완곡하게 말하면 부드럽다. 메뉴에서 매운 정도를 조절할 때 쓴다.|実は[[辛いのが苦手]]なので、辛さを控えめにしてください。|사실 매운 걸 잘 못 먹어서 덜 맵게 해 주세요.|彼は[[辛いのが苦手]]だから、カレーは甘口にしよう。|그는 매운 걸 못 먹으니 카레는 순한 맛으로 하자.|辛さはどうなさいますか。|辛いのが苦手なので、一番控えめでお願いします。|맵기는 어떻게 하시겠어요? / 매운 걸 못 먹어서 제일 순하게 부탁드려요.
+アレルギー|アレルギー|알레르기|식당 주문 때 꼭 필요한 말. 「卵アレルギー」「そばアレルギー」처럼 식재료 뒤에 붙인다. 정중체·반말 공통으로 쓴다.|子どもが卵の[[アレルギー]]なので、成分を教えてください。|아이가 달걀 알레르기라서 성분을 알려 주세요.|[[アレルギー]]はありますか。|알레르기는 있으세요?|食べ物のアレルギーはありますか。|はい、そばアレルギーがあります。|음식 알레르기는 있으세요? / 네, 메밀 알레르기가 있어요.
+領収書|りょうしゅうしょ|영수증(증빙용)|회사 경비 처리 등에 쓰는 정식 증빙. 계산대에서 받는 간이 영수증은 「レシート」. 「領収書をいただけますか」처럼 정중하게 요청한다.|会社の経費にするので、[[領収書]]をお願いします。|회사 경비로 처리할 거라 영수증을 부탁드립니다.|[[領収書]]の宛名は「株式会社ひまわり」でお願いします。|영수증 수신처는 "주식회사 히마와리"로 부탁드려요.|領収書は必要ですか。|はい、宛名は会社名でお願いします。|영수증이 필요하세요? / 네, 수신처는 회사 이름으로 부탁드려요.
+返品する|へんぴんする|반품하다|산 물건을 돌려주고 환불·교환을 받는 것. 「返品したいんですが」로 정중하게 말문을 연다. 가게별 반품 규정이 다르니 확인한다.|サイズが合わなかったので、[[返品したい]]のですが。|사이즈가 맞지 않아서 반품하고 싶은데요.|未開封なら、一週間以内に[[返品できます]]。|미개봉이면 일주일 이내에 반품할 수 있습니다.|このシャツ、返品することはできますか。|レシートをお持ちでしたら、返品できますよ。|이 셔츠 반품할 수 있나요? / 영수증을 가지고 계시면 반품 가능해요.
+大きいサイズ|おおきいサイズ|더 큰 사이즈|옷·신발 사이즈를 바꿔 달라고 할 때 쓴다. 「もう一つ大きいサイズ」는 '한 치수 더 큰 것'. 작은 것은 「小さいサイズ」.|少しきついので、もう一つ[[大きいサイズ]]はありますか。|조금 끼어서 한 치수 큰 사이즈는 있나요?|[[大きいサイズ]]は店の奥にございます。|큰 사이즈는 가게 안쪽에 있습니다.|少し小さいですね。|では、もう一つ大きいサイズをお持ちします。|조금 작네요. / 그럼 한 치수 큰 사이즈를 가져다 드릴게요.
+品切れ|しなぎれ|품절|상품이 다 팔려 없는 상태. 「売り切れ」와 비슷하게 쓰는 명사로 반말·정중체 공통이다. 점원은 「品切れでございます」「品切れになりました」라고 말한다.|人気の商品はすぐ[[品切れ]]になる。|인기 상품은 금방 품절된다.|申し訳ございません、そちらは[[品切れ]]でして。|죄송합니다, 그 상품은 품절이라서요.|この新作、まだありますか。|すみません、昨日で品切れになりました。|이 신상품 아직 있나요? / 죄송합니다, 어제부로 품절됐어요.
+見ているだけです|みているだけです|구경만 하는 거예요|점원이 말을 걸 때 부드럽게 거절하는 정중체. 반말·혼잣말은 「見てるだけ」. 부정적 뉘앙스 없이 흔히 쓴다.|店員さんに話しかけられて、「[[見ているだけです]]」と答えた。|점원이 말을 걸어서 "구경만 하는 거예요"라고 대답했다.|ごめん、今日は[[見てるだけ]]なんだ。|미안, 오늘은 구경만 하는 거야.|何かお探しですか。|いえ、見ているだけです。ありがとうございます。|찾으시는 게 있으세요? / 아니요, 구경만 하는 거예요. 감사합니다.
+温めてください|あたためてください|데워 주세요|편의점에서 도시락 등을 데워 달라고 할 때 쓰는 정중한 부탁. 반말은 「温めて」. 점원은 「温めますか」라고 묻는다.|お弁当は[[温めてください]]。|도시락은 데워 주세요.|ごめん、これ電子レンジで[[温めて]]もらえる？|미안, 이거 전자레인지에 데워 줄 수 있어?|お弁当、温めますか。|はい、温めてください。お箸もお願いします。|도시락 데워 드릴까요? / 네, 데워 주세요. 젓가락도 부탁해요.
+予約する|よやくする|예약하다|식당·호텔·병원 등 폭넓게 쓴다. 「予約したいのですが」로 정중하게 문의하고, 이미 했으면 「予約してあります」「予約しています」.|金曜の夜、四人で[[予約したい]]のですが。|금요일 밤에 네 명 예약하고 싶은데요.|席は[[予約して]]あるから、安心して。|자리는 예약해 뒀으니까 안심해.|ご予約はされていますか。|はい、七時に田中で予約しています。|예약하셨나요? / 네, 7시에 다나카 이름으로 예약했어요.
+セール|セール|세일|할인 판매. 「セール中」「夏のセール」처럼 쓴다. 비슷한 말로 「バーゲン」도 있다. 반말·정중체 구분 없이 쓰는 외래어.|来週から夏物が[[セール]]になるらしい。|다음 주부터 여름옷이 세일이라고 한다.|[[セール]]中でも、返品できない商品がある。|세일 중에도 반품이 안 되는 상품이 있다.|このコート、半額だって。|本当だ！セールだから、今日買わないと損だね。|이 코트 반값이래. / 진짜네! 세일이니까 오늘 사지 않으면 손해야.
+#travel|여행·교통·호텔
+乗り換える|のりかえる|환승하다|전철·버스를 갈아타다. 「乗り換えが必要です」처럼 명사형 「乗り換え」도 자주 쓴다. 길 안내에서 정중체로 「乗り換えてください」라고 한다.|新宿で山手線に[[乗り換えて]]ください。|신주쿠에서 야마노테선으로 갈아타세요.|次の駅で地下鉄に[[乗り換える]]つもりだ。|다음 역에서 지하철로 갈아탈 생각이다.|渋谷まで行きたいんですが。|新宿で乗り換えると早いですよ。|시부야까지 가고 싶은데요. / 신주쿠에서 갈아타면 빨라요.
+片道|かたみち|편도|왕복의 반대. 「片道切符」「片道三十分」처럼 쓴다. 정중체·반말 공통으로 쓰는 명사.|大阪までの[[片道]]料金はいくらですか。|오사카까지 편도 요금은 얼마인가요?|家から会社まで[[片道]]一時間かかる。|집에서 회사까지 편도로 한 시간 걸린다.|京都まで、往復ですか。|いえ、片道でお願いします。|교토까지 왕복이신가요? / 아니요, 편도로 부탁드려요.
+往復|おうふく|왕복|오고 가는 것. 「往復切符」「往復で〜円」처럼 쓰며 동사 「往復する」도 가능하다. 반말·정중체 공통.|東京と大阪を[[往復]]する出張が続いている。|도쿄와 오사카를 왕복하는 출장이 이어지고 있다.|空港までの[[往復]]切符を二枚ください。|공항까지 왕복표를 두 장 주세요.|箱根まで往復いくらですか。|往復で四千円です。|하코네까지 왕복 얼마예요? / 왕복 사천 엔입니다.
+終電|しゅうでん|막차|그날 마지막 전철. 「終電を逃す」「終電に間に合う」로 자주 쓴다. 첫차는 「始発」.|飲み会が長引いて、[[終電]]を逃した。|술자리가 길어져 막차를 놓쳤다.|[[終電]]は十二時半だから、そろそろ出よう。|막차는 12시 반이니까 슬슬 나가자.|もう十二時だよ。終電、大丈夫？|やばい、急がないと終電に乗り遅れる！|벌써 12시야. 막차 괜찮아? / 큰일이다, 서두르지 않으면 막차를 놓쳐!
+遅延|ちえん|지연|열차나 항공편이 예정보다 늦어지는 것. 안내 방송·뉴스·공지에서 주로 쓰는 한자어로, 대화에서는 「電車が遅れている」처럼 「遅れる」도 많이 쓴다. 「遅延証明書」는 회사 제출용 서류.|事故の影響で、電車が三十分[[遅延]]している。|사고의 영향으로 전철이 30분 지연되고 있다.|[[遅延]]証明書をもらって会社に出した。|지연 증명서를 받아 회사에 제출했다.|遅れてすみません。電車が遅延していて。|大丈夫ですよ。大変でしたね。|늦어서 죄송합니다. 전철이 지연되어서요. / 괜찮아요. 힘드셨겠어요.
+改札|かいさつ|개찰구|역의 출입 게이트. 「改札口」라고도 한다. 약속 장소로 「改札で待ち合わせ」를 자주 쓴다.|駅の[[改札]]で待ち合わせしよう。|역 개찰구에서 만나자.|切符を入れて[[改札]]を通った。|표를 넣고 개찰구를 통과했다.|どこで待ち合わせる？|東口の改札の前はどう？|어디서 만날까? / 동쪽 출구 개찰구 앞은 어때?
+最寄り駅|もよりえき|가장 가까운 역|집이나 목적지에서 가장 가까운 역. 길을 설명할 때 「最寄り駅は〜です」로 시작한다. 정중체·반말 공통.|家の[[最寄り駅]]まで歩いて十分です。|집에서 가장 가까운 역까지 걸어서 10분입니다.|[[最寄り駅]]はどこですか。|가장 가까운 역은 어디인가요?|ホテルの最寄り駅はどこですか。|地下鉄の中央駅が一番近いです。|호텔에서 가장 가까운 역은 어디인가요? / 지하철 주오역이 가장 가까워요.
+乗り場|のりば|승강장, 타는 곳|버스·택시·배 등을 타는 곳. 「タクシー乗り場」「三番乗り場」처럼 쓴다. 전철 승강장은 보통 「ホーム」라고 한다. 반말·정중체 공통 명사.|すみません、タクシー[[乗り場]]はどこですか。|저기요, 택시 승강장은 어디인가요?|空港行きのバスは四番[[乗り場]]から出るよ。|공항 가는 버스는 4번 승강장에서 출발해.|フェリーに乗りたいんですが。|乗り場はあの白い建物の裏です。|페리를 타고 싶은데요. / 타는 곳은 저 하얀 건물 뒤쪽이에요.
+始発|しはつ|첫차|그날 처음 출발하는 전철·버스. 반대는 「終電」. 「始発駅」는 출발역이라는 뜻도 된다. 반말·정중체 공통 명사.|早朝の飛行機なので、[[始発]]で空港に向かいます。|이른 아침 비행기라서 첫차로 공항에 갑니다.|終電を逃したから、[[始発]]まで駅前で待つしかない。|막차를 놓쳤으니 첫차까지 역 앞에서 기다릴 수밖에 없다.|明日、何時に出る？|始発に乗らないと間に合わないよ。|내일 몇 시에 나가? / 첫차를 타지 않으면 늦어.
+次で降ります|つぎでおります|다음에서 내립니다|혼잡한 버스나 전철에서 앞사람에게 알리는 정중체. 반말은 「次で降りる」, 길을 비켜 달라는 뜻으로 「降ります」만 말하기도 한다.|すみません、[[次で降ります]]。通してください。|죄송합니다, 다음에서 내려요. 좀 지나갈게요.|満員電車の中で「[[次で降ります]]」と小声で言った。|만원 전철 안에서 "다음에 내려요"라고 작게 말했다.|すみません、降りられますか。|はい、次で降ります。|저기요, 내리시나요? / 네, 다음에서 내립니다.
+この住所までお願いします|このじゅうしょまでおねがいします|이 주소까지 가 주세요|택시에서 지도나 메모를 보여 주며 목적지를 말하는 정중체. 「この」 자리에 장소를 넣어 「東京駅までお願いします」처럼도 쓴다. 반말 「〜まで行って」는 기사에게 무례하게 들릴 수 있다.|タクシーの運転手に地図を見せて、「[[この住所までお願いします]]」と言った。|택시 기사에게 지도를 보여 주며 "이 주소까지 가 주세요"라고 말했다.|すみません、[[この住所までお願いします]]。急いでいるんです。|저기요, 이 주소까지 가 주세요. 급해서요.|どちらまで行かれますか。|このメモの、この住所までお願いします。|어디까지 가세요? / 이 메모에 있는 이 주소까지 가 주세요.
+時刻表|じこくひょう|시간표|버스·전철의 운행 시간표. 「時刻表を調べる」「時刻表どおり」로 자주 쓴다. 시골은 운행 횟수가 적어 꼭 확인한다.|バス停の[[時刻表]]を写真に撮った。|버스 정류장의 시간표를 사진으로 찍었다.|田舎は本数が少ないので、[[時刻表]]を確認してから出かける。|시골은 운행 횟수가 적으니 시간표를 확인하고 나선다.|次のバス、何時かな。|時刻表を見ると、あと十分だよ。|다음 버스 몇 시일까. / 시간표를 보니 10분 남았어.
+荷物を預ける|にもつをあずける|짐을 맡기다|호텔 프런트나 코인로커에 짐을 맡기는 것. 체크인 전에 짐만 맡길 때 자주 쓴다. 손님이 부탁할 때는 「荷物を預かっていただけますか」(預ける=맡기다, 預かる=맡아 주다)라고 한다.|チェックインの前に、フロントに[[荷物を預けて]]観光に出かけた。|체크인 전에 프런트에 짐을 맡기고 관광을 나섰다.|コインロッカーに[[荷物を預ける]]。|코인로커에 짐을 맡긴다.|十時ですが、まだ部屋に入れませんか。|お部屋は三時からです。荷物を預けて、観光してきてはいかがですか。|10시인데 아직 방에 못 들어가나요? / 방은 3시부터예요. 짐을 맡기시고 관광하고 오시는 건 어떠세요?
+チェックイン|チェックイン|체크인|호텔·공항에서 수속하는 것. 호텔은 보통 오후부터 가능하다. 「チェックインする」「チェックインできる」로 쓴다.|午後三時から[[チェックイン]]できます。|오후 3시부터 체크인할 수 있습니다.|オンラインで先に[[チェックイン]]しておいた。|온라인으로 먼저 체크인해 두었다.|予約しているキムです。チェックインをお願いします。|キム様ですね。お待ちしておりました。|예약한 김입니다. 체크인 부탁드려요. / 김 님이시군요. 기다리고 있었습니다.
+チェックアウト|チェックアウト|체크아웃|호텔을 나갈 때의 수속. 보통 오전 10~11시까지이며 늦추려면 프런트에 정중하게 부탁한다. 「チェックアウトする」.|[[チェックアウト]]は朝十時までです。|체크아웃은 아침 10시까지입니다.|遅れそうなので、[[チェックアウト]]を一時間延ばしてもらった。|늦을 것 같아서 체크아웃을 한 시간 연장받았다.|明日のチェックアウトは何時ですか。|十一時までにお願いいたします。|내일 체크아웃은 몇 시인가요? / 11시까지 부탁드립니다.
+空室|くうしつ|빈 방|호텔에 남은 방. 반대는 「満室」. 「空室はありますか」로 당일 숙박을 문의한다. 딱딱한 말로 안내문에도 쓰인다.|週末は[[空室]]がほとんどない。|주말에는 빈 방이 거의 없다.|今夜、二名で泊まれる[[空室]]はありますか。|오늘 밤 두 명이 묵을 수 있는 빈 방이 있나요?|今夜の空室はありますか。|はい、ツインのお部屋が一つ空いております。|오늘 밤 빈 방이 있나요? / 네, 트윈룸이 하나 비어 있습니다.
+両替|りょうがえ|환전|돈을 다른 나라 화폐로 바꾸거나 큰돈을 잔돈으로 바꾸는 것. 「両替する」「両替所」. 반말·정중체 공통. 공항·은행·호텔에서 가능하며 여권이 필요한 경우가 많다.|空港で円に[[両替]]した。|공항에서 엔으로 환전했다.|[[両替]]できる銀行はこの近くにありますか。|환전할 수 있는 은행이 이 근처에 있나요?|ウォンを円に両替したいのですが。|かしこまりました。パスポートをお見せください。|원화를 엔으로 환전하고 싶은데요. / 알겠습니다. 여권을 보여 주세요.
+免税|めんぜい|면세|외국인 여행자가 일정 금액 이상 사면 소비세가 면제되는 제도. 「免税カウンター」「免税で買える」처럼 쓴다. 여권이 필요하다.|五千円以上買うと[[免税]]になる。|5천 엔 이상 사면 면세가 된다.|[[免税]]カウンターはどこですか。|면세 카운터는 어디인가요?|これ、免税で買えますか。|はい、パスポートがあれば免税になります。|이거 면세로 살 수 있나요? / 네, 여권이 있으면 면세가 됩니다.
+観光|かんこう|관광|여행지를 둘러보는 것. 「観光地」「観光客」「観光する」. 입국 심사에서 목적을 물으면 「観光です」라고 답한다.|週末は京都で[[観光]]を楽しんだ。|주말에는 교토에서 관광을 즐겼다.|この町は[[観光]]客でいつもにぎわっている。|이 동네는 늘 관광객으로 북적인다.|今回は観光ですか。|はい、一週間ほど観光する予定です。|이번에는 관광이신가요? / 네, 일주일 정도 관광할 예정이에요.
+日帰り|ひがえり|당일치기|하루에 다녀오는 여행. 「日帰り旅行」「日帰りで行く」. 1박은 「一泊」. 정중체·반말 공통으로 쓰는 명사.|週末に箱根へ[[日帰り]]旅行に行った。|주말에 하코네로 당일치기 여행을 다녀왔다.|遠いけど、[[日帰り]]でも行けるよ。|멀지만 당일치기로도 갈 수 있어.|温泉に行きたいな。|日帰りなら、近場でも楽しめるよ。|온천에 가고 싶다. / 당일치기라면 가까운 곳에서도 즐길 수 있어.
+忘れ物|わすれもの|두고 온 물건, 분실물|「忘れ物をする」는 물건을 두고 오는 것. 역·가게에는 「忘れ物センター」가 있다. 「お忘れ物のないように」는 방송에서 자주 듣는 안내.|電車に[[忘れ物]]をして、駅員さんに相談した。|전철에 물건을 두고 내려 역무원에게 상담했다.|[[忘れ物]]はございませんか。|두고 가신 물건은 없으신가요?|傘を電車に忘れたんです。|では、忘れ物の窓口でお問い合わせください。|우산을 전철에 두고 내렸어요. / 그럼 분실물 창구에 문의해 주세요.
+満員電車|まんいんでんしゃ|만원 전철|출퇴근 시간에 사람이 가득한 전철. 「ラッシュ」라고도 한다. 매일의 피곤함을 이야기할 때 자주 나온다.|毎朝、[[満員電車]]で通勤するのは大変だ。|매일 아침 만원 전철로 출근하는 건 힘들다.|[[満員電車]]の中でスマホを見るのは危ない。|만원 전철 안에서 스마트폰을 보는 건 위험하다.|朝から疲れてるね。|満員電車に一時間乗ってるからね。|아침부터 피곤해 보이네. / 만원 전철을 한 시간 타니까.
+写真を撮っていただけませんか|しゃしんをとっていただけませんか|사진을 찍어 주실 수 있을까요|낯선 사람에게 부탁하는 겸양 표현. 「撮ってもらえますか」보다 공손하다. 반말은 「写真撮ってくれる？」.|すみません、[[写真を撮っていただけませんか]]。|저기요, 사진 좀 찍어 주실 수 있을까요?|展望台で外国人観光客に「[[写真を撮っていただけませんか]]」と頼まれた。|전망대에서 외국인 관광객에게 "사진 좀 찍어 주실 수 있을까요?"라는 부탁을 받았다.|すみません、写真を撮っていただけませんか。|いいですよ。はい、チーズ！|저기, 사진 좀 찍어 주실 수 있을까요? / 좋아요. 자, 치즈!
+遠回り|とおまわり|돌아서 감, 우회|지름길을 쓰지 않고 멀리 돌아가는 것. 「遠回りする」「遠回りになる」. 반말·정중체 공통이며, 비유적으로 '에두르는 방법'이라는 뜻으로도 쓴다.|工事中で、[[遠回り]]するしかなかった。|공사 중이라 돌아서 갈 수밖에 없었다.|[[遠回り]]になるけど、海沿いの道を行こう。|돌아가긴 하지만 바닷가 길로 가자.|近道はないの？|ないよ。遠回りしても、この道が一番安全だ。|지름길은 없어? / 없어. 돌아가더라도 이 길이 제일 안전해.
+方面|ほうめん|~방면|전철·버스의 행선 방향. 「新宿方面」「東京方面行き」처럼 지명 뒤에 붙인다. 역 안내판에서 자주 보인다.|この電車は新宿[[方面]]に行きますか。|이 전철은 신주쿠 방면으로 가나요?|海[[方面]]へ向かう道は渋滞している。|바다 방면으로 가는 길은 정체되어 있다.|渋谷方面のバスはどこですか。|三番乗り場から出ています。|시부야 방면 버스는 어디서 타나요? / 3번 승강장에서 출발해요.
+#work|직장·업무
+お疲れ様です|おつかれさまです|수고하셨습니다, 수고하십니다|직장에서 만날 때와 헤어질 때 두루 쓰는 기본 인사. 정중체라 윗사람에게도 쓸 수 있고, 동료끼리는 반말 형태 お疲れ도 쓴다.|午後、廊下で部長とすれ違って[[お疲れ様です]]と挨拶した。|오후에 복도에서 부장님과 마주쳐 "수고하십니다"라고 인사했다.|メールの書き出しは「[[お疲れ様です]]、田中です。」とすることが多い。|메일 첫머리는 "수고하십니다, 다나카입니다."라고 쓰는 경우가 많다.|そろそろ帰りますね。|はい、今日もお疲れ様でした。|슬슬 들어갈게요. / 네, 오늘도 수고하셨습니다.
+残業する|ざんぎょうする|야근하다, 초과 근무하다|일상적인 업무 용어로 격식 없이 두루 쓴다. 활용형에 따라 정중체와 반말을 모두 만들 수 있다.|今週は忙しくて、毎日[[残業しました]]。|이번 주는 바빠서 매일 야근했습니다.|明日は[[残業しない]]で、早く帰るつもりだ。|내일은 야근하지 않고 일찍 갈 생각이다.|最近、帰りが遅いですね。|ええ、決算前なので残業続きなんです。|요즘 퇴근이 늦으시네요. / 네, 결산 전이라 계속 야근이에요.
+締め切り|しめきり|마감, 마감 기한|제출이나 신청의 마감일을 말한다. 격식 없이 쓰는 일반 명사이고 締切로도 쓴다.|レポートの[[締め切り]]は金曜日の正午です。|리포트 마감은 금요일 정오입니다.|[[締め切り]]まであと二日しかないのに、まだ半分も終わっていない。|마감까지 이틀밖에 안 남았는데 아직 절반도 못 끝냈다.|企画書は、いつまでに出せばいいですか。|締め切りは今週の木曜日です。|기획서는 언제까지 내면 됩니까? / 마감은 이번 주 목요일입니다.
+資料を作成する|しりょうをさくせいする|자료를 작성하다|作成는 문서나 자료를 갖추어 만든다는 딱딱한 업무 표현. 구어에서는 作る도 쓰지만 비즈니스에서는 作成가 자연스럽다.|会議用の[[資料を作成して]]、前日に共有します。|회의용 자료를 작성해서 전날 공유하겠습니다.|今日中に[[資料を作成しなければ]]ならない。|오늘 안에 자료를 작성해야 한다.|来週のプレゼンの準備は進んでいますか。|はい、今ちょうど資料を作成しているところです。|다음 주 프레젠테이션 준비는 진행되고 있나요? / 네, 지금 막 자료를 작성하는 중입니다.
+打ち合わせ|うちあわせ|(업무) 미팅, 사전 협의|회의보다 가볍고 소규모인 협의를 가리킨다. 사내외 모두에 쓰고 정중체와 반말 대화에 다 어울린다.|十時から客先と[[打ち合わせ]]があります。|10시부터 고객사와 미팅이 있습니다.|昼ごはんのあとに[[打ち合わせ]]を入れてもいいですか。|점심 먹고 나서 미팅을 잡아도 될까요?|明日の打ち合わせ、何時からでしたっけ。|午後二時からだよ。会議室Bね。|내일 미팅 몇 시부터였죠? / 오후 2시부터야. 회의실 B.
+報告する|ほうこくする|보고하다|상사에게 상황이나 결과를 알리는 것. 일본 직장에서는 報連相(보고·연락·상담)의 하나로 중시한다.|進捗は毎週月曜に課長へ[[報告します]]。|진척 상황은 매주 월요일에 과장님께 보고합니다.|問題があったら、すぐ[[報告して]]ください。|문제가 있으면 바로 보고해 주세요.|トラブルの件、部長には伝えた？|いえ、まだです。今から報告します。|문제 건, 부장님께는 전했어? / 아뇨, 아직요. 지금 보고하겠습니다.
+相談する|そうだんする|상담하다, 의논하다|고민이나 판단을 다른 사람과 의논하는 것. 정중체와 반말 모두 자연스럽고, 상사에게는 ご相談라고 한다.|判断に迷ったので、先輩に[[相談しました]]。|판단이 서지 않아서 선배와 의논했습니다.|一人で悩まないで、まず私に[[相談して]]よ。|혼자 고민하지 말고 먼저 나한테 의논해.|ちょっとご相談したいことがあるのですが。|いいですよ。会議室で話しましょうか。|잠시 상의드리고 싶은 일이 있는데요. / 좋아요. 회의실에서 얘기할까요?
+確認する|かくにんする|확인하다|사실이나 내용을 틀림없는지 살펴보는 것. 업무 메일과 대화에서 매우 자주 나오며 정중체는 確認します, 반말은 確認する이다.|送信する前に、宛先をもう一度[[確認します]]。|보내기 전에 수신처를 한 번 더 확인하겠습니다.|念のため、在庫を[[確認して]]おいて。|혹시 모르니 재고를 확인해 둬.|納品は今週中で間違いないですか。|担当に確認してから、折り返しご連絡します。|납품은 이번 주 안으로 틀림없나요? / 담당자에게 확인한 뒤에 다시 연락드리겠습니다.
+休みを取る|やすみをとる|휴가를 내다, 쉬다|연차나 휴일을 신청해 쉬는 것. 상사에게는 休みをいただく라고 낮춰 말하기도 한다.|来月、三日間[[休みを取ります]]。|다음 달에 사흘간 휴가를 냅니다.|夏は一週間くらい[[休みを取って]]旅行したい。|여름에는 일주일쯤 휴가를 내서 여행하고 싶다.|来週の金曜、休みを取ってもいいですか。|うん、大丈夫。仕事は調整しておくね。|다음 주 금요일에 휴가 써도 될까요? / 응, 괜찮아. 업무는 조정해 둘게.
+出張|しゅっちょう|출장|회사 업무로 다른 지역에 가는 것. 出張に行く, 出張中 형태로 쓰며 격식 없이 두루 쓰는 명사이다.|来週は大阪へ[[出張]]に行きます。|다음 주에는 오사카로 출장을 갑니다.|先月は[[出張]]ばかりで、家にほとんどいなかった。|지난달은 출장만 다녀서 집에 거의 없었다.|今週、田中さんは席にいないんですね。|ええ、福岡に出張中です。|이번 주 다나카 씨는 자리에 없네요. / 네, 후쿠오카에 출장 중입니다.
+持ち帰る|もちかえる|가지고 돌아가다, 일단 가져가서 검토하다|물건을 가져가는 뜻 외에 안건을 그 자리에서 정하지 않고 회사로 가져가 검토한다는 비즈니스 표현으로 쓴다. 持ち帰らせてください는 정중한 부탁이다.|今日の件は、いったん[[持ち帰らせて]]ください。|오늘 건은 일단 가져가서 검토하게 해 주세요.|仕事を家に[[持ち帰る]]のは、なるべく避けたい。|일을 집에 가져가는 것은 되도록 피하고 싶다.|この条件で契約していただけますか。|申し訳ありません、社に持ち帰って検討いたします。|이 조건으로 계약해 주시겠습니까? / 죄송합니다, 회사로 가져가 검토하겠습니다.
+段取り|だんどり|준비 순서, 일의 절차 계획|일을 진행하는 순서와 준비를 가리키는 구어 느낌의 명사. 段取りがいい는 칭찬, 段取りが悪い는 비판이며 격식 없이 쓴다.|当日の[[段取り]]を前もって確認しておこう。|당일 진행 순서를 미리 확인해 두자.|彼女は[[段取り]]がいいので、仕事が早い。|그녀는 일 처리 순서가 좋아서 일이 빠르다.|引っ越しの手続き、うまく進んでる？|段取りが悪くて、まだ半分しか終わってないよ。|이사 절차는 잘 진행되고 있어? / 준비 순서가 엉망이라 아직 절반밖에 못 끝냈어.
+立て込む|たてこむ|(일이) 몰리다, 바쁘다|일이나 손님이 한꺼번에 몰려 바쁜 상태. 今ちょっと立て込んでいて처럼 바쁘다는 것을 완곡하게 전할 때 쓰며, 정중체 立て込んでおります는 비즈니스 전화에서도 쓴다.|今週は仕事が[[立て込んで]]いて、なかなか休めません。|이번 주는 일이 몰려서 좀처럼 쉴 수가 없습니다.|年末は[[立て込む]]から、早めに準備しておこう。|연말은 일이 몰리니까 미리 준비해 두자.|今、少し話せる？|ごめん、今ちょっと立て込んでて。三十分後でもいい？|지금 잠깐 얘기할 수 있어? / 미안, 지금 좀 바빠서. 30분 뒤에도 괜찮아?
+提出する|ていしゅつする|제출하다|서류나 보고서를 정식으로 내는 것. 업무와 학교에서 두루 쓰는 한자어로, 구어에서는 出す도 쓴다. 정중체 提出します, 반말 提出する 모두 가능하다.|交通費の精算書を経理に[[提出しました]]。|교통비 정산서를 경리팀에 제출했습니다.|報告書は明日までに[[提出して]]ね。|보고서는 내일까지 제출해 줘.|企画書、もう出しましたか。|はい、今朝メールで提出しました。|기획서는 벌써 내셨어요? / 네, 오늘 아침에 메일로 제출했습니다.
+引き継ぐ|ひきつぐ|인수하다, 인계하다|업무나 담당을 이어받거나 넘기는 것. 명사형 引き継ぎ는 인수인계를 뜻하며 업무 메일에서 정중체로 자주 쓴다.|来月から、この案件を後輩に[[引き継ぎます]]。|다음 달부터 이 안건을 후배에게 인계합니다.|前の担当者から仕事を[[引き継いだ]]ばかりです。|이전 담당자에게 막 일을 인수받은 참입니다.|異動の準備は進んでいますか。|はい、今週中に引き継ぎ資料を作ります。|인사이동 준비는 진행되고 있나요? / 네, 이번 주 안에 인수인계 자료를 만들겠습니다.
+納期|のうき|납기|물건이나 작업물을 넘기기로 한 기한. 거래나 발주 상황에서 쓰는 업무 용어로 딱딱한 정중체 문맥에 어울린다.|部品の[[納期]]が一週間遅れそうです。|부품 납기가 일주일 늦어질 것 같습니다.|[[納期]]に間に合わせるため、チーム全員で作業した。|납기에 맞추기 위해 팀 전원이 작업했다.|注文した商品は、いつ届きますか。|納期は来月の十日になります。|주문한 상품은 언제 도착하나요? / 납기는 다음 달 10일입니다.
+取引先|とりひきさき|거래처|거래하는 회사나 상대. 사외 사람을 가리키는 비즈니스 단어로 정중체와 반말 모두 쓸 수 있지만 업무 문맥이 기본이다.|午後から[[取引先]]へあいさつに伺います。|오후부터 거래처에 인사하러 찾아뵙겠습니다.|[[取引先]]の担当者とは、ずっと良い関係が続いている。|거래처 담당자와는 계속 좋은 관계가 이어지고 있다.|今日は外出ですか。|はい、取引先を二件回ってから直帰します。|오늘은 외근이세요? / 네, 거래처 두 곳을 돈 뒤에 바로 퇴근합니다.
+目処が立つ|めどがたつ|전망이 서다, 가닥이 잡히다|일의 완료나 해결 시기가 어느 정도 보인다는 뜻. 目途로도 쓴다. 정중체와 반말 모두 가능하며 부정형 目処が立たない도 자주 쓴다.|ようやく解決の[[目処が立ち]]ました。|드디어 해결될 전망이 섰습니다.|来月には完成の[[目処が立つ]]と思います。|다음 달에는 완성될 전망이 선다고 생각합니다.|新システムの導入、どうなりそう？|来月末には目処が立ちそうです。|새 시스템 도입은 어떻게 될 것 같아? / 다음 달 말에는 가닥이 잡힐 것 같습니다.
+上司|じょうし|상사|직장에서 자신보다 직급이 높은 사람. 사내 사람을 말할 때 쓰며 상대 앞에서 직접 부를 때는 部長 처럼 직함을 쓰는 것이 보통이다.|[[上司]]に相談してから返事をします。|상사와 상의한 뒤에 답변드리겠습니다.|今の[[上司]]は話しやすくて、働きやすい。|지금 상사는 말하기 편해서 일하기 편하다.|新しい職場はどう？|上司も同僚も親切で、すごく働きやすいよ。|새 직장은 어때? / 상사도 동료도 친절해서 정말 일하기 편해.
+遅刻する|ちこくする|지각하다|정해진 시간보다 늦게 도착하는 것. 직장과 학교에서 쓰는 일반 단어이며 사과할 때는 遅刻してすみません처럼 정중체를 쓴다.|電車が止まって、会社に[[遅刻しました]]。|전철이 멈춰서 회사에 지각했습니다.|絶対に[[遅刻しない]]ように、目覚ましを三つかけた。|절대 지각하지 않도록 알람을 세 개 맞췄다.|課長、電車の遅延で少し遅れそうです。|了解。気をつけて来てね。|과장님, 전철 지연으로 조금 늦을 것 같습니다. / 알겠어. 조심해서 와.
+在宅勤務|ざいたくきんむ|재택근무|집에서 하는 근무 방식. 在宅ワーク, リモートワーク와 비슷하게 쓰며 업무 대화에서 격식 없이 두루 쓰는 명사이다.|週に二日は[[在宅勤務]]をしています。|주 이틀은 재택근무를 하고 있습니다.|[[在宅勤務]]だと通勤時間がなくて楽だ。|재택근무라면 통근 시간이 없어서 편하다.|明日は出社しますか。|いえ、明日は在宅勤務です。|내일은 출근하세요? / 아뇨, 내일은 재택근무입니다.
+お先に失礼します|おさきにしつれいします|먼저 가보겠습니다|퇴근할 때 남아 있는 사람들에게 하는 정중한 인사. 상사와 동료 모두에게 쓰며 보통 お疲れ様でした와 함께 말한다.|今日は用事があるので、[[お先に失礼します]]。|오늘은 볼일이 있어서 먼저 가보겠습니다.|昨日は[[お先に失礼しました]]。おかげで用事に間に合いました。|어제는 먼저 들어가서 죄송했습니다. 덕분에 볼일에 늦지 않았어요.|もう帰るの？|はい、お先に失礼します。|벌써 가는 거야? / 네, 먼저 가보겠습니다.
+手伝う|てつだう|돕다, 거들다|다른 사람의 일을 돕는 것. 윗사람에게 말할 때는 お手伝いします를 쓰고 반말에서는 手伝おうか처럼 가볍게 제안한다.|資料の印刷を[[手伝って]]もらえませんか。|자료 인쇄를 도와주실 수 있나요?|忙しそうだから、少し[[手伝おう]]か。|바빠 보이니까 조금 도와줄까?|今週は仕事が山積みで…。|何か手伝えることがあれば言ってね。|이번 주는 일이 산더미라서... / 도울 수 있는 일이 있으면 말해.
+見積もり|みつもり|견적|비용이나 금액을 미리 계산해 제시하는 것. 見積書는 견적서이고 업무 메일에서는 정중체로 お見積もり라고도 한다.|来週までに[[見積もり]]を送っていただけますか。|다음 주까지 견적을 보내 주실 수 있나요?|二社から[[見積もり]]を取って、金額を比べた。|두 회사에서 견적을 받아 금액을 비교했다.|この工事の費用は、いくらくらいですか。|正式な見積もりを出しますので、少しお待ちください。|이 공사 비용은 대략 얼마입니까? / 정식 견적을 내드릴 테니 잠시 기다려 주세요.
+転職する|てんしょくする|이직하다|다른 회사나 직종으로 옮기는 것. 일상 대화에서도 많이 쓰고 정중체와 반말 모두 가능하다. 명사 転職도 쓴다.|今の会社に不満はないが、来年[[転職する]]つもりだ。|지금 회사에 불만은 없지만 내년에 이직할 생각이다.|友達が去年IT企業に[[転職しました]]。|친구가 작년에 IT 기업으로 이직했습니다.|最近、仕事はどう？|実は、転職しようかなと考えてるんだ。|요즘 일은 어때? / 실은 이직할까 하고 생각 중이야.
+#request|부탁·감사·사과
+お願いします|おねがいします|부탁드립니다|정중체의 기본 부탁 표현. 주문이나 의뢰할 때 두루 쓰이며 반말에서는 お願い라고 한다.|明日までにお返事を[[お願いします]]。|내일까지 답변을 부탁드립니다.|すみません、注文を[[お願いします]]。|저기요, 주문 부탁드립니다.|これ、コピーしておきましょうか。|はい、五部お願いします。|이거 복사해 둘까요? / 네, 다섯 부 부탁드립니다.
+ありがとうございます|ありがとうございます|감사합니다|정중체의 기본 감사 표현. 친구에게는 반말 ありがとう를 쓰고 과거의 일에는 ありがとうございました를 쓴다.|プレゼントを[[ありがとうございます]]。大切にします。|선물 감사합니다. 소중히 쓰겠습니다.|親切に教えてくださって、本当に[[ありがとうございます]]。|친절하게 가르쳐 주셔서 정말 감사합니다.|荷物、持ちましょうか。|ありがとうございます。助かります。|짐 들어 드릴까요? / 감사합니다. 도움이 됩니다.
+助かる|たすかる|도움이 되다, 살았다|상대 덕에 곤란이 해결되어 고마울 때 쓴다. 助かります는 정중체, 助かった는 반말로 감사의 뜻을 겸한다.|手伝ってくれて本当に[[助かった]]よ。|도와줘서 정말 살았어.|駅まで送っていただけると[[助かります]]。|역까지 태워 주시면 정말 고맙겠습니다.|車で駅まで送ろうか。|え、いいの？ すごく助かる！|차로 역까지 데려다줄까? / 어, 그래도 돼? 정말 고마워!
+すみません|すみません|죄송합니다, 실례합니다, 고맙습니다|사과와 말 걸기와 가벼운 감사에 모두 쓰는 정중체 표현. 가까운 사이에서는 ごめん(ね)을 쓴다.|遅くなって[[すみません]]。|늦어서 죄송합니다.|[[すみません]]、駅はどちらですか。|실례합니다, 역은 어느 쪽인가요?|これ、落とされましたよ。|あ、すみません。ありがとうございます。|이거 떨어뜨리셨어요. / 아, 죄송합니다. 감사합니다.
+申し訳ありません|もうしわけありません|죄송합니다(격식)|すみません보다 훨씬 격식 있는 사과 표현. 고객이나 상사에게 쓰며 더 공손하게는 申し訳ございません이라고 한다.|ご連絡が遅くなり、大変[[申し訳ありません]]。|연락이 늦어져 대단히 죄송합니다.|[[申し訳ありません]]が、本日は満席でございます。|죄송하지만 오늘은 만석입니다.|注文と違う商品が届いたんですが。|申し訳ありません。すぐに交換いたします。|주문과 다른 상품이 왔는데요. / 죄송합니다. 바로 교환해 드리겠습니다.
+ごめん|ごめん|미안|친한 사이에서 쓰는 반말 사과. 윗사람에게는 쓰지 않는다. ごめんなさい는 조금 더 부드럽지만, 윗사람이나 업무에서는 すみません·申し訳ありません을 쓴다.|昨日は電話に出られなくて、[[ごめん]]。|어제는 전화를 못 받아서 미안.|[[ごめん]]ね、ちょっと遅れる。|미안, 조금 늦을 거야.|約束してたのに忘れてた。ごめん！|もう、次は気をつけてよ。|약속했는데 깜빡했어. 미안! / 정말, 다음엔 조심해.
+頼む|たのむ|부탁하다, 주문하다|일을 부탁하거나 음식을 주문한다는 뜻. 반말에서는 頼むよ처럼 쓰고 정중하게는 お願いする를 쓴다.|先輩に資料の確認を[[頼みました]]。|선배에게 자료 확인을 부탁했습니다.|ピザを[[頼んで]]、みんなで食べよう。|피자를 시켜서 다 같이 먹자.|飲み物は何にする？|私はウーロン茶を頼むよ。|마실 건 뭐로 할래? / 나는 우롱차를 시킬게.
+お待たせしました|おまたせしました|오래 기다리셨습니다|상대를 기다리게 한 것을 사과하며 하는 정중체 인사. 친구 사이에서는 「お待たせ」「ごめん、待った？」, 접객에서는 「お待たせいたしました」가 더 공손하다.|会議室に入って、「[[お待たせしました]]」と頭を下げた。|회의실에 들어가며 "오래 기다리셨습니다"라고 고개를 숙였다.|[[お待たせしました]]。ご注文のコーヒーです。|오래 기다리셨습니다. 주문하신 커피입니다.|お待たせしました。駅で迷ってしまって。|大丈夫ですよ。私も今来たところです。|오래 기다리셨죠. 역에서 헤매는 바람에. / 괜찮아요. 저도 방금 왔어요.
+お気遣いありがとうございます|おきづかいありがとうございます|마음 써 주셔서 감사합니다|상대의 배려나 걱정에 감사하는 정중한 표현. 윗사람과 비즈니스 메일에서도 쓰며 반말로는 気を使ってくれてありがとう라고 한다.|体調を心配してくださって、[[お気遣いありがとうございます]]。|몸 상태까지 걱정해 주시고 마음 써 주셔서 감사합니다.|「[[お気遣いありがとうございます]]。もう大丈夫です」と返信した。|"마음 써 주셔서 감사합니다. 이제 괜찮습니다"라고 답장했다.|寒いので、よかったらこのひざ掛けを使ってください。|お気遣いありがとうございます。助かります。|추우니까 괜찮으시면 이 무릎담요를 쓰세요. / 마음 써 주셔서 감사합니다. 덕분에 살았어요.
+おかげで|おかげで|덕분에|좋은 결과가 누군가나 무언가 덕이라고 고마워하는 표현. 나쁜 결과에 쓰면 비꼬는 뉘앙스가 되므로 주의한다. 정중체와 반말 모두 가능하다.|先生の[[おかげで]]、試験に合格できました。|선생님 덕분에 시험에 합격할 수 있었습니다.|君が手伝ってくれた[[おかげで]]、早く終わったよ。|네가 도와준 덕분에 일찍 끝났어.|合格おめでとう！|ありがとう。みんなが教えてくれたおかげだよ。|합격 축하해! / 고마워. 다들 가르쳐 준 덕분이야.
+お礼を言う|おれいをいう|감사 인사를 하다|고마움을 말로 전하는 것. 반말·정중체 모두 쓰며, 윗사람에게는 겸양 표현 お礼を申し上げます를 쓴다.|手伝ってくれた同僚に、改めて[[お礼を言った]]。|도와준 동료에게 다시 한번 감사 인사를 했다.|まだちゃんと[[お礼を言って]]いなかったね。本当にありがとう。|아직 제대로 고맙다는 말을 못 했네. 정말 고마워.|この前は本当にありがとうございました。|いえいえ、お礼を言うのはこちらのほうですよ。|지난번에는 정말 감사했습니다. / 아니에요, 감사 인사를 드려야 할 사람은 저예요.
+遠慮なく|えんりょなく|사양하지 말고, 거리낌 없이|상대에게 마음 편히 하라고 권하거나, 호의를 받아들일 때 쓴다. 정중체와 반말 모두 쓰이고 격식 있는 자리에서도 쓸 수 있다.|質問があれば、[[遠慮なく]]聞いてください。|질문이 있으면 사양하지 말고 물어보세요.|[[遠慮なく]]いただきます。|사양하지 않고 먹겠습니다.|お菓子、よかったらどうぞ。|ありがとうございます。遠慮なくいただきます。|과자 괜찮으시면 드세요. / 감사합니다. 사양하지 않고 먹겠습니다.
+貸す|かす|빌려주다|물건이나 돈을 상대에게 빌려주는 동사. 반대는 借りる다. 반말은 貸して, 정중하게는 お貸しします라고 한다.|傘を忘れた友達に、自分の傘を[[貸した]]。|우산을 잊은 친구에게 내 우산을 빌려주었다.|辞書を[[貸して]]くれてありがとう。|사전을 빌려줘서 고마워.|充電器、持ってる？|あるよ。貸そうか？|충전기 있어? / 있어. 빌려줄까?
+恐れ入ります|おそれいります|송구합니다, 죄송하지만|부탁하거나 호의에 감사할 때 쓰는 정중한 표현으로 접객이나 비즈니스에서 자주 쓴다. 恐れ入りますが 형태로 부탁의 서두로도 쓴다.|[[恐れ入ります]]が、少々お待ちいただけますか。|송구하지만 잠시 기다려 주시겠습니까?|わざわざお越しいただき、[[恐れ入ります]]。|일부러 와 주셔서 송구합니다.|お荷物をお預かりしましょうか。|ありがとうございます。恐れ入ります。|짐을 맡아 드릴까요? / 감사합니다. 송구합니다.
+失礼しました|しつれいしました|실례했습니다|실수나 무례를 가볍게 사과하는 정중체 표현. 상대 방을 나갈 때 인사로도 쓰이며 가까운 사이에서는 ごめん을 쓴다.|電話番号を間違えました。[[失礼しました]]。|전화번호를 잘못 눌렀습니다. 실례했습니다.|ノックもせずに入って、[[失礼しました]]。|노크도 없이 들어와서 실례했습니다.|あの、ここは私の席ですが。|あ、失礼しました。間違えました。|저기, 여기는 제 자리인데요. / 아, 실례했습니다. 착각했네요.
+とんでもない|とんでもない|천만에요, 터무니없다|감사나 칭찬을 겸손하게 부정할 때는 とんでもないです라고 쓴다. 또 말도 안 되는 일이라는 뜻으로도 쓴다. 정중하게는 とんでもないことでございます.|「お礼なんて、[[とんでもない]]です。」|"감사 인사라니 천만에요."|一日で終わらせろなんて、[[とんでもない]]話だ。|하루 만에 끝내라니 말도 안 되는 소리다.|いつも本当に助かっています。|いえいえ、とんでもないです。|항상 정말 도움이 됩니다. / 아니에요, 천만에요.
+お詫びする|おわびする|사과드리다|사과한다는 뜻의 겸양 표현. 공식적인 사죄에 쓰며 お詫びいたします가 더 정중하고 일상 대화보다는 업무나 공지에 어울린다.|ミスについて、心より[[お詫びします]]。|실수에 대해 진심으로 사과드립니다.|記事に誤りがありました。[[お詫びして]]訂正いたします。|기사에 오류가 있었습니다. 사과드리며 정정합니다.|今回の不手際は、どう責任を取るおつもりですか。|改めて、深くお詫びいたします。|이번 불찰은 어떻게 책임을 지실 생각입니까? / 다시 한번 깊이 사과드립니다.
+お構いなく|おかまいなく|신경 쓰지 마세요, 괜찮습니다|손님이 대접을 받을 때 번거롭게 하지 말라고 사양하는 정중한 표현. 윗사람에게도 쓰고 친구에게는 気を使わないで라고 한다.|どうぞ[[お構いなく]]。すぐ帰りますので。|부디 신경 쓰지 마세요. 금방 돌아갈 거라서요.|「お茶でもどうぞ」「いえ、[[お構いなく]]」|"차라도 드세요" "아뇨, 신경 쓰지 마세요"|コーヒーでも淹れましょうか。|どうぞお構いなく。|커피라도 내올까요? / 부디 신경 쓰지 마세요.
+お願いがある|おねがいがある|부탁이 있다|부탁을 꺼내기 전에 미리 알리는 말. 반말은 お願いがあるんだけど, 정중체는 お願いがあるのですが이며 윗사람에게는 お願いしたいことがございます처럼 더 공손하게 말한다.|先輩、ちょっと[[お願いがある]]んですが、今いいですか。|선배님, 좀 부탁이 있는데요, 지금 괜찮으세요?|実は君に[[お願いがある]]んだ。|실은 너한테 부탁이 있어.|ねえ、一つお願いがあるんだけど。|何？ できることなら手伝うよ。|있잖아, 부탁이 하나 있는데. / 뭔데? 할 수 있는 거면 도와줄게.
+感謝する|かんしゃする|감사하다|감사의 마음을 가진다는 딱딱한 한자어 동사. 편지, 연설, 인사말에 어울리고 일상 구어에서는 ありがとう를 쓴다.|家族の支えに心から[[感謝しています]]。|가족의 지지에 진심으로 감사하고 있습니다.|毎日働ける環境に[[感謝しなければ]]いけない。|매일 일할 수 있는 환경에 감사해야 한다.|長い間、本当にお世話になりました。|こちらこそ、感謝しています。|오랫동안 정말 신세 많이 졌습니다. / 저야말로 감사하고 있습니다.
+お手数ですが|おてすうですが|번거로우시겠지만|상대에게 수고를 끼치는 부탁을 하기 전에 붙이는 정중한 서두. 비즈니스 메일과 안내문에서 쓰는 격식 표현이다.|[[お手数ですが]]、こちらにご記入ください。|번거로우시겠지만 여기에 기입해 주십시오.|[[お手数ですが]]、折り返しお電話をいただけますか。|번거로우시겠지만 다시 전화 주시겠습니까?|住所が間違っていたようです。|お手数ですが、もう一度ご確認をお願いします。|주소가 틀렸던 것 같습니다. / 번거로우시겠지만 다시 한번 확인 부탁드립니다.
+無理を言う|むりをいう|무리한 부탁을 하다|상대에게 무리한 요구를 하는 것. 無理を言ってすみません처럼 사과의 서두로 쓰고, 無理を言わないで는 상대의 무리한 요구를 거절할 때 쓴다. 반말·정중체 모두 가능하다.|急な話で[[無理を言って]]すみません。|갑작스러운 이야기라 무리한 부탁을 해서 죄송합니다.|あまり[[無理を言わない]]でよ。私にも都合があるんだから。|너무 무리한 말 하지 마. 나도 사정이 있다고.|今日中に仕上げてほしいんですが…。|無理を言わないでくださいよ。さすがに難しいです。|오늘 안에 마무리해 주셨으면 하는데요... / 무리한 말 하지 마세요. 아무래도 어렵습니다.
+ちょっといいですか|ちょっといいですか|잠깐 괜찮으세요?|상대 시간을 빼앗아도 되는지 묻는 정중체 표현. 반말은 ちょっといい？ 이며 윗사람에게는 今、お時間よろしいでしょうか가 더 안전하다.|課長、[[ちょっといいですか]]。確認したいことがあります。|과장님, 잠깐 괜찮으세요? 확인하고 싶은 게 있습니다.|悪い、[[ちょっといい]]？ すぐ終わるから。|미안, 잠깐 괜찮아? 금방 끝나니까.|今、少しお時間ありますか。|はい、大丈夫ですよ。どうしました？|지금 잠깐 시간 있으세요? / 네, 괜찮아요. 무슨 일이세요?
+以後気をつけます|いごきをつけます|앞으로 조심하겠습니다|실수를 사과한 뒤 재발 방지를 다짐하는 정중체 표현. 윗사람에게도 쓰고 반말에서는 次から気をつける라고 한다.|ご指摘ありがとうございます。[[以後気をつけます]]。|지적해 주셔서 감사합니다. 앞으로 조심하겠습니다.|新人は「すみません、[[以後気をつけます]]」と何度も頭を下げた。|신입은 "죄송합니다, 앞으로 조심하겠습니다"라며 몇 번이고 고개를 숙였다.|提出期限が過ぎていますよ。|申し訳ありません。以後気をつけます。|제출 기한이 지났어요. / 죄송합니다. 앞으로 조심하겠습니다.
+お言葉に甘えて|おことばにあまえて|말씀에 따라, 호의를 받아들여|상대의 친절한 제안을 사양하지 않고 받아들일 때 쓰는 정중한 표현. 윗사람의 배려에 응답하는 말로 자연스럽다.|[[お言葉に甘えて]]、今日は先に帰らせていただきます。|말씀에 따라 오늘은 먼저 퇴근하겠습니다.|では、[[お言葉に甘えて]]一杯だけいただきます。|그럼 호의를 받아들여 한 잔만 마시겠습니다.|今日はもう上がっていいよ。|ありがとうございます。お言葉に甘えて、お先に失礼します。|오늘은 이제 퇴근해도 돼. / 감사합니다. 말씀에 따라 먼저 가보겠습니다.
+#schedule|약속·일정 조율
+都合がいい|つごうがいい|시간 형편이 좋다|약속 시간이 상대에게 맞는지 말할 때 쓴다. 정중체는 都合がいいです, 반말은 都合がいい이며 격식 있게는 ご都合がよろしい라고 묻는다.|来週なら、水曜日が[[都合がいい]]です。|다음 주라면 수요일이 형편이 좋습니다.|いつが一番[[都合がいい]]？|언제가 제일 시간이 괜찮아?|打ち合わせは、いつがよろしいですか。|木曜の午後なら都合がいいです。|미팅은 언제가 좋으신가요? / 목요일 오후라면 괜찮습니다.
+空く|あく|비다, 시간이 나다|시간이나 자리가 비어 있다는 뜻. 空いている는 비어 있는 상태이며 일정을 묻는 말로 정중체와 반말 모두 자연스럽다.|土曜の夜は[[空いて]]いますか。|토요일 밤은 비어 있나요?|来月になれば、少し時間が[[空く]]と思います。|다음 달이 되면 시간이 조금 날 거라고 생각합니다.|明日の夜、空いてる？|うん、空いてるよ。どうしたの？|내일 밤에 시간 있어? / 응, 비어 있어. 무슨 일이야?
+予定|よてい|예정, 일정|앞으로 할 일이나 약속. 予定がある는 선약이 있다는 뜻이고 정중체와 반말 모두 쓰는 기본 명사이다.|週末の[[予定]]は何かありますか。|주말 일정은 뭔가 있나요?|今日は午後から[[予定]]が入ってしまった。|오늘은 오후부터 일정이 잡혀 버렸다.|日曜日、何か予定ある？|特にないよ。映画でも行く？|일요일에 무슨 일정 있어? / 특별히 없어. 영화라도 볼까?
+延期する|えんきする|연기하다|정해진 날짜를 뒤로 미루는 것. 행사나 회의의 일정 변경을 알릴 때 쓰고 정중체 延期します는 공지에도 쓴다.|大雨のため、運動会を来週に[[延期します]]。|큰비 때문에 운동회를 다음 주로 연기합니다.|会議を[[延期して]]もらえないか頼んでみよう。|회의를 연기해 줄 수 없는지 부탁해 보자.|台風が来るみたいだけど、旅行どうする？|危ないから、来月に延期しよう。|태풍이 온다는데 여행은 어떻게 할래? / 위험하니까 다음 달로 연기하자.
+キャンセルする|キャンセルする|취소하다|예약이나 약속을 취소한다는 뜻. 구어와 비즈니스 모두에서 쓰고 정중하게는 キャンセルさせていただきます라고 한다.|急用ができて、レストランの予約を[[キャンセルしました]]。|급한 일이 생겨서 레스토랑 예약을 취소했습니다.|申し訳ありませんが、明日の約束を[[キャンセルさせて]]ください。|죄송하지만 내일 약속을 취소하게 해 주세요.|明日のランチ、行けなくなっちゃった。|そっか。じゃあ、お店には私が連絡しておくね。|내일 점심, 못 가게 됐어. / 그렇구나. 그럼 가게에는 내가 연락해 둘게.
+日程|にってい|일정(날짜 계획)|행사나 출장의 날짜별 계획. 予定이 개인 일정이라면 日程은 정해진 날짜 배열을 말하며 日程調整는 일정 조율이라는 비즈니스 표현이다.|出張の[[日程]]が決まったらお知らせします。|출장 일정이 정해지면 알려 드리겠습니다.|全員の都合を考えて、[[日程]]を決めよう。|모두의 사정을 생각해서 일정을 정하자.|研修の日程は、もう決まりましたか。|はい、来月の五日から三日間です。|연수 일정은 이미 정해졌나요? / 네, 다음 달 5일부터 사흘간입니다.
+待ち合わせ|まちあわせ|(만날) 약속, 만나기로 함|만날 장소와 시간을 정해 만나는 것. 待ち合わせする는 동사로, 場所와 時間과 함께 일상 대화에서 두루 쓴다.|駅の改札で[[待ち合わせ]]しましょう。|역 개찰구에서 만납시다.|[[待ち合わせ]]の場所を間違えて、会うのに時間がかかった。|만날 장소를 착각해서 만나는 데 시간이 걸렸다.|待ち合わせは何時にする？|六時に渋谷のハチ公前はどう？|약속 시간은 몇 시로 할까? / 6시에 시부야 하치코 동상 앞은 어때?
+集合する|しゅうごうする|집합하다|여러 사람이 정해진 곳에 모이는 것. 단체 행동이나 행사에서 쓰며 정중체는 集合してください, 명사로는 集合時間이라고 한다.|朝八時に学校の前に[[集合します]]。|아침 8시에 학교 앞에 집합합니다.|全員[[集合して]]から出発しよう。|전원 모이고 나서 출발하자.|当日はどこに集まればいいですか。|九時に東口に集合です。|당일에는 어디에 모이면 되나요? / 9시에 동쪽 출구에 집합입니다.
+ずらす|ずらす|(시간이나 위치를) 옮기다, 미루다|시간이나 순서를 조금 옮기는 것. 日程を延期하는 것보다 가볍게 약간 이동하는 느낌이고 반말과 정중체 모두 쓰는 구어 동사이다.|約束の時間を三十分[[ずらして]]もらえますか。|약속 시간을 30분 늦춰 줄 수 있나요?|会議の開始を一時間[[ずらそう]]か。|회의 시작을 한 시간 미룰까?|三時だと間に合わなそうです。|じゃあ、四時にずらしましょう。|3시면 못 맞출 것 같아요. / 그럼 4시로 옮깁시다.
+調整する|ちょうせいする|조정하다|여러 사람의 사정을 맞추는 것. 일정 조정에 日程を調整する로 자주 쓰고 업무 정중체에도 어울리는 딱딱한 한자어이다.|スケジュールを[[調整して]]、時間を作ります。|스케줄을 조정해서 시간을 만들겠습니다.|みんなの休みを[[調整する]]のは大変だ。|모두의 휴가를 조정하는 것은 힘들다.|二人の予定が合いませんね。|こちらで調整してみます。少しお待ちください。|두 사람의 일정이 안 맞네요. / 이쪽에서 조정해 보겠습니다. 잠시 기다려 주세요.
+変更する|へんこうする|변경하다|날짜나 장소 등을 바꾸는 것. 예약이나 일정 변경에 쓰고 정중체 変更いたします가 안내문에 자주 나온다.|予約の日時を[[変更したい]]のですが。|예약 일시를 변경하고 싶은데요.|場所を[[変更しました]]ので、ご注意ください。|장소를 변경했으니 주의해 주세요.|集合場所が変わったって聞いた？|うん、駅前から公園に変更になったよ。|집합 장소가 바뀌었다는 거 들었어? / 응, 역 앞에서 공원으로 변경됐어.
+来週あたり|らいしゅうあたり|다음 주쯤|あたり는 대략적인 시기를 나타내 상대에게 부담 없이 제안하는 말투를 만든다. 반말과 정중체 모두 쓰이는 구어 표현이다.|[[来週あたり]]、ご飯でもどうですか。|다음 주쯤 식사라도 어떠세요?|工事は[[来週あたり]]終わりそうだ。|공사는 다음 주쯤 끝날 것 같다.|今度、飲みに行きませんか。|いいですね。来週あたりはどうですか。|다음에 한잔하러 가지 않을래요? / 좋아요. 다음 주쯤은 어때요?
+都合が悪い|つごうがわるい|형편이 안 좋다, 사정이 안 된다|제안된 날짜가 사정상 어렵다고 완곡하게 거절하는 표현. 정중체는 都合が悪いです이며 이유를 말하지 않아도 되는 편리한 말이다.|その日はあいにく[[都合が悪い]]んです。|그날은 공교롭게도 사정이 안 됩니다.|急に[[都合が悪くなって]]、行けなくなりました。|갑자기 사정이 안 좋아져서 못 가게 되었습니다.|金曜の夜はどうですか。|すみません、その日は都合が悪くて。|금요일 밤은 어떠세요? / 죄송해요, 그날은 사정이 안 돼서요.
+先約がある|せんやくがある|선약이 있다|이미 다른 약속이 있다는 뜻. 이유를 분명히 하며 거절하는 말로 정중체는 先約があります, 반말은 先約があるんだ이다.|土曜日は[[先約があります]]ので、日曜でもいいですか。|토요일은 선약이 있어서 일요일이어도 될까요?|その日はもう[[先約がある]]から、ごめんね。|그날은 이미 선약이 있어서 미안해.|今度の日曜、ゴルフに行かない？|ごめん、その日は先約があるんだ。|이번 일요일에 골프 치러 가지 않을래? / 미안, 그날은 선약이 있어.
+前倒し|まえだおし|앞당김|예정을 원래보다 앞으로 당기는 것. 반대는 後ろ倒し이며 업무 일정에서 자주 쓰고 동사로는 前倒しにする, 前倒しする 형태로 쓴다. 반말·정중체 공통.|提出を[[前倒し]]にしてもらえませんか。|제출을 앞당겨 줄 수 있나요?|出発を[[前倒しして]]、朝六時にしよう。|출발을 앞당겨서 아침 6시로 하자.|発表、再来週から来週に変わりました。|えっ、予定が前倒しになったんですか。|발표가 다다음 주에서 다음 주로 바뀌었습니다. / 어, 일정이 앞당겨진 건가요?
+また今度|またこんど|다음에, 다음 기회에|오늘은 어렵다는 뜻으로 부드럽게 거절하거나 훗날을 기약하는 말. 반말 정중체 모두 쓰이며 때로는 인사치레로도 쓰인다.|今日は疲れているので、[[また今度]]にしましょう。|오늘은 피곤하니 다음에 합시다.|誘ってくれてありがとう。[[また今度]]ぜひ。|불러 줘서 고마워. 다음에 꼭.|帰りにちょっと飲まない？|ごめん、今日は無理。また今度ね。|퇴근길에 잠깐 마시지 않을래? / 미안, 오늘은 안 돼. 다음에 또.
+今週中|こんしゅうちゅう|이번 주 안, 이번 주 중|이번 주가 끝나기 전까지라는 기한을 나타낸다. 업무 일정에서 자주 쓰며 「今週中に」 형태가 기본이다. 반말·정중체 공통. 「今日中」「今月中」도 같은 방식으로 쓴다.|資料は[[今週中]]にお送りします。|자료는 이번 주 안에 보내 드리겠습니다.|引っ越しの日、[[今週中]]には決めようよ。|이삿날, 이번 주 안에는 정하자.|返事はいつまでにすればいいですか。|今週中にいただけると助かります。|답변은 언제까지 드리면 될까요? / 이번 주 안에 주시면 감사하겠습니다.
+予定が埋まる|よていがうまる|일정이 꽉 차다|약속이나 일이 들어차 빈 시간이 없는 상태. 거절할 때 その日はもう予定が埋まっていて처럼 완곡하게 쓴다. 반말·정중체 모두 가능하다.|来週は出張と会議で[[予定が埋まって]]います。|다음 주는 출장과 회의로 일정이 꽉 차 있습니다.|週末の[[予定が埋まる]]と、なんだか安心する。|주말 일정이 꽉 차면 왠지 안심이 된다.|今月どこかで会えない？|ごめん、今月はもう予定が埋まってて。来月はどう？|이번 달에 언제 한번 못 만나? / 미안, 이번 달은 이미 일정이 꽉 차서. 다음 달은 어때?
+間に合う|まにあう|시간에 맞추다, 늦지 않다|정해진 시각에 늦지 않거나 충분하다는 뜻. 반말 間に合わない는 못 맞춘다는 말이며 정중체와 반말 모두 쓴다.|急げば、まだ最終電車に[[間に合います]]。|서두르면 아직 막차에 맞출 수 있습니다.|今から走っても[[間に合わない]]よ。|지금부터 뛰어도 시간에 못 맞춰.|新幹線の時間、大丈夫そう？|ぎりぎり間に合うと思う。|신칸센 시간은 괜찮을 것 같아? / 아슬아슬하게 맞출 것 같아.
+時間を作る|じかんをつくる|시간을 내다|바쁜 가운데 일부러 시간을 확보한다는 뜻. 만나고 싶은 마음을 전할 때 쓰며 정중체와 반말 모두 자연스럽다.|忙しいですが、なんとか[[時間を作って]]会いに行きます。|바쁘지만 어떻게든 시간을 내서 만나러 가겠습니다.|来週、[[時間を作る]]から、ゆっくり話そう。|다음 주에 시간을 낼 테니 천천히 이야기하자.|最近、全然会えてないね。|本当だね。今月中に時間を作るよ。|요즘 전혀 못 만났네. / 정말이네. 이번 달 안에 시간을 낼게.
+候補|こうほ|후보|선택지로 올려 둔 날짜 장소 사람 등을 말한다. 日程の候補, 候補日 처럼 쓰며 일정 조율에서 정중체 대화에도 자주 나온다.|食事会の[[候補]]の日を三つ挙げてください。|식사 모임 후보 날짜를 세 개 들어 주세요.|店の[[候補]]はいくつか見つけておいたよ。|가게 후보는 몇 군데 찾아 뒀어.|日程の候補を出してもらえますか。|はい、来週の火曜か木曜でいかがでしょう。|일정 후보를 내 주실 수 있나요? / 네, 다음 주 화요일이나 목요일은 어떠세요?
+一緒にどう|いっしょにどう|같이 어때?|가볍게 함께 하자고 권하는 말. 반말 一緒にどう？ 이고 정중하게는 ご一緒にいかがですか, 一緒にどうですか라고 한다.|ランチ、[[一緒にどう]]？|점심 같이 어때?|今夜の花火大会、[[一緒にどう]]ですか。|오늘 밤 불꽃놀이 축제 같이 어때요?|明日、買い物に行くんだけど、一緒にどう？|いいね！ 行く行く。|내일 쇼핑하러 가는데 같이 어때? / 좋아! 갈래 갈래.
+リスケ|リスケ|일정 재조정|リスケジュール의 줄임말로 정해진 일정을 다시 잡는 것. 직장에서 쓰는 가벼운 구어로 リスケする, リスケになる처럼 쓴다. 거래처나 윗사람에게는 日程を変更させていただけませんか처럼 정식으로 말하는 편이 안전하다.|会議が[[リスケ]]になって、来週の月曜に変わった。|회의 일정이 다시 잡혀서 다음 주 월요일로 바뀌었다.|ごめん、明日のランチ、[[リスケ]]してもいい？|미안, 내일 점심 약속 다시 잡아도 될까?|明日の打ち合わせ、先方の都合で無理になりました。|じゃあ、リスケしましょう。候補日を出してもらえますか。|내일 미팅은 상대측 사정으로 어렵게 됐습니다. / 그럼 일정을 다시 잡죠. 후보 날짜를 받아 주시겠어요?
+ドタキャン|ドタキャン|막판 취소|土壇場(どたんば)でキャンセル의 줄임말로 약속 직전에 취소하는 것. 비격식 구어이며 동사형 ドタキャンする, 수동형 ドタキャンされる로 쓴다. 비즈니스에서는 쓰지 않는다.|友達に[[ドタキャン]]されて、一人で映画を見た。|친구가 막판에 취소해서 혼자 영화를 봤다.|前日の[[ドタキャン]]は、さすがに失礼だと思う。|전날 막판 취소는 아무래도 실례라고 생각한다.|今夜の飲み会、行けなくなった。|えー、またドタキャン？ 勘弁してよ。|오늘 밤 회식, 못 가게 됐어. / 에이, 또 막판 취소야? 봐줘.
+何時ごろ|なんじごろ|몇 시쯤|대략적인 시각을 묻는 말. 정중체 何時ごろになりますか, 반말 何時ごろ？ 모두 쓰며 대답할 때는 九時ごろ처럼 같은 형태로 쓴다.|明日は[[何時ごろ]]に着きますか。|내일은 몇 시쯤 도착하나요?|仕事は[[何時ごろ]]終わりそう？|일은 몇 시쯤 끝날 것 같아?|家には何時ごろ帰るの？|九時ごろには帰れると思う。|집에는 몇 시쯤 돌아와? / 9시쯤에는 돌아올 수 있을 것 같아.
+#phone|전화·메시지(LINE)
+折り返し電話する|おりかえしでんわする|다시 전화하다(콜백)|부재중 전화를 받은 뒤 상대에게 다시 걸 때. 정중체는 「折り返しお電話します」, 반말은 「折り返すね」. 업무와 일상 모두 쓴다.|会議が終わったら[[折り返し電話します]]。|회의가 끝나면 다시 전화할게요.|着信あったよね。今から[[折り返し電話する]]ね。|전화 왔었지. 지금 바로 다시 걸게.|山田さんから電話があったよ。|ありがとう、昼休みに折り返し電話するよ。|야마다 씨한테서 전화 왔었어. / 고마워, 점심시간에 다시 전화할게.
+電波が悪い|でんぱがわるい|전파 상태가 나쁘다|통화나 인터넷이 끊길 때 쓴다. 반말·정중체 모두 가능하며 정중하게는 「電波が悪いようです」라고 한다.|ここは[[電波が悪くて]]、声が途切れます。|여기는 전파가 안 좋아서 목소리가 끊깁니다.|地下だと[[電波が悪い]]から、先にLINE送っておくね。|지하는 전파가 안 좋으니까 먼저 LINE 보내 둘게.|もしもし、聞こえる？|ごめん、電波が悪いみたいで途切れるよ。|여보세요, 들려? / 미안, 전파가 안 좋은지 끊겨.
+留守電を入れる|るすでんをいれる|음성사서함에 메시지를 남기다|「留守電」은 「留守番電話」의 줄임말로 일상 구어에서 널리 쓴다. 좀 더 격식 있게는 「留守番電話にメッセージを残す」라고 한다.|出なかったので、[[留守電を入れて]]おきました。|받지 않으셔서 음성 메시지를 남겨 두었습니다.|何度かけても出ないから、[[留守電を入れた]]。|몇 번을 걸어도 안 받아서 음성 메시지를 남겼어.|田中さん、電話に出ませんでした。|では、留守電を入れておいてください。|다나카 씨가 전화를 안 받았습니다. / 그럼 음성 메시지를 남겨 두세요.
+既読スルー|きどくスルー|읽씹(읽고 답장 안 함)|메시지를 읽고도 답하지 않는 것. 친구 사이에서 쓰는 속어적 표현이라 비즈니스나 윗사람에게는 쓰지 않는다. 「既読無視」도 같은 뜻이다.|彼にメッセージを送ったのに、[[既読スルー]]された。|그에게 메시지를 보냈는데 읽씹당했어.|[[既読スルー]]はやめてよ、返事くらいしてね。|읽씹은 그만해 줘, 답장 정도는 해 줘.|彼女から返事来た？|ううん、完全に既読スルーだよ。|여자친구한테 답장 왔어? / 아니, 완전 읽씹이야.
+スタンプを送る|スタンプをおくる|스티커를 보내다|LINE 등에서 스티커로 가볍게 답할 때. 친구 사이에서는 자연스럽지만 격식 있는 상대에게는 문장으로 답하는 편이 좋다.|とりあえず[[スタンプを送って]]おいた。|일단 스티커를 보내 놓았어.|お礼に[[スタンプを送ります]]ね。|감사의 뜻으로 스티커를 보낼게요.|返信、まだ？|ごめん、今スタンプを送ったよ。|답장 아직이야? / 미안, 방금 스티커 보냈어.
+通話中|つうわちゅう|통화 중|전화가 이미 사용 중일 때. 「お話し中」는 더 정중한 표현이다. 「ただいま通話中です」처럼 안내문에도 쓴다.|さっきかけたら[[通話中]]でした。|아까 걸었더니 통화 중이었어요.|今[[通話中]]なので、あとでかけ直します。|지금 통화 중이라 나중에 다시 걸게요.|部長に電話した？|かけたけど、ずっと通話中なんだ。|부장님께 전화했어? / 걸었는데 계속 통화 중이야.
+繋がる|つながる|연결되다|전화·인터넷이 연결될 때. 「繋がらない」는 불통을 말한다. 한자 대신 히라가나 「つながる」로 적는 경우도 많다. 정중체는 「繋がります」.|やっと電話が[[繋がった]]。|드디어 전화가 연결됐다.|この場所でもWi-Fiが[[繋がります]]か。|이 장소에서도 와이파이가 연결되나요?|駅に着いた？|うん、でも電話がなかなか繋がらなくて。|역에 도착했어? / 응, 그런데 전화가 좀처럼 연결이 안 돼서.
+掛け直す|かけなおす|다시 걸다|통화를 끊고 나중에 다시 거는 것. 정중체 「掛け直します」, 반말 「掛け直すね」. 상대에게 부탁할 때는 「かけ直していただけますか」.|会議中なので、あとで[[掛け直します]]。|회의 중이라 나중에 다시 걸겠습니다.|電池がやばいから、10分後に[[掛け直す]]ね。|배터리가 위험해서 10분 뒤에 다시 걸게.|今ちょっといい？|ごめん、運転中だから掛け直すね。|지금 잠깐 괜찮아? / 미안, 운전 중이라 다시 걸게.
+着信がある|ちゃくしんがある|착신이 있다(전화가 와 있다)|부재중 전화나 걸려 온 전화에 대해 말할 때. 정중하게는 「着信がありました」. 「不在着信」은 부재중 전화를 말한다.|スマホを見たら、母から何件も[[着信があった]]。|스마트폰을 보니 엄마한테서 여러 통 전화가 와 있었다.|見知らぬ番号から[[着信がありました]]。|모르는 번호로 전화가 와 있었습니다.|知らない番号から着信があったんだけど。|出ないほうがいいよ、迷惑電話かも。|모르는 번호로 전화가 왔었는데. / 받지 않는 게 좋아, 스팸 전화일지도 몰라.
+既読がつく|きどくがつく|읽음 표시가 뜨다|LINE에서 상대가 메시지를 읽으면 표시가 붙는 것. 「既読がつかない」는 아직 읽지 않았다는 뜻으로 일상에서 자주 쓰는 구어.|夜中だから、すぐには[[既読がつかない]]と思う。|한밤중이라 바로 읽음 표시가 안 뜰 것 같아.|送ってから一時間たつのに、まだ[[既読がつきません]]。|보낸 지 한 시간이 지났는데 아직 읽음 표시가 안 떠요.|先輩に連絡した？|したけど、まだ既読がつかないんだ。|선배한테 연락했어? / 했는데 아직 읽음 표시가 안 떠.
+返信する|へんしんする|답장하다|메일이나 메시지에 답할 때. 정중체 「返信します」, 업무에서는 「ご返信ありがとうございます」처럼 존경 접두어 「ご」를 붙인다.|メールには今日中に[[返信します]]。|메일에는 오늘 중으로 답장하겠습니다.|ごめん、[[返信する]]の忘れてた。|미안, 답장하는 걸 깜빡했어.|昨日のメッセージ、見てくれた？|うん、今夜ゆっくり返信するね。|어제 보낸 메시지 봤어? / 응, 오늘 밤에 천천히 답장할게.
+電話に出る|でんわにでる|전화를 받다|걸려 온 전화를 받는 것. 「電話を取る」는 주로 직장에서 수화기를 드는 행동을 말한다. 「出られません」은 받을 수 없다는 뜻.|授業中なので[[電話に出られません]]。|수업 중이라 전화를 받을 수 없습니다.|何回かけても[[電話に出ない]]んだよ。|몇 번을 걸어도 전화를 안 받아.|兄さん、全然電話に出ないね。|寝てるんじゃない？ 夜勤だったから。|오빠 전혀 전화를 안 받네. / 자고 있는 거 아냐? 야근이었거든.
+聞き取れない|ききとれない|알아들을 수 없다|상대의 말소리가 작거나 멀어서 잘 안 들릴 때. 정중체 「聞き取れません」, 공손하게 되물을 때는 「恐れ入りますが、もう一度お願いします」를 함께 쓴다.|声が小さくて、よく[[聞き取れません]]。|목소리가 작아서 잘 알아듣지 못하겠습니다.|すみません、今のところが[[聞き取れなかった]]んですが。|죄송합니다, 방금 부분을 못 알아들었는데요.|もしもし、駅の近くにいます。|すみません、雑音で聞き取れないです。|여보세요, 역 근처에 있어요. / 죄송해요, 잡음 때문에 안 들려요.
+少々お待ちください|しょうしょうおまちください|잠시만 기다려 주세요|전화 응대나 접객에서 쓰는 정중한 표현. 더 높이면 「少々お待ちくださいませ」. 친구 사이에서는 「ちょっと待って」라고 한다.|ただいま確認しますので、[[少々お待ちください]]。|지금 확인할 테니 잠시만 기다려 주세요.|担当者におつなぎしますので、[[少々お待ちくださいませ]]。|담당자에게 연결해 드릴 테니 잠시만 기다려 주십시오.|山本様はいらっしゃいますか。|はい、少々お待ちください。|야마모토 님 계십니까? / 네, 잠시만 기다려 주세요.
+後ほど|のちほど|나중에(격식)|「あとで」의 격식 있는 말. 업무 메일이나 전화에서 쓰며 가까운 사이의 반말에는 어울리지 않는다.|詳細は[[後ほど]]メールでお送りします。|자세한 내용은 나중에 메일로 보내겠습니다.|では、[[後ほど]]こちらからお電話いたします。|그럼 나중에 저희 쪽에서 전화드리겠습니다.|資料はいつ届きますか。|確認して、後ほどご連絡いたします。|자료는 언제 도착하나요? / 확인해서 나중에 연락드리겠습니다.
+充電が切れる|じゅうでんがきれる|배터리가 나가다|스마트폰 배터리가 방전될 때. 구어에서는 「バッテリーが切れる」도 쓴다. 「充電が切れそう」는 방전 직전을 뜻한다.|スマホの[[充電が切れて]]、連絡できなかった。|스마트폰 배터리가 나가서 연락을 못 했어.|もうすぐ[[充電が切れそう]]なので、急いで話します。|곧 배터리가 나갈 것 같아서 서둘러 말할게요.|さっきなんで電話出なかったの？|ごめん、充電が切れちゃって。|아까 왜 전화 안 받았어? / 미안, 배터리가 나가 버려서.
+誤送信|ごそうしん|잘못 보냄|메일이나 메시지를 엉뚱한 상대에게 보냈을 때. 「誤送信してしまいました」로 사과하며 격식 있는 업무 상황에서도 쓴다.|違う人にメールを[[誤送信]]してしまいました。|다른 사람에게 메일을 잘못 보내고 말았습니다.|さっきのメッセージは[[誤送信]]です。無視してね。|아까 메시지는 잘못 보낸 거야. 무시해 줘.|変なスタンプが来たけど、どうしたの？|あ、誤送信！ 気にしないで。|이상한 스티커가 왔는데 무슨 일이야? / 아, 잘못 보냈어! 신경 쓰지 마.
+位置情報を送る|いちじょうほうをおくる|위치 정보를 보내다|약속 장소에서 만나기 어려울 때 지도 앱으로 현재 위치를 공유하는 것. 정중체와 반말 모두 쓴다.|お店の場所が分からないので、[[位置情報を送って]]もらえますか。|가게 위치를 모르겠으니 위치 정보를 보내 주실 수 있나요?|着いたら[[位置情報を送る]]ね。|도착하면 위치 정보를 보낼게.|お店、どこにあるの？|今、位置情報を送るから待ってて。|가게가 어디에 있어? / 지금 위치 정보 보낼 테니까 기다려.
+通知を切る|つうちをきる|알림을 끄다|앱 알림을 끌 때. 「通知をオフにする」도 쓴다. 반대는 「通知をオンにする」.|夜は寝るので、アプリの[[通知を切って]]います。|밤에는 자야 해서 앱 알림을 꺼 두었습니다.|グループがうるさいから[[通知を切った]]。|단톡방이 시끄러워서 알림을 껐어.|このグループ、毎日すごいね。|もう通知を切ってるよ。|이 단톡방 매일 대단하네. / 나는 벌써 알림 꺼 놨어.
+音声メッセージ|おんせいメッセージ|음성 메시지|LINE 등에서 목소리를 녹음해 보내는 기능이나 그 메시지. 글자를 치기 귀찮을 때 가볍게 쓰며 격식 있는 자리에는 맞지 않는다.|長くなるので、[[音声メッセージ]]で送りますね。|길어질 것 같으니 음성 메시지로 보낼게요.|ばあちゃんは打つのが大変だから、いつも[[音声メッセージ]]だよ。|할머니는 타자 치기 힘드셔서 항상 음성 메시지야.|文字だと説明しにくいな。|じゃあ、音声メッセージで送って。|글자로는 설명하기 어렵네. / 그럼 음성 메시지로 보내 줘.
+迷惑電話|めいわくでんわ|스팸 전화|판매나 사기 목적의 원치 않는 전화. 「迷惑電話をブロックする」「迷惑電話対策」처럼 쓴다. 일상 대화에서 쓰는 중립적인 말이다.|最近、営業の[[迷惑電話]]が多くて困る。|요즘 영업 스팸 전화가 많아서 곤란해.|[[迷惑電話]]をブロックする設定にしました。|스팸 전화를 차단하도록 설정했습니다.|また知らない番号からだ。|きっと迷惑電話だから、出なくていいよ。|또 모르는 번호네. / 분명 스팸 전화니까 안 받아도 돼.
+連絡先を交換する|れんらくさきをこうかんする|연락처를 교환하다|새로 만난 사람과 번호나 LINE ID를 주고받을 때. 「交換しませんか」는 정중하게 청하는 말, 친구 사이는 「交換しよう」.|よかったら、[[連絡先を交換しませんか]]。|괜찮으시면 연락처를 교환하지 않을래요?|飲み会で[[連絡先を交換した]]人から連絡が来た。|회식 자리에서 연락처를 교환한 사람에게서 연락이 왔어.|今日はありがとうございました。|こちらこそ。連絡先を交換しておきましょう。|오늘 감사했습니다. / 저야말로요. 연락처를 교환해 둡시다.
+間違い電話|まちがいでんわ|잘못 걸린 전화|번호를 잘못 눌러 걸거나 받은 전화. 잘못 건 쪽은 「すみません、番号を間違えました」라고 사과하는 것이 자연스럽다.|[[間違い電話]]をかけてしまい、失礼しました。|전화를 잘못 걸어서 실례했습니다.|夜中に[[間違い電話]]がかかってきた。|한밤중에 잘못 걸린 전화가 왔어.|さっきの電話、誰だった？|間違い電話だったよ。|아까 전화 누구였어? / 잘못 걸린 전화였어.
+電話を切る|でんわをきる|전화를 끊다|통화를 끝낼 때. 수동형 「切られる」는 일방적으로 끊겨서 불쾌했다는 뉘앙스가 있다. 정중체 「電話を切ります」.|相手が[[電話を切る]]まで待つのがマナーだと聞いた。|상대가 전화를 끊을 때까지 기다리는 것이 예의라고 들었다.|いきなり[[電話を切られて]]びっくりした。|갑자기 전화가 끊겨서 깜짝 놀랐어.|そろそろ電話を切るね。|うん、おやすみ。また明日。|슬슬 전화 끊을게. / 응, 잘 자. 내일 또 봐.
+ミュートにする|ミュートにする|음소거로 하다|화상회의나 스마트폰 소리를 무음으로 할 때. 「消音にする」보다 가타카나 표현을 더 많이 쓴다. 정중하게는 「ミュートにしてください」.|発言しないときは、マイクを[[ミュートにして]]ください。|발언하지 않을 때는 마이크를 음소거해 주세요.|映画館では必ずスマホを[[ミュートにする]]。|영화관에서는 반드시 스마트폰을 무음으로 해 둬.|ごめん、雑音が入ってない？|入ってるよ。ミュートにしておいたら？|미안, 잡음 들어가지 않아? / 들어가고 있어. 음소거해 두는 게 어때?
+#problem|문제 상황·트러블
+困る|こまる|곤란하다|어떻게 해야 할지 몰라 난처한 상태. 정중체 「困ります」, 반말 「困った」. 상대에게 「それは困ります」라고 하면 강한 거절·항의가 된다.|鍵が見つからなくて[[困っています]]。|열쇠를 못 찾아서 곤란한 상황입니다.|急に雨が降ってきて、傘がなくて[[困った]]よ。|갑자기 비가 와서 우산이 없어 난처했어.|どうしたの？|財布を忘れて、本当に困ってるんだ。|무슨 일이야? / 지갑을 두고 와서 정말 곤란해.
+失くす|なくす|잃어버리다|물건을 분실했을 때. 「無くす」「失くす」 모두 쓰며 가나로 적기도 한다. 「亡くす」는 사람을 여읜다는 뜻이니 혼동 주의. 정중체 「失くしました」.|大事な書類を[[失くして]]しまいました。|중요한 서류를 잃어버리고 말았습니다.|また定期券を[[失くした]]の？|또 정기권을 잃어버렸어?|傘、どこ？|電車の中でなくしたみたい。|우산 어디 있어? / 전철 안에서 잃어버린 것 같아.
+壊れる|こわれる|고장 나다, 부서지다|물건이 고장 나거나 망가질 때. 스스로 고장 난 상태를 말하며, 누가 부수면 「壊す」. 정중체 「壊れました」.|パソコンが急に[[壊れて]]、データが消えた。|컴퓨터가 갑자기 고장 나서 데이터가 사라졌어.|エアコンが[[壊れました]]ので、修理をお願いしたいです。|에어컨이 고장 났으니 수리를 부탁드리고 싶습니다.|エアコン、つかないんだけど。|壊れたのかもね。管理会社に電話しよう。|에어컨이 안 켜지는데. / 고장 났나 봐. 관리 회사에 전화하자.
+寝坊する|ねぼうする|늦잠 자다|일어나야 할 시간에 못 일어나는 것. 지각 이유로 자주 쓴다. 정중체 「寝坊しました」, 반말 「寝坊した」. 「寝過ごす」도 비슷한 뜻이다.|すみません、[[寝坊して]]電車に乗り遅れました。|죄송합니다, 늦잠을 자서 전철을 놓쳤습니다.|明日は早いから、[[寝坊しない]]ようにね。|내일은 일찍 나가야 하니까 늦잠 자지 않도록 해.|まだ家にいるの？|ごめん、寝坊しちゃった。すぐ出るね。|아직 집이야? / 미안, 늦잠 자 버렸어. 바로 나갈게.
+間に合わない|まにあわない|시간에 맞출 수 없다|마감이나 열차 시간에 늦을 것 같을 때. 반대는 「間に合う」. 정중체 「間に合いません」. 업무에서는 사과와 함께 쓴다.|今から走っても[[間に合わない]]よ。|지금부터 뛰어도 시간에 못 맞춰.|この納期では[[間に合いません]]。|이 납기로는 시간에 맞출 수 없습니다.|最終電車、あと五分だよ。|やばい、間に合わないかも。|막차가 5분 남았어. / 큰일이다, 못 탈지도 몰라.
+忘れ物をする|わすれものをする|물건을 두고 오다|어딘가에 물건을 깜빡하고 두고 왔을 때. 정중체 「忘れ物をしました」. 분실물 신고 때는 「忘れ物をしたのですが」라고 말을 꺼낸다.|タクシーに[[忘れ物をして]]しまいました。|택시에 물건을 두고 내리고 말았습니다.|よく[[忘れ物をする]]ので、前の晩に確認します。|자주 물건을 두고 와서 전날 밤에 확인해요.|どうしたの？ 戻るの？|うん、教室に忘れ物をしたみたい。|왜 그래? 돌아가는 거야? / 응, 교실에 물건을 두고 온 것 같아.
+怪我をする|けがをする|다치다|넘어지거나 부딪혀 몸을 다쳤을 때. 「怪我」는 가나로 「けが」라고 적는 경우가 많다. 정중체 「怪我をしました」, 걱정할 때는 「怪我はありませんか」.|階段で転んで、足に[[怪我をして]]しまいました。|계단에서 넘어져서 다리를 다치고 말았습니다.|料理中に指に[[怪我をした]]。|요리하다가 손가락을 다쳤어.|その手、どうしたの？|昨日、自転車で転んで怪我をしたんだ。|그 손 왜 그래? / 어제 자전거 타다 넘어져서 다쳤어.
+財布を落とす|さいふをおとす|지갑을 떨어뜨리다(잃어버리다)|길에서 지갑을 흘렸을 때. 「落とす」는 분실의 뜻으로도 쓴다. 정중체 「落としました」. 분실물은 「落とし物」라고 한다.|駅で[[財布を落として]]、交番に届けを出しました。|역에서 지갑을 잃어버려서 파출소에 분실 신고를 했습니다.|[[財布を落とした]]かもしれない。|지갑을 떨어뜨렸을지도 몰라.|顔が真っ青だよ。|財布を落としたみたいなんだ。|얼굴이 새파래. / 지갑을 잃어버린 것 같아.
+鍵を閉め忘れる|かぎをしめわすれる|문 잠그는 것을 잊다|외출 후 현관 잠금을 깜빡했을 때. 「〜忘れる」는 동사 뒤에 붙어 하는 것을 깜빡하다라는 뜻이다. 정중체 「閉め忘れました」.|家を出るとき[[鍵を閉め忘れた]]気がする。|집을 나올 때 문을 안 잠근 것 같아.|うっかり[[鍵を閉め忘れる]]ことが増えた。|깜빡하고 문을 잠그지 않는 일이 늘었다.|あれ、鍵閉めたっけ？|閉めたよ。私が見たから大丈夫。|어, 문 잠갔던가? / 잠갔어. 내가 봤으니까 괜찮아.
+トラブルになる|トラブルになる|문제가 생기다, 분쟁이 되다|사람과의 다툼이나 계약 문제가 생겼을 때. 구어와 문어 모두 쓴다. 정중체 「トラブルになりました」, 「トラブルを避ける」도 자주 쓴다.|お金のことで友達と[[トラブルになって]]しまった。|돈 문제로 친구와 분쟁이 생기고 말았다.|ご近所と[[トラブルにならない]]ように、挨拶はしておきます。|이웃과 문제가 생기지 않도록 인사는 해 둘게요.|隣の人と何かあったの？|うん、騒音でトラブルになってね。|옆집 사람이랑 무슨 일 있었어? / 응, 소음 때문에 마찰이 생겨서.
+勘違いする|かんちがいする|착각하다|사실을 잘못 알거나 오해했을 때. 정중체 「勘違いしていました」. 반말은 「勘違いしてた」. 사과 문맥에서 자주 쓴다.|会議は明日だと[[勘違いして]]いました。|회의가 내일이라고 착각하고 있었습니다.|ごめん、私が[[勘違いした]]みたい。|미안, 내가 착각한 것 같아.|今日、約束してたよね？|え、明日じゃなかった？ 勘違いしてたかも。|오늘 약속했었지? / 어, 내일 아니었어? 착각했나 봐.
+手違い|てちがい|착오, 실수|준비나 절차에서 생긴 착오. 사과나 설명에서 쓰는 약간 격식 있는 말로 「手違いがありました」처럼 쓴다.|発送の[[手違い]]で、商品が届いていません。|발송 착오로 상품이 도착하지 않았습니다.|何かの[[手違い]]だと思うんですが。|무언가 착오가 있었던 것 같은데요.|予約したはずなのに、名前がないんです。|申し訳ございません。手違いがあったようです。|예약했을 텐데 이름이 없어요. / 죄송합니다. 착오가 있었던 것 같습니다.
+停電する|ていでんする|정전되다|전기가 끊겼을 때. 「停電」만으로 명사로도 쓴다. 정중체 「停電しました」. 지진·태풍 뉴스에서 자주 듣는다.|台風で一晩中[[停電して]]いました。|태풍으로 밤새 정전되어 있었습니다.|急に[[停電した]]から、スマホのライトをつけた。|갑자기 정전돼서 스마트폰 라이트를 켰어.|あれ、電気が消えた！|停電かな。ブレーカーを見てくるね。|어, 불이 꺼졌어! / 정전인가. 차단기 보고 올게.
+ミスをする|ミスをする|실수하다|업무나 시험에서의 실수. 「ミス」는 외래어지만 일상적이다. 정중체 「ミスをしました」. 사과할 때는 「ミスをして申し訳ありません」.|大事な場面で[[ミスをして]]しまいました。|중요한 순간에 실수하고 말았습니다.|誰でも[[ミスをする]]ことはあるよ。|누구나 실수할 때는 있어.|また計算を間違えちゃった。|大丈夫。ミスをしたら直せばいいよ。|또 계산을 틀렸어. / 괜찮아. 실수했으면 고치면 돼.
+故障中|こしょうちゅう|고장 중|기계나 시설이 고장 나 사용할 수 없는 상태. 안내문에서 자주 보며 「故障中」 종이를 붙인다. 정중체 「故障中です」.|このエレベーターは[[故障中]]です。|이 엘리베이터는 고장 중입니다.|コピー機が[[故障中]]だったから、コンビニで印刷した。|복사기가 고장 나서 편의점에서 인쇄했어.|この自動販売機、使えますか。|いいえ、故障中みたいです。|이 자판기 쓸 수 있나요? / 아니요, 고장 난 것 같아요.
+詰まる|つまる|막히다|배수구나 코 등이 막혔을 때. 「鼻が詰まる」는 코가 막히는 것. 정중체 「詰まりました」. 교통 체증은 「渋滞」라고 한다.|トイレが[[詰まって]]、水が流れません。|화장실이 막혀서 물이 내려가지 않아요.|排水口が[[詰まった]]ので、業者を呼んだ。|배수구가 막혀서 업체를 불렀어.|台所の水が流れないんだけど。|排水口が詰まってるのかもね。|부엌 물이 안 내려가는데. / 배수구가 막혔을지도 몰라.
+動かない|うごかない|움직이지 않는다, 작동하지 않는다|기계나 앱이 작동하지 않을 때. 정중체 「動きません」. 사람이 움직이지 않는 상황에도 쓸 수 있다.|アプリが[[動かなくて]]、予約ができません。|앱이 작동하지 않아서 예약을 할 수 없습니다.|画面が固まって、マウスも[[動かない]]。|화면이 멈춰서 마우스도 안 움직여.|パソコン、まだ直らない？|うん、全然動かないんだ。|컴퓨터 아직 안 고쳐졌어? / 응, 전혀 작동하지 않아.
+返金してもらう|へんきんしてもらう|환불받다|상품에 문제가 있어 돈을 돌려받을 때. 「〜てもらう」는 상대가 해 주는 것을 받는다는 뜻이다. 정중체 「返金してもらいました」, 요청은 「返金していただけますか」.|商品が壊れていたので、[[返金してもらいました]]。|상품이 망가져 있어서 환불받았습니다.|できれば[[返金してもらいたい]]のですが。|가능하면 환불받고 싶은데요.|このシャツ、サイズが違ったの。|それなら、店に行って返金してもらえば？|이 셔츠 사이즈가 달랐어. / 그러면 가게에 가서 환불받으면 어때?
+クレームを入れる|クレームをいれる|항의하다|서비스나 상품에 불만을 제기할 때. 한국어 클레임과 달리 일본어 「クレーム」는 주로 불만·항의의 뜻이다. 정중체 「クレームを入れました」. 사업 문맥에서도 쓴다.|店員の態度が悪くて、本社に[[クレームを入れた]]。|점원 태도가 나빠서 본사에 항의했어.|お客様が[[クレームを入れて]]きたので、対応しました。|고객이 항의해 와서 대응했습니다.|あのレストラン、ひどかったね。|本当だよ。クレームを入れようかな。|그 식당 너무했지. / 정말이야. 항의할까 봐.
+盗まれる|ぬすまれる|도둑맞다|「盗む」의 수동형으로 물건을 도둑맞은 피해를 말한다. 일본어는 「(나는) 〜を盗まれる」 형태가 자연스럽다. 정중체 「盗まれました」. 신고는 경찰이나 파출소에 한다.|駅前に止めていた自転車を[[盗まれました]]。|역 앞에 세워 둔 자전거를 도둑맞았습니다.|旅行中にカメラを[[盗まれて]]、本当にショックだった。|여행 중에 카메라를 도둑맞아서 정말 충격이었어.|どうしたの？ 元気ないね。|実は、かばんを盗まれたんだ。|무슨 일이야? 기운이 없네. / 실은 가방을 도둑맞았어.
+まずい|まずい|곤란하다, 큰일이다|「맛없다」의 뜻 외에 상황이 좋지 않아 곤란하다는 구어 뜻이 있다. 반말·친구 사이 구어로 쓰고, 정중체는 「まずいです」. 일에서는 「まずい状況」. 윗사람에게 보고할 때는 「困ったことになりました」가 무난하다.|どうしよう、[[まずい]]ことになった。|어쩌지, 큰일 났어.|締め切りを過ぎているので、少し[[まずい]]ですね。|마감이 지났으니 좀 곤란하네요.|課長に報告した？|まだ。早く言わないとまずいよね。|과장님께 보고했어? / 아직. 빨리 말하지 않으면 큰일이겠지.
+焦る|あせる|초조해하다, 조급해하다|시간이 없거나 일이 잘 안 풀려 마음이 급해지는 것. 정중체 「焦ります」. 상대를 달랠 때 「焦らないで」라고 자주 쓴다.|時間がなくて、すっかり[[焦って]]しまった。|시간이 없어서 완전히 초조해져 버렸다.|[[焦らなくて]]いいから、落ち着いてやりなさい。|조급해하지 않아도 되니까 침착하게 해라.|試験まであと五分！|焦らないで、深呼吸しよう。|시험까지 5분 남았어! / 조급해하지 말고 심호흡하자.
+慌てる|あわてる|당황하다, 허둥대다|예상 못한 일에 놀라 허둥댈 때. 「慌てて〜する」는 서둘러 하다라는 부사적 용법이다. 정중체 「慌てます」, 달랠 때 「慌てないで」.|[[慌てて]]家を出たら、スマホを忘れた。|허둥지둥 집을 나왔더니 스마트폰을 두고 왔다.|彼は急な質問にも[[慌てる]]様子がなかった。|그는 갑작스러운 질문에도 당황하는 기색이 없었다.|財布がない！|慌てないで。もう一度かばんを見てみよう。|지갑이 없어! / 당황하지 마. 다시 한번 가방을 봐 보자.
+助けを呼ぶ|たすけをよぶ|도움을 청하다, 구조를 부르다|위급할 때 사람을 부르는 것. 「助けて！」가 직접적인 외침이고, 「助けを呼ぶ」는 그 행동을 서술한다. 정중체 「助けを呼びます」.|困ったら、すぐ[[助けを呼んで]]ください。|곤란하면 바로 도움을 청해 주세요.|大声で[[助けを呼んだ]]ら、近所の人が来てくれた。|큰 소리로 도움을 청했더니 이웃 사람이 와 줬다.|エレベーターが止まっちゃった。|落ち着いて。非常ボタンで助けを呼ぼう。|엘리베이터가 멈춰 버렸어. / 침착해. 비상 버튼으로 도움을 청하자.
+なんとかなる|なんとかなる|어떻게든 된다|걱정하는 사람을 격려하는 구어. 반말은 「なんとかなるよ」, 정중체 「なんとかなりますよ」. 낙관적이지만 무책임하게 들리지 않도록 상황에 주의한다.|大丈夫、[[なんとかなる]]よ。|괜찮아, 어떻게든 될 거야.|いまは苦しいですが、きっと[[なんとかなります]]。|지금은 힘들지만 분명 어떻게든 될 거예요.|来週の発表、不安だな。|なんとかなるって。一緒に練習しよう。|다음 주 발표, 불안해. / 어떻게든 돼. 같이 연습하자.
+#small|스몰토크·일상 대화
+最近どう|さいきんどう|요즘 어때|오랜만에 만난 친구나 동료에게 가볍게 안부를 묻는 반말·구어. 정중하게는 「最近いかがですか」. 윗사람에게는 「最近どうですか」 정도로 쓴다.|久しぶり！[[最近どう]]？|오랜만이야! 요즘 어때?|[[最近どう]]ですか。お仕事は忙しいですか。|요즘 어떠세요? 일은 바쁘세요?|最近どう？|まあまあかな。仕事は相変わらずだよ。|요즘 어때? / 그럭저럭. 일은 여전해.
+暑くなる|あつくなる|더워지다|날씨 이야기는 일본어 스몰토크의 단골이다. 「〜くなる」는 い형용사의 변화 표현. 정중체 「暑くなりますね」, 반말 「暑くなるね」.|だんだん[[暑くなって]]きましたね。|점점 더워졌네요.|来週から急に[[暑くなる]]らしいよ。|다음 주부터 갑자기 더워진대.|今日はいい天気ですね。|ええ、これからもっと暑くなりそうです。|오늘은 날씨가 좋네요. / 네, 앞으로 더 더워질 것 같아요.
+天気がいい|てんきがいい|날씨가 좋다|맑고 화창한 날씨를 가리킨다. 정중체 「天気がいいですね」, 반말 「天気がいいね」. 인사 대신 가볍게 꺼내기 좋다.|今日は[[天気がいい]]ので、散歩に行きませんか。|오늘은 날씨가 좋으니 산책하러 가지 않을래요?|[[天気がいい]]ね、洗濯物がよく乾きそう。|날씨 좋네, 빨래가 잘 마르겠다.|いい天気だね。どこか行こうか。|いいね。公園でお弁当を食べない？|날씨 좋다. 어디 갈까? / 좋아. 공원에서 도시락 먹지 않을래?
+休みの日|やすみのひ|쉬는 날|주말이나 휴일을 가리킨다. 「休みの日は何をしていますか」는 취미를 묻는 흔한 질문. 반말은 「休みの日って何してるの」.|[[休みの日]]は、たいてい家で映画を見ています。|쉬는 날에는 대개 집에서 영화를 봅니다.|[[休みの日]]って何してるの？|쉬는 날에는 뭐 해?|休みの日は何をしていますか。|散歩したり、カフェで本を読んだりしています。|쉬는 날에는 뭘 하세요? / 산책하거나 카페에서 책을 읽곤 해요.
+趣味|しゅみ|취미|처음 만난 사람과의 대화에서 흔한 화제. 「ご趣味は？」는 정중한 질문. 「趣味は〜です」로 대답한다. 취미가 없을 때는 「特にありません」.|私の[[趣味]]は写真を撮ることです。|제 취미는 사진을 찍는 것입니다.|[[趣味]]は特にないけど、最近ランニングを始めた。|취미는 딱히 없는데 최근에 달리기를 시작했어.|ご趣味は何ですか。|旅行です。去年は北海道に行きました。|취미가 무엇인가요? / 여행이에요. 작년에는 홋카이도에 갔어요.
+ハマる|はまる|푹 빠지다|무언가에 열중하는 구어. 「〜にハマる」로 쓰며 가나로 「はまる」라고도 적는다. 반말·구어이므로 격식 있는 자리에는 맞지 않고, 정중체는 「ハマっています」.|最近、韓国ドラマに[[ハマって]]います。|요즘 한국 드라마에 푹 빠져 있어요.|子どもがゲームに[[ハマった]]みたいで、やめないの。|아이가 게임에 푹 빠진 것 같아서 그만두질 않아.|最近、何かハマってる？|うん、実は料理にハマってるんだ。|요즘 뭔가 빠져 있는 거 있어? / 응, 실은 요리에 빠져 있어.
+通勤する|つうきんする|통근하다(출퇴근하다)|집에서 직장까지 다니는 것. 「通勤時間」「通勤電車」처럼 복합어로도 자주 쓴다. 출근 행위 자체는 「出勤する」라고 한다. 정중체 「通勤しています」.|毎日、一時間かけて[[通勤して]]います。|매일 한 시간 걸려서 통근하고 있어요.|電車で[[通勤する]]のは疲れる。|전철로 통근하는 건 피곤해.|会社まで遠いんですか。|ええ、電車で一時間かけて通勤しています。|회사까지 먼가요? / 네, 전철로 한 시간 걸려 통근해요.
+一人暮らし|ひとりぐらし|혼자 살기|가족과 떨어져 혼자 사는 생활. 「一人暮らしを始める」「一人暮らしをする」처럼 쓴다. 정중체·반말 모두 중립적이다.|[[一人暮らし]]を始めて、料理が上手になりました。|자취를 시작하고 나서 요리 실력이 늘었어요.|[[一人暮らし]]って、意外と寂しいよ。|자취는 의외로 외로워.|一人暮らしは大変ですか。|最初は大変でしたが、もう慣れました。|자취는 힘든가요? / 처음엔 힘들었지만 이제 익숙해졌어요.
+実家|じっか|본가|자신이 자란 부모님의 집. 결혼한 사람이 친정이나 본가를 가리킬 때도 쓴다. 「実家に帰る」「実家暮らし」 등으로 쓰며 정중체·반말 모두 자연스럽다.|お盆は[[実家]]に帰る予定です。|오봉에는 본가에 갈 예정입니다.|[[実家]]から野菜がいっぱい届いた。|본가에서 채소가 잔뜩 도착했어.|週末はどこか行くの？|うん、実家に帰って母に会ってくる。|주말에 어디 가? / 응, 본가에 가서 엄마를 만나고 올게.
+出身|しゅっしん|출신|태어나거나 자란 곳, 졸업한 학교 등을 가리킨다. 「ご出身はどちらですか」가 정중한 질문. 「〜出身です」로 대답한다. 지역과 학교 모두에 쓴다.|ご[[出身]]はどちらですか。|출신은 어디세요?|私は大阪[[出身]]です。|저는 오사카 출신입니다.|日本の方じゃないんですか。|はい、韓国の釜山出身です。|일본 분이 아니세요? / 네, 한국 부산 출신이에요.
+そういえば|そういえば|그러고 보니|대화 중 문득 생각난 화제를 꺼낼 때. 정중체·반말 모두 쓸 수 있으며 가볍게 화제를 바꾸는 말이다. 윗사람에게도 뒤 문장을 정중체로 이으면 무난하다.|[[そういえば]]、来週の飲み会、行く？|그러고 보니 다음 주 회식 갈 거야?|[[そういえば]]、先日お話しした本、読みましたか。|그러고 보니 일전에 말씀드린 책 읽으셨나요?|ああ、おなかすいた。|そういえば、もうお昼だね。何か食べに行こう。|아, 배고프다. / 그러고 보니 벌써 점심때네. 뭐 먹으러 가자.
+ところで|ところで|그런데|화제를 바꿀 때 쓰는 접속사. 중립적이어서 정중체·반말 모두 쓴다. 문어에서도 자주 보이며 지나치게 갑작스러우면 어색하니 앞에 한마디 두면 좋다.|[[ところで]]、週末のご予定はありますか。|그런데 주말 일정은 있으세요?|[[ところで]]、あの話どうなった？|그런데 그 얘기 어떻게 됐어?|天気の話ばっかりしてるね。|本当。ところで、最近引っ越したって聞いたよ。|날씨 얘기만 하고 있네. / 정말. 그런데 최근에 이사했다고 들었어.
+ちなみに|ちなみに|참고로|덧붙여 관련 정보를 말할 때. 정중체·반말 모두 쓴다. 「ちなみに」 뒤에는 질문이나 보충 설명이 온다. 상대의 관심을 끌어 대화를 잇는 데 편리하다.|[[ちなみに]]、私はコーヒーよりお茶派です。|참고로 저는 커피보다 차 파예요.|[[ちなみに]]この店は、駅から歩いて五分ですよ。|참고로 이 가게는 역에서 걸어서 5분이에요.|このラーメン、おいしいね。|でしょ。ちなみに、夜は餃子も人気だよ。|이 라멘 맛있네. / 그렇지. 참고로 밤에는 교자도 인기야.
+忙しい|いそがしい|바쁘다|일이나 일정이 많을 때. 「お忙しいところすみません」은 부탁이나 사과 앞에 두는 정중한 표현. 반말은 「忙しい」, 정중체는 「忙しいです」.|今月はずっと[[忙しくて]]、遊ぶ暇もない。|이번 달은 계속 바빠서 놀 틈도 없어.|お[[忙しい]]ところ、すみません。|바쁘신데 죄송합니다.|最近、全然会えないね。|ごめん、仕事が忙しくて。|요즘 전혀 못 만나네. / 미안, 일이 바빠서.
+寝不足|ねぶそく|수면 부족|잠을 충분히 못 자 피곤한 상태. 「寝不足で」「寝不足気味」처럼 쓴다. 정중체 「寝不足です」. 상대를 걱정할 때는 「寝不足ですか」.|昨日は[[寝不足]]で、一日中眠かった。|어제는 수면 부족이라 하루 종일 졸렸어.|[[寝不足]]ですか。顔色が悪いですよ。|수면 부족이세요? 안색이 안 좋아요.|あくびばっかりだね。|うん、昨日ゲームで寝不足なんだ。|하품만 하네. / 응, 어제 게임하느라 잠을 못 잤어.
+風邪をひく|かぜをひく|감기에 걸리다|「ひく」는 보통 히라가나로 적는다. 정중체 「風邪をひきました」. 걱정할 때는 「風邪をひかないように」. 「風邪を引く」로 적기도 한다.|薄着で出かけて、[[風邪をひいて]]しまった。|얇게 입고 나갔다가 감기에 걸리고 말았다.|季節の変わり目は、[[風邪をひき]]やすいです。|환절기에는 감기에 걸리기 쉬워요.|声がかすれてるよ。|うん、風邪をひいたみたい。|목소리가 쉬었어. / 응, 감기에 걸린 것 같아.
+ダイエット|ダイエット|다이어트|체중 감량 노력. 일본어에서는 다이어트가 곧 살 빼기를 뜻한다. 「ダイエット中」「ダイエットする」로 쓴다. 정중체·반말 모두 쓰며 가벼운 일상 화제다.|来月まで[[ダイエット]]をがんばるつもりです。|다음 달까지 다이어트를 열심히 할 생각이에요.|[[ダイエット]]中だから、ケーキはやめとく。|다이어트 중이라 케이크는 안 먹을래.|ケーキ、食べる？|ごめん、ダイエット中なんだ。|케이크 먹을래? / 미안, 다이어트 중이야.
+運動する|うんどうする|운동하다|몸을 움직이는 활동 전반. 정중체 「運動しています」. 「運動不足」는 운동 부족. 건강 이야기를 할 때 자주 쓴다.|週に二回、ジムで[[運動して]]います。|일주일에 두 번 헬스장에서 운동하고 있어요.|最近全然[[運動しない]]から、体が重い。|요즘 전혀 운동을 안 해서 몸이 무거워.|最近、運動してる？|ううん、全然。運動不足だよ。|요즘 운동해? / 아니, 전혀. 운동 부족이야.
+料理をする|りょうりをする|요리를 하다|음식을 만드는 것. 정중체 「料理をします」. 「料理が好き」와 함께 쓰이며 가벼운 일상 대화에 어울린다. 「料理を作る」도 비슷하게 쓴다.|夜は、たいてい自分で[[料理をします]]。|밤에는 대개 직접 요리해요.|彼は意外と[[料理をする]]らしい。|그는 의외로 요리를 한대.|普段、料理をしますか。|はい、週末にまとめて作っています。|평소에 요리하세요? / 네, 주말에 몰아서 만들어요.
+ドラマを見る|ドラマをみる|드라마를 보다|드라마 시청. 보통 「見る」로 적고, 영화·공연은 「観る」로 적기도 한다. 정중체 「ドラマを見ます」.|寝る前に[[ドラマを見る]]のが日課です。|자기 전에 드라마를 보는 것이 일과예요.|昨日は夜中まで[[ドラマを見て]]いた。|어제는 한밤중까지 드라마를 봤어.|週末、何してた？|ずっとドラマを見てたよ。|주말에 뭐 했어? / 계속 드라마 봤어.
+おすすめ|おすすめ|추천|추천 대상을 말할 때. 「お勧め」「お薦め」로 적기도 하지만 히라가나가 일반적이다. 정중체 「おすすめです」, 반말 「おすすめだよ」. 가게나 메뉴 소개에 자주 쓴다.|この辺で[[おすすめ]]のお店はありますか。|이 근처에 추천하는 가게가 있나요?|[[おすすめ]]の本があったら教えて。|추천할 만한 책이 있으면 알려 줘.|ここ、初めてなんですが、おすすめは何ですか。|カレーが人気ですよ。|여기 처음인데 추천 메뉴가 뭐예요? / 카레가 인기예요.
+暇|ひま|한가함, 짬|할 일이 없는 상태. 「暇だ」「暇がない」처럼 쓴다. 반말로는 「暇？」, 정중하게는 「お時間ありますか」가 낫다. 「暇ですか」는 직설적이니 윗사람에게는 피한다.|今週末は[[暇]]ですか。|이번 주말은 한가하세요?|今日は一日中[[暇]]で、昼寝ばかりしてた。|오늘은 하루 종일 한가해서 낮잠만 잤어.|今夜、暇？|うん、暇だよ。ご飯でも行く？|오늘 밤 한가해? / 응, 한가해. 밥이라도 먹으러 갈까?
+引っ越す|ひっこす|이사하다|살던 곳을 옮기는 것. 정중체 「引っ越しました」, 명사는 「引っ越し」. 이웃에게는 「隣に引っ越してきた〜です」라고 인사한다.|先月、駅の近くに[[引っ越しました]]。|지난달에 역 근처로 이사했어요.|来年、東京に[[引っ越す]]かもしれない。|내년에 도쿄로 이사할지도 몰라.|新しい部屋はどう？|広くて快適だよ。引っ越してよかった。|새 집은 어때? / 넓고 쾌적해. 이사하길 잘했어.
+相変わらず|あいかわらず|여전히|이전과 다름없다는 뜻. 칭찬에도 불평에도 쓴다. 정중체 「相変わらずお元気ですね」. 가까운 사이에서는 「相変わらずだね」로 농담조도 가능하다.|あの店は[[相変わらず]]人気ですね。|저 가게는 여전히 인기네요.|[[相変わらず]]元気そうだね。|여전히 건강해 보이네.|お変わりありませんか。|ええ、相変わらず忙しいですが、元気です。|별일 없으세요? / 네, 여전히 바쁘지만 건강해요.
+気になる|きになる|신경 쓰이다, 궁금하다|마음에 걸리거나 호기심이 생길 때. 정중체 「気になります」, 반말 「気になる」. 「〜が気になる」는 조사 「が」로 대상을 표시한다.|彼の話が[[気になって]]、眠れなかった。|그의 이야기가 신경 쓰여서 잠을 못 잤어.|あのドラマ、ずっと[[気になっている]]んだ。|그 드라마, 계속 궁금했어.|何か気になることがあるの？|うん、さっきの先生の言葉がちょっと。|뭔가 신경 쓰이는 게 있어? / 응, 아까 선생님이 하신 말이 좀.
+#feel|감정·맞장구·리액션
+なるほど|なるほど|과연, 그렇군요|상대의 설명에 납득했을 때 하는 맞장구. 반말·정중체 모두 쓰이지만, 윗사람에게 단독으로 쓰면 평가하는 느낌이 날 수 있으니 「なるほど、そういうことですね」처럼 이어 말하면 무난합니다.|[[なるほど]]、そういうことだったんですね。|그렇군요, 그런 거였군요.|あ、[[なるほど]]！だから昨日は来なかったのか。|아, 그렇구나! 그래서 어제 안 왔던 거구나.|この道は夜になると通れないんだって。|なるほど、だから誰もいないんだね。|이 길은 밤이 되면 지나갈 수 없대. / 그렇구나, 그래서 아무도 없는 거구나.
+まさか|まさか|설마|믿기 어려운 일에 놀랐을 때 쓰는 중립적인 부사로 반말·정중체 모두 가능합니다. 뒤에 부정이나 의문이 이어지는 경우가 많습니다.|[[まさか]]、本当に合格したんですか。|설마, 정말 합격하신 거예요?|[[まさか]]こんなところで会うとは思わなかった。|설마 이런 곳에서 만날 줄은 몰랐어.|田中さん、会社を辞めるらしいよ。|えっ、まさか。昨日まで普通だったのに。|다나카 씨, 회사 그만둔대. / 어, 설마. 어제까지 멀쩡했는데.
+びっくりする|びっくりする|깜짝 놀라다|갑작스러운 일에 놀랄 때 쓰는 구어체 표현(의태어)입니다. 정중체는 「びっくりしました」, 반말은 「びっくりした」. 격식 있는 글에서는 「驚く」를 씁니다.|急に大きな音がして、[[びっくりしました]]。|갑자기 큰 소리가 나서 깜짝 놀랐어요.|友達からの電話に[[びっくりして]]、コーヒーをこぼした。|친구 전화에 놀라서 커피를 쏟았다.|さっきの地震、大きかったね。|うん、びっくりした。心臓が止まるかと思った。|아까 지진 컸지. / 응, 깜짝 놀랐어. 심장이 멎는 줄 알았어.
+嬉しい|うれしい|기쁘다|い형용사. 반말은 「嬉しい」, 정중체는 「嬉しいです」. 감사의 마음을 전할 때 「そう言ってもらえて嬉しいです」처럼 자주 씁니다.|お祝いのメッセージをもらって、すごく[[嬉しいです]]。|축하 메시지를 받아서 정말 기뻐요.|手紙が届いていて、ちょっと[[嬉しかった]]。|편지가 와 있어서 조금 기뻤다.|合格おめでとう！|ありがとう！嬉しい！|합격 축하해! / 고마워! 기뻐!
+がっかりする|がっかりする|실망하다, 맥이 빠지다|기대가 어긋났을 때의 의태어입니다. 정중체는 「がっかりしました」. 상대에게 직접 「がっかりした」라고 하면 강하게 들릴 수 있으니 주의하세요.|結果を見て、ちょっと[[がっかりしました]]。|결과를 보고 조금 실망했어요.|楽しみにしていた花火大会が中止で、[[がっかりして]]しまった。|기대하던 불꽃놀이가 취소돼서 실망하고 말았다.|試験、どうだった？|だめだった。正直がっかりしてるよ。|시험 어땠어? / 망쳤어. 솔직히 실망이야.
+ほっとする|ほっとする|안심하다, 한시름 놓다|걱정이 풀려 마음이 놓일 때 쓰는 구어 표현입니다. 정중체는 「ほっとしました」. 편안해지는 느낌에도 씁니다.|無事に着いたと聞いて、[[ほっとしました]]。|무사히 도착했다고 들어서 안심했어요.|家に帰ると[[ほっとする]]。|집에 돌아오면 마음이 놓인다.|面接、やっと終わったよ。|お疲れ様。ほっとしたでしょう？|면접 드디어 끝났어. / 수고했어. 한시름 놨겠네.
+羨ましい|うらやましい|부럽다|い형용사. 반말은 「羨ましい」, 정중체는 「羨ましいです」. 상대의 행운이나 환경에 대해 가볍게 말할 때 쓰며 질투의 뉘앙스가 약합니다.|海の近くに住めるなんて、[[羨ましいです]]。|바다 근처에 살 수 있다니 부러워요.|あの子はいつも成績がよくて[[羨ましい]]。|저 애는 늘 성적이 좋아서 부럽다.|来月、ハワイに行くんだ。|いいなあ、羨ましい！お土産よろしくね。|다음 달에 하와이 가. / 좋겠다, 부러워! 기념품 부탁해.
+恥ずかしい|はずかしい|부끄럽다, 창피하다|い형용사. 자신의 실수나 수줍음을 말할 때 씁니다. 반말은 「恥ずかしい」, 정중체는 「恥ずかしいです」.|みんなの前で転んで、[[恥ずかしかった]]です。|모두 앞에서 넘어져서 창피했어요.|名前を呼び間違えて、[[恥ずかしい]]ったらない。|이름을 잘못 불러서 창피하기 짝이 없다.|顔が赤いよ。|だって、恥ずかしいんだもん。|얼굴 빨개. / 그치만 창피한걸.
+悔しい|くやしい|분하다, 억울하다|い형용사. 지거나 아깝게 놓쳤을 때의 분한 마음을 나타냅니다. 반말「悔しい」, 정중체「悔しいです」.|あと一点で負けて、本当に[[悔しいです]]。|1점 차로 져서 정말 분해요.|[[悔しくて]]、その夜は眠れなかった。|분해서 그날 밤은 잠이 오지 않았다.|決勝、惜しかったね。|うん、悔しいけど、また頑張るよ。|결승 아깝더라. / 응, 분하지만 다시 힘낼게.
+寂しい|さびしい|쓸쓸하다, 외롭다|い형용사. 반말「寂しい」, 정중체「寂しいです」. 회화에서는 「さみしい」라고도 하지만 읽기는 さびしい가 기본입니다.|友達が転校してしまって、[[寂しくなりました]]。|친구가 전학 가 버려서 쓸쓸해졌어요.|一人で食べるご飯は、やっぱり[[寂しい]]。|혼자 먹는 밥은 역시 쓸쓸하다.|来週からしばらく出張なんだ。|そうなんだ。寂しくなるね。|다음 주부터 한동안 출장이야. / 그렇구나. 쓸쓸해지겠다.
+懐かしい|なつかしい|그립다, 옛 생각이 나다|い형용사. 옛날 일이나 오랜만에 접한 것이 정겹게 느껴질 때 씁니다. 반말 「懐かしい」, 정중체 「懐かしいです」. 한국어 '그립다'보다 '옛 생각이 나서 반갑다'에 가깝습니다.|この曲を聞くと、学生時代が[[懐かしい]]です。|이 노래를 들으면 학창 시절이 그리워요.|[[懐かしい]]！この写真、高校のときのだよね。|와, 옛날 생각난다! 이 사진 고등학교 때 거지?|これ、小学校の文集だよ。|うわ、懐かしい！どこにあったの？|이거 초등학교 문집이야. / 우와, 추억이다! 어디 있었어?
+ありえない|ありえない|말도 안 돼, 있을 수 없다|강한 놀람이나 불만을 나타내는 반말 구어입니다. 정중체는 「ありえません」. 윗사람에게 감정적으로 쓰면 실례가 될 수 있습니다.|三時間も待たされるなんて、[[ありえない]]。|세 시간이나 기다리게 하다니 말도 안 돼.|そんなミスは[[ありえません]]。すぐ確認します。|그런 실수는 있을 수 없습니다. 바로 확인하겠습니다.|財布を電車に忘れたんだって。|えー、ありえない！ほんとに？|지갑을 전철에 두고 내렸대. / 에이, 말도 안 돼! 진짜야?
+やばい|やばい|큰일이다, 대박이다|젊은 층의 반말 구어로, 나쁜 일에도 좋은 일에도 쓰입니다. 격식 있는 자리나 윗사람에게는 부적절합니다.|[[やばい]]、もう八時だ！遅刻する！|큰일이다, 벌써 8시야! 지각하겠어!|このラーメン、[[やばい]]くらいおいしい。|이 라멘, 미칠 만큼 맛있어.|見て、このケーキ。|うわ、やばい！おいしそう！|봐, 이 케이크. / 우와, 대박! 맛있겠다!
+さすが|さすが|역시, 과연|기대한 대로 훌륭함을 칭찬할 때 씁니다. 정중체 「さすがですね」. 윗사람에게 쓰면 평가하는 느낌이 나므로 「勉強になります」 등이 더 안전합니다.|[[さすが]]プロですね。仕上がりがきれいです。|역시 프로네요. 마무리가 깔끔해요.|一人で全部やったの？[[さすが]]だなあ。|혼자서 다 한 거야? 역시 대단하다.|このデザイン、私が作ったの。|さすがだね！センスあるよ。|이 디자인, 내가 만든 거야. / 역시! 센스 있어.
+よかったですね|よかったですね|잘됐네요, 다행이네요|상대에게 좋은 일이 있었을 때 하는 정중체 맞장구입니다. 반말은 「よかったね」. 윗사람에게도 쓸 수 있습니다.|無事に見つかって、[[よかったですね]]。|무사히 찾아서 다행이에요.|試験に受かったの？[[よかったね]]！|시험에 붙었어? 잘됐다!|赤ちゃんが生まれました。|おめでとうございます！よかったですね。|아기가 태어났어요. / 축하드려요! 잘됐네요.
+大変でしたね|たいへんでしたね|힘드셨겠어요|상대가 겪은 고생을 위로하는 정중체입니다. 반말은 「大変だったね」. 윗사람에게는 「お疲れ様でした」를 곁들이면 더 자연스럽습니다.|一日中立ちっぱなしで、[[大変でしたね]]。|하루 종일 서 계셔서 힘드셨겠어요.|引っ越し、[[大変だったね]]。ゆっくり休んでね。|이사 힘들었겠다. 푹 쉬어.|昨日、終電を逃して歩いて帰ったんです。|それは大変でしたね。お疲れ様でした。|어제 막차를 놓쳐서 걸어서 돌아왔어요. / 그거 힘드셨겠어요. 수고하셨어요.
+そうなんですね|そうなんですね|그렇군요|새로운 정보를 들었을 때의 정중한 맞장구입니다. 반말은 「そうなんだ」. 가볍게 들리지 않도록 윗사람에게는 「そうなんですね」, 더 정중히는 「さようでございますか」.|[[そうなんですね]]、知りませんでした。|그렇군요, 몰랐어요.|[[そうなんだ]]、全然知らなかった。|그렇구나, 전혀 몰랐어.|実は、ここの店長なんです。|そうなんですね！若く見えますね。|사실 여기 점장이에요. / 그렇군요! 젊어 보이세요.
+確かに|たしかに|듣고 보니 그렇네, 확실히|상대 말에 동의할 때의 맞장구로 반말·정중체 모두 쓰입니다. 정중하게는 「確かにそうですね」.|[[確かに]]、その方が安いですね。|확실히 그쪽이 더 싸네요.|[[確かに]]言われてみればそうだね。|듣고 보니 확실히 그러네.|毎日夜中まで働くのは体に悪いよね。|確かに。少し休まないとね。|매일 한밤중까지 일하는 건 몸에 안 좋잖아. / 맞아. 좀 쉬어야지.
+嘘|うそ|거짓말, 설마|「うそ！」는 놀랐을 때의 반말 리액션으로 「정말?」에 가깝습니다. 정중하게는 「本当ですか」. 원래 뜻은 거짓말이며 「うそをつく」로 씁니다.|[[うそ]]！そのバッグ、三千円だったの？|말도 안 돼! 그 가방, 3천 엔이었어?|[[うそ]]をつくのはよくないよ。|거짓말을 하는 건 좋지 않아.|宝くじ、当たっちゃった。|えっ、うそでしょ！|복권 당첨돼 버렸어. / 어, 거짓말이지!
+感動する|かんどうする|감동하다|영화·음악·행동 등에 마음이 움직였을 때 씁니다. 정중체 「感動しました」, 반말 「感動した」. 격식 있는 자리에서도 자연스럽습니다.|映画の最後の場面に[[感動しました]]。|영화 마지막 장면에 감동했어요.|彼女の優しさに[[感動して]]、涙が出た。|그녀의 상냥함에 감동해서 눈물이 났다.|あの映画、どうだった？|すごく感動したよ。ハンカチは必須！|그 영화 어땠어? / 엄청 감동했어. 손수건은 필수야!
+イライラする|いらいらする|짜증나다, 초조하다|마음이 편치 않고 신경이 곤두설 때의 의태어입니다. 반말·정중체 모두 쓰지만 감정이 강하므로 상대에게 향하면 거친 인상을 줍니다. 히라가나로도 씁니다.|電車が遅れて、朝から[[イライラして]]いる。|전철이 늦어서 아침부터 짜증이 나 있다.|そんなに[[イライラしないで]]ください。|그렇게 짜증 내지 마세요.|顔が怖いよ、どうしたの？|返事が来なくて、ちょっとイライラしてるんだ。|얼굴이 무서워, 무슨 일이야? / 답장이 안 와서 좀 짜증나.
+緊張する|きんちょうする|긴장하다|중요한 자리에서 몸이 굳을 때 씁니다. 정중체 「緊張します」, 반말 「緊張する」. 면접·발표·첫 만남에서 흔합니다.|面接の前は、いつも[[緊張します]]。|면접 전에는 늘 긴장돼요.|初めてのデートで[[緊張して]]、何も話せなかった。|첫 데이트에서 긴장해서 아무 말도 못 했다.|手が震えてるよ。|うん、すごく緊張してる。|손이 떨리고 있어. / 응, 엄청 긴장돼.
+納得する|なっとくする|납득하다|이유나 설명을 듣고 받아들일 때 씁니다. 비즈니스에서도 쓰는 정중체 「納得できません」은 강한 불만 표현이 됩니다.|その説明では[[納得できません]]。|그 설명으로는 납득할 수 없습니다.|理由を聞いて、やっと[[納得した]]。|이유를 듣고 겨우 납득했다.|値段が上がる理由、分かった？|うん、説明を聞いて納得したよ。|가격이 오르는 이유, 알겠어? / 응, 설명을 듣고 납득했어.
+心配する|しんぱいする|걱정하다|상대나 일을 염려할 때 씁니다. 정중체 「心配しました」, 위로할 때는 「心配しないで」「ご心配なく」. 상대가 걱정해 주었을 때는 「ご心配をおかけしました」라고 합니다.|連絡がなかったので、とても[[心配しました]]。|연락이 없어서 무척 걱정했어요.|そんなに[[心配しなくても]]大丈夫だよ。|그렇게 걱정하지 않아도 괜찮아.|母が入院したんです。|それは心配ですね。早くよくなるといいですね。|어머니가 입원하셨어요. / 그거 걱정되시겠네요. 빨리 나으시면 좋겠네요.
+残念|ざんねん|아쉽다, 유감이다|な형용사. 아쉬움이나 유감을 나타냅니다. 정중체 「残念です」, 반말 「残念だ」「残念」. 거절당했을 때나 못 만났을 때 쓰기 좋습니다.|来られないなんて、本当に[[残念]]です。|못 오신다니 정말 아쉬워요.|雨で中止なんて[[残念]]だね。|비 때문에 중지라니 아쉽다.|今回のライブは行けなくなりました。|それは残念ですね。また今度ぜひ。|이번 라이브는 못 가게 됐어요. / 그거 아쉽네요. 다음에 꼭 가요.
+#idiom|관용구·의성어·의태어
+そわそわする|そわそわする|안절부절못하다|[의태어] 마음이 들떠 가만히 있지 못하는 모양. 반말·정중체 모두 쓰이는 구어 표현입니다.|面接の順番を待つ間、ずっと[[そわそわして]]いた。|면접 순서를 기다리는 동안 계속 안절부절못했다.|[[そわそわしないで]]、少し座ったら？|안절부절못하지 말고 좀 앉지 그래?|今日はデートなんだって？|うん、朝からそわそわしてるよ。|오늘 데이트라며? / 응, 아침부터 안절부절못하고 있어.
+ぺらぺら|ぺらぺら|술술(유창하게), 줄줄|[의태어] 외국어를 유창하게 말하는 모양, 또는 비밀을 경솔하게 줄줄 말하는 모양. 칭찬에는 정중하게 「ぺらぺらですね」, 부정적 용법은 반말 구어입니다.|彼女は英語も中国語も[[ぺらぺら]]だ。|그녀는 영어도 중국어도 유창하다.|友達の秘密を[[ぺらぺら]]としゃべってしまった。|친구의 비밀을 줄줄 말해 버렸다.|ケンさん、日本語上手ですね。|いえいえ、まだぺらぺらじゃないですよ。|켄 씨, 일본어 잘하시네요. / 아니에요, 아직 유창하지는 않아요.
+わくわくする|わくわくする|설레다, 두근두근하다|[의태어] 기대로 마음이 들뜨는 모양. 정중체 「わくわくします」, 반말 「わくわくする」. 긍정적인 기대에만 씁니다.|明日からの旅行を考えると[[わくわくします]]。|내일부터의 여행을 생각하면 설레요.|新学期が楽しみで、[[わくわくして]]眠れない。|새 학기가 기대돼서 설레 잠이 오지 않는다.|もう荷造りしたの？|うん、わくわくして早く終わっちゃった。|벌써 짐 쌌어? / 응, 설레서 금방 끝났어.
+どきどきする|どきどきする|두근거리다|[의태어] 긴장이나 설렘으로 심장이 뛰는 모양. 좋은 설렘과 불안한 긴장 모두에 쓰입니다. 정중체 「どきどきします」.|発表の前は、心臓が[[どきどきします]]。|발표 전에는 심장이 두근거려요.|好きな人と目が合って[[どきどきした]]。|좋아하는 사람과 눈이 마주쳐서 두근거렸다.|初めてのデート、どうだった？|ずっとどきどきして、何を話したか覚えてないよ。|첫 데이트 어땠어? / 계속 두근거려서 무슨 얘기를 했는지 기억이 안 나.
+ぐっすり|ぐっすり|푹(자다)|[의태어] 깊이 잠든 모양으로 「ぐっすり眠る」「ぐっすり寝る」처럼 씁니다. 정중체·반말 모두 자연스러운 일상 표현입니다.|昨夜は[[ぐっすり]]眠れました。|어젯밤은 푹 잘 수 있었어요.|子どもは車の中で[[ぐっすり]]寝ている。|아이는 차 안에서 푹 자고 있다.|顔色がいいね。|昨日は十時間もぐっすり寝たからね。|안색이 좋네. / 어제 열 시간이나 푹 잤거든.
+のんびりする|のんびりする|느긋하게 지내다|[의태어] 서두르지 않고 편안하게 시간을 보내는 모양. 정중체 「のんびりします」, 반말 「のんびりする」. 휴일 계획을 말할 때 자주 씁니다.|休みの日は家で[[のんびりします]]。|휴일에는 집에서 느긋하게 지내요.|温泉で[[のんびりして]]、疲れを取りたい。|온천에서 느긋하게 쉬며 피로를 풀고 싶다.|週末はどうする？|特に予定はないから、家でのんびりするよ。|주말에 뭐 해? / 특별한 일정이 없어서 집에서 느긋하게 있을 거야.
+こっそり|こっそり|몰래, 슬며시|[의태어] 남이 모르게 조용히 하는 모양. 반말·정중체 모두 쓰는 부사입니다. 장난스러운 계획에도 어울립니다.|夜中に[[こっそり]]冷蔵庫を開けた。|한밤중에 몰래 냉장고를 열었다.|彼は誰にも言わず、[[こっそり]]準備を進めていました。|그는 아무에게도 말하지 않고 몰래 준비를 진행했습니다.|誕生日パーティー、どうする？|本人にはこっそり準備しようよ。|생일 파티 어떻게 할까? / 본인 모르게 몰래 준비하자.
+はっきり|はっきり|분명히, 또렷이|[의태어·부사] 모호하지 않고 분명한 모양. 「はっきり言う」「はっきり見える」. 반말·정중체 모두 쓰입니다. 「はっきりした性格」처럼 성격 묘사에도 씁니다.|返事は[[はっきり]]言ってください。|대답은 분명히 말해 주세요.|彼は[[はっきり]]した性格で、思ったことをすぐ言う。|그는 분명한 성격이라 생각한 걸 바로 말한다.|この字、読める？|ううん、字が小さくてはっきり見えない。|이 글자, 읽을 수 있어? / 아니, 글자가 작아서 또렷이 안 보여.
+うろうろする|うろうろする|서성이다, 어슬렁거리다|[의태어] 목적 없이 같은 곳을 왔다 갔다 하는 모양. 정중체 「うろうろしています」. 상대에게 말할 때는 약간 직설적인 반말·구어입니다.|駅の前で道に迷って、[[うろうろして]]しまった。|역 앞에서 길을 잃고 서성이고 말았다.|そんなところで[[うろうろしないで]]ください。|그런 데서 서성이지 마세요.|さっきから何してるの？|財布を探してうろうろしてたんだ。|아까부터 뭐 하는 거야? / 지갑을 찾느라 서성이고 있었어.
+ぴかぴか|ぴかぴか|반짝반짝|[의태어] 깨끗이 닦여 윤이 나는 모양. 「ぴかぴかになる」「ぴかぴかの〜」로 씁니다. 반말·정중체 모두 일상 표현입니다.|掃除をしたら、床が[[ぴかぴか]]になった。|청소를 했더니 바닥이 반짝반짝해졌다.|子どもは[[ぴかぴか]]のランドセルを背負っている。|아이는 반짝반짝한 책가방을 메고 있다.|新しい車？|うん、昨日買ったばかりで、まだぴかぴかだよ。|새 차야? / 응, 어제 막 사서 아직 반짝반짝해.
+ぼろぼろ|ぼろぼろ|너덜너덜, 주르륵|[의태어] 낡아서 해진 모양, 또는 눈물이나 부스러기가 계속 떨어지는 모양. 「涙がぼろぼろ出る」도 흔하며 작은 눈물방울에는 「ぽろぽろ」를 씁니다. 지쳐 몸이 엉망일 때 「体がぼろぼろ」라고도 합니다. 반말·정중체 모두 쓰는 일상 표현입니다.|このかばんは十年使って、もう[[ぼろぼろ]]だ。|이 가방은 10년 써서 이제 너덜너덜하다.|悲しい映画で、涙が[[ぼろぼろ]]出た。|슬픈 영화라 눈물이 주르륵 흘렀다.|その靴、まだ履いてるの？|愛着があってね。ぼろぼろでも捨てられない。|그 신발 아직도 신어? / 애착이 있어서. 너덜너덜해도 못 버려.
+ぐずぐずする|ぐずぐずする|꾸물대다, 우물쭈물하다|[의태어] 빨리 처리하지 않고 시간을 끄는 모양. 상대를 재촉하거나 꾸짖을 때 쓰는 반말·구어이며 윗사람에게는 쓰지 않습니다.|[[ぐずぐずして]]いると、電車に乗り遅れるよ。|꾸물대고 있으면 전철을 놓쳐.|彼は決められなくて、いつも[[ぐずぐずしている]]。|그는 결정을 못 해서 늘 우물쭈물한다.|早く準備して！|ごめん、ぐずぐずしてた。すぐ行く。|빨리 준비해! / 미안, 꾸물댔어. 바로 갈게.
+しっかり|しっかり|제대로, 단단히, 똑바로|[의태어·부사] 빈틈없이 확실하게 하는 모양. 「しっかり食べる」「しっかりした人」. 반말·정중체 모두 쓰이며 격려의 말로도 자주 씁니다.|朝ごはんを[[しっかり]]食べてから出かけます。|아침밥을 든든히 먹고 나갑니다.|彼女は若いのに、とても[[しっかり]]している。|그녀는 젊은데도 매우 야무지다.|風邪をひいたみたい。|しっかり休んで、早く治してね。|감기 걸린 것 같아. / 푹 쉬어서 얼른 나아.
+猫の手も借りたい|ねこのてもかりたい|너무 바빠서 누구 손이라도 빌리고 싶다|[관용구] 몹시 바쁠 때 쓰는 표현입니다. 구어에서 반말·정중체 모두 쓰이지만 윗사람에게 직접 도움을 청할 때는 「人手が足りません」이 무난합니다.|年末は忙しくて、[[猫の手も借りたい]]ほどです。|연말은 바빠서 고양이 손이라도 빌리고 싶을 정도예요.|今日は店が混んで、[[猫の手も借りたい]]気分だった。|오늘은 가게가 붐벼서 누구 손이라도 빌리고 싶은 심정이었다.|手伝おうか？|ありがとう！今は猫の手も借りたいくらいだよ。|도와줄까? / 고마워! 지금은 정말 손이 하나라도 아쉬워.
+耳が痛い|みみがいたい|듣기 뼈아프다, 찔린다|[관용구] 자신의 약점을 지적받아 듣기 거북할 때 씁니다. 귀가 아픈 것이 아니라 정곡을 찔렸다는 비유입니다. 반말·정중체 모두 쓰입니다.|勉強しろと言われて、[[耳が痛い]]。|공부하라는 말을 들으니 뜨끔하다.|先輩の[[耳が痛い]]忠告を素直に聞いた。|선배의 뼈아픈 충고를 순순히 들었다.|毎日夜更かしは体に悪いよ。|うっ、耳が痛いなあ。|매일 밤샘은 몸에 안 좋아. / 윽, 찔리네.
+気が合う|きがあう|마음이 맞다|[관용구] 성격이나 취향이 잘 맞아 함께 있기 편한 관계. 「〜と気が合う」로 쓰며 반말·정중체 모두 쓰입니다.|彼とは初めて会ったときから[[気が合いました]]。|그와는 처음 만났을 때부터 마음이 잘 맞았어요.|あの二人は本当に[[気が合う]]みたいだね。|저 두 사람은 정말 마음이 잘 맞는 것 같네.|新しいルームメイトはどう？|すごく気が合って、毎晩おしゃべりしてるよ。|새 룸메이트는 어때? / 엄청 잘 맞아서 매일 밤 수다 떨고 있어.
+顔が広い|かおがひろい|발이 넓다|[관용구] 아는 사람이 많다는 뜻입니다. 칭찬으로 쓰이며 반말·정중체 모두 가능. 상대에게는 「お顔が広いですね」라고 합니다.|田中さんは[[顔が広い]]から、紹介してもらおう。|다나카 씨는 발이 넓으니까 소개받자.|地元で[[顔が広い]]人に相談しました。|지역에서 발이 넓은 사람에게 상담했습니다.|いい美容師さん、知らない？|山田さんなら顔が広いから、聞いてみたら？|좋은 미용사 모르니? / 야마다 씨라면 발이 넓으니까 물어보지 그래?
+口に合う|くちにあう|입에 맞다|[관용구] 음식이 자기 취향에 맞는다는 뜻. 손님에게 음식을 내며 「お口に合うかどうか」「お口に合いますか」라고 정중하게 묻는 표현이 대표적입니다.|お[[口に合う]]かどうか分かりませんが、どうぞ。|입에 맞으실지 모르겠지만 드셔 보세요.|この料理、ちょっと辛くて[[口に合わなかった]]。|이 요리, 좀 매워서 입에 안 맞았어.|日本の料理はどうですか。|どれもおいしくて、私の口に合います。|일본 요리는 어떠세요? / 다 맛있고 제 입에 맞아요.
+腹が立つ|はらがたつ|화가 나다|[관용구] 화가 나는 감정을 직접적으로 말하는 구어입니다. 정중체 「腹が立ちました」. 상대에게 직접 쓰면 거칠므로 공식적인 자리에서는 「不快に思う」가 낫습니다.|約束を破られて、本当に[[腹が立ちました]]。|약속을 어겨서 정말 화가 났어요.|思い出すだけで[[腹が立つ]]。|떠올리기만 해도 화가 난다.|どうしたの、怖い顔して。|店員の態度に腹が立ってさ。|왜 그래, 무서운 얼굴로. / 점원 태도에 화가 나서.
+目がない|めがない|사족을 못 쓰다|[관용구] 무엇인가를 매우 좋아해 거부하지 못하는 모습. 「〜に目がない」. 반말·정중체 모두 쓰이며 먹을 것·취미에 많이 씁니다.|私は甘いものに[[目がありません]]。|저는 단것에 사족을 못 써요.|父は釣りに[[目がない]]。|아버지는 낚시라면 사족을 못 쓴다.|このケーキ、食べる？|食べる！チョコには目がないんだ。|이 케이크 먹을래? / 먹을래! 초콜릿이라면 사족을 못 써.
+口が堅い|くちがかたい|입이 무겁다|[관용구] 비밀을 잘 지킨다는 뜻으로 신뢰를 나타내는 칭찬입니다. 반대는 「口が軽い」. 반말·정중체 모두 가능합니다.|彼は[[口が堅い]]から、安心して相談できる。|그는 입이 무거워서 안심하고 상담할 수 있다.|[[口が堅くて]]信頼できる人を探しています。|입이 무겁고 믿을 수 있는 사람을 찾고 있습니다.|これ、誰にも言わないでね。|大丈夫、私は口が堅いから。|이거 아무한테도 말하지 마. / 괜찮아, 나 입 무거워.
+頭が下がる|あたまがさがる|머리가 숙여지다, 존경스럽다|[관용구] 상대의 노력이나 행동에 깊이 감탄해 존경하는 마음. 윗사람의 노력에도 쓸 수 있어 정중체 「頭が下がります」로 자주 씁니다.|毎日の努力には本当に[[頭が下がります]]。|매일의 노력에는 정말 머리가 숙여집니다.|一人で子どもを育てる彼女に[[頭が下がる]]思いだ。|혼자 아이를 키우는 그녀에게 머리가 숙여진다.|毎朝五時に起きてボランティアしてるんだ。|すごい、頭が下がるなあ。|매일 아침 5시에 일어나서 봉사활동 해. / 대단하다, 존경스러워.
+水に流す|みずにながす|없던 일로 하다|[관용구] 과거의 잘못이나 다툼을 문제 삼지 않기로 하는 것. 화해할 때 반말·정중체 모두 쓰입니다.|過去のことは[[水に流して]]、仲直りしよう。|지난 일은 없던 걸로 하고 화해하자.|今回のミスは[[水に流します]]が、次は気をつけてください。|이번 실수는 없던 일로 하겠지만 다음에는 조심해 주세요.|この前はひどいことを言って、ごめん。|もういいよ、水に流そう。|지난번에 심한 말 해서 미안. / 이제 됐어, 없던 일로 하자.
+足を引っ張る|あしをひっぱる|발목을 잡다|[관용구] 남의 일이나 진행을 방해하거나 팀에 폐를 끼치다. 반말·정중체 모두 쓰이며 사과할 때 「足を引っ張ってすみません」도 씁니다.|自分のミスでチームの[[足を引っ張って]]しまった。|내 실수로 팀의 발목을 잡고 말았다.|仲間の[[足を引っ張る]]ようなことはしたくない。|동료의 발목을 잡는 일은 하고 싶지 않다.|試合、緊張するな。|大丈夫。みんなの足を引っ張らないようにがんばろう。|경기, 긴장되네. / 괜찮아. 모두에게 폐 끼치지 않도록 힘내자.
+骨が折れる|ほねがおれる|힘들다, 수고가 많이 들다|[관용구] 노력이 많이 필요한 일을 가리킵니다. 뼈가 부러진다는 뜻이 아니라 비유입니다. 정중체 「骨が折れます」. 업무나 집안일에 씁니다.|この仕事は、一人でやるには[[骨が折れる]]。|이 일은 혼자서 하기엔 힘이 많이 든다.|初めての海外出張の準備は[[骨が折れました]]。|첫 해외 출장 준비는 정말 힘들었어요.|引っ越しの片付け、終わった？|まだ。荷物が多くて骨が折れるよ。|이사 정리 끝났어? / 아직. 짐이 많아서 힘들어.
+#keigo|경어·정중한 표현
+いらっしゃる|いらっしゃる|계시다, 가시다, 오시다|[존경어] いる・行く・来る의 존경어. 상대나 제3자의 행동을 높일 때 씁니다. ます형은 「いらっしゃいます」로 활용. 자기 쪽 사람을 외부인에게 말할 때는 쓰지 않습니다.|部長は今、会議室に[[いらっしゃいます]]。|부장님은 지금 회의실에 계십니다.|先生が[[いらっしゃったら]]、お知らせください。|선생님이 오시면 알려 주세요.|田中先生はどちらにいらっしゃいますか。|先生なら、さっき教室にいらっしゃいましたよ。|다나카 선생님은 어디 계세요? / 선생님이라면 아까 교실에 계셨어요.
+おっしゃる|おっしゃる|말씀하시다|[존경어] 言う의 존경어. 상대나 윗사람이 말한 내용을 높일 때 씁니다. ます형은 「おっしゃいます」(おっしゃります도 쓰이지만 おっしゃいます가 일반적).|先生が[[おっしゃった]]とおりにやってみました。|선생님이 말씀하신 대로 해 봤습니다.|今、何と[[おっしゃいました]]か。|지금 뭐라고 말씀하셨어요?|社長は何と言っていましたか。|来週までに返事が欲しいとおっしゃっていました。|사장님은 뭐라고 하셨어요? / 다음 주까지 답을 원한다고 말씀하셨어요.
+召し上がる|めしあがる|드시다|[존경어] 食べる・飲む의 존경어. 상대에게 음식을 권할 때 「どうぞ召し上がってください」처럼 씁니다. 자기 동작에는 쓰지 않습니다.|どうぞ冷めないうちに[[召し上がって]]ください。|식기 전에 어서 드세요.|お客様は何を[[召し上がります]]か。|손님은 무엇을 드시겠습니까?|先生は何を召し上がりますか。|そうですね、私は和食をいただきます。|선생님은 무엇을 드시겠어요? / 글쎄요, 저는 일식을 먹겠습니다.
+ご覧になる|ごらんになる|보시다|[존경어] 見る의 존경어. 상대가 보는 행위를 높입니다. 상대에게 보라고 권할 때는 「ご覧ください」가 기본입니다.|この写真は、社長が昨日[[ご覧になった]]ものです。|이 사진은 사장님이 어제 보신 것입니다.|社長は昨日の報告書を[[ご覧になりました]]か。|사장님은 어제 보고서를 보셨습니까?|新しい企画書は、部長にお見せしましたか。|はい、先ほどご覧になりました。|새 기획서는 부장님께 보여드렸어요? / 네, 아까 보셨어요.
+なさる|なさる|하시다|[존경어] する의 존경어. 상대의 행동을 높일 때 씁니다. ます형은 「なさいます」. 「ご結婚なさる」처럼 명사와도 결합합니다.|週末は何を[[なさいます]]か。|주말에는 무엇을 하시나요?|先生は毎朝散歩を[[なさる]]そうです。|선생님은 매일 아침 산책을 하신다고 합니다.|来週の会議、どう進めましょうか。|部長が司会をなさるそうですよ。|다음 주 회의, 어떻게 진행할까요? / 부장님이 사회를 보신다고 해요.
+くださる|くださる|주시다|[존경어] くれる의 존경어. 윗사람이 나에게 해 주는 행동에 감사할 때 씁니다. ます형은 「くださいます」. 「〜てくださる」로 은혜를 나타냅니다.|先生が推薦状を書いて[[くださいました]]。|선생님이 추천서를 써 주셨습니다.|お忙しいなか、お越し[[くださって]]、ありがとうございます。|바쁘신 중에 와 주셔서 감사합니다.|このお菓子、どうしたの？|取引先の方がくださったんですよ。|이 과자 어떻게 된 거야? / 거래처 분이 주셨어요.
+お越しになる|おこしになる|오시다, 가시다|[존경어] 주로 来る의 존경어(行く에도 쓰임). 「お(ご)〜になる」형의 존경 표현으로 손님이 찾아오는 것을 말할 때 비즈니스·서비스업에서 자주 씁니다. 감사 인사는 「お越しくださいまして」 형태가 많습니다.|明日は何時ごろ[[お越しになります]]か。|내일은 몇 시쯤 오십니까?|皆様が[[お越しになる]]前に、準備を済ませておきます。|여러분이 오시기 전에 준비를 끝내 두겠습니다.|来週の説明会に、社長は出席されますか。|はい、十時ごろお越しになる予定です。|다음 주 설명회에 사장님은 참석하시나요? / 네, 10시쯤 오실 예정입니다.
+ご存じ|ごぞんじ|아시는 것|[존경어] 知っている의 존경 표현(명사형). 「ご存じですか」「ご存じのとおり」로 씁니다. 반대로 자기가 안다고 할 때는 「存じております」(겸양어)를 씁니다.|この店を[[ご存じ]]ですか。|이 가게를 아세요?|[[ご存じ]]のとおり、来月から料金が変わります。|아시는 대로 다음 달부터 요금이 바뀝니다.|山田様が転勤されたこと、ご存じでしたか。|いいえ、初めて聞きました。|야마다 님이 전근 가신 거 알고 계셨어요? / 아니요, 처음 들었어요.
+申す|もうす|말하다(겸양)|[겸양어(丁重語)] 言う의 겸양 표현. 자기나 자기 쪽 사람이 말할 때만 씁니다. 자기소개 「〜と申します」가 대표적입니다. 상대에게는 쓰지 않습니다.|はじめまして、田中と[[申します]]。|처음 뵙겠습니다, 다나카라고 합니다.|父がよろしくと[[申して]]おりました。|아버지가 안부 전해 달라고 했습니다.|失礼ですが、お名前は？|山本と申します。どうぞよろしくお願いします。|실례지만 성함이 어떻게 되시죠? / 야마모토라고 합니다. 잘 부탁드립니다.
+伺う|うかがう|찾아뵙다, 여쭙다, 듣다(겸양)|[겸양어] 訪ねる・聞く・尋ねる의 겸양어. 방문할 때와 질문할 때 모두 씁니다. 상대를 높이면서 자신을 낮춥니다.|明日の午後、御社に[[伺います]]。|내일 오후에 귀사에 찾아뵙겠습니다.|ひとつ[[伺って]]もよろしいですか。|하나 여쭤봐도 될까요?|来週のご都合はいかがですか。|水曜日の午後でしたら伺えます。|다음 주 사정은 어떠세요? / 수요일 오후라면 찾아뵐 수 있습니다.
+参る|まいる|가다, 오다(겸양)|[겸양어(丁重語)] 行く・来る의 겸양. 듣는 사람에게 정중하게 말하는 용법이라 윗사람 앞에서 자신의 이동을 말할 때 씁니다. 「参ります」는 방송이나 안내에도 나옵니다.|すぐに担当の者が[[参ります]]。|바로 담당자가 오겠습니다.|来週、京都へ[[参る]]予定です。|다음 주에 교토에 갈 예정입니다.|お客様をお待たせしています。|承知しました。すぐに参ります。|손님을 기다리게 하고 있어요. / 알겠습니다. 바로 가겠습니다.
+いただく|いただく|받다, 먹다(겸양)|[겸양어] もらう・食べる・飲む의 겸양어. 「いただきます」는 식사 전 인사로도 씁니다. 「〜ていただく」는 상대에게 은혜를 받는 겸양 표현입니다.|このお菓子、家族で[[いただきました]]。|이 과자, 가족끼리 잘 먹었습니다.|先生に貴重なお時間を[[いただき]]、ありがとうございます。|선생님께 귀중한 시간을 내주셔서 감사합니다.|コーヒーでもいかがですか。|ありがとうございます。いただきます。|커피라도 한 잔 어떠세요? / 감사합니다. 잘 마시겠습니다.
+拝見する|はいけんする|보다(겸양)|[겸양어] 見る의 겸양어. 상대가 준 자료·작품을 내가 볼 때 씁니다. 「拝見します」「拝見しました」. 상대의 행동에는 「ご覧になる」를 씁니다.|先日の企画書を[[拝見しました]]。|일전의 기획서를 봤습니다.|資料を[[拝見して]]、いくつか質問があります。|자료를 보고 몇 가지 질문이 있습니다.|こちらが見積書です。|ありがとうございます。さっそく拝見します。|이쪽이 견적서입니다. / 감사합니다. 바로 보겠습니다.
+存じる|ぞんじる|알다, 생각하다(겸양)|[겸양어] 知る・思う의 겸양어. 「存じております」는 알고 있다는 뜻이고, 「存じます」는 격식 있게 생각한다는 뜻입니다. 사람을 알고 있다고 할 때는 「存じ上げる」를 씁니다. 「ご存じ」(존경)와 구별하세요.|事情はよく[[存じております]]。|사정은 잘 알고 있습니다.|ご不便をおかけし、申し訳なく[[存じます]]。|불편을 끼쳐 죄송하게 생각합니다.|山田さんをご存じですか。|はい、お名前は存じ上げておりますが、お会いしたことはありません。|야마다 씨를 아세요? / 네, 성함은 알고 있지만 만난 적은 없습니다.
+お目にかかる|おめにかかる|뵙다(겸양)|[겸양어] 会う의 겸양어. 윗사람이나 손님을 만날 때 씁니다. 「お目にかかれて光栄です」는 첫 만남 인사로도 씁니다. 「お会いする」보다 한층 격식 있습니다.|初めて[[お目にかかります]]。|처음 뵙겠습니다.|[[お目にかかれる]]日を楽しみにしております。|뵙게 될 날을 기대하고 있겠습니다.|初めまして。山田です。|初めまして。お目にかかれて光栄です。|처음 뵙겠습니다. 야마다입니다. / 처음 뵙겠습니다. 뵙게 되어 영광입니다.
+致す|いたす|하다(겸양)|[겸양어(丁重語)] する의 겸양어. 「いたします」는 업무 대화에서 매우 자주 쓰입니다. 대부분 히라가나로 쓰이며 「確認いたします」처럼 보조적으로 붙을 때는 히라가나가 원칙입니다.|この件は私どもで[[致します]]。|이 건은 저희가 하겠습니다.|お手伝いを[[致しましょう]]か。|도와드릴까요?|資料のコピーをお願いできますか。|かしこまりました。私が致します。|자료 복사를 부탁드릴 수 있을까요? / 알겠습니다. 제가 하겠습니다.
+ご案内する|ごあんないする|안내해 드리다|[겸양어] 「ご+동작명사+する」형의 겸양 표현. 손님을 안내하는 것은 내 쪽 동작이므로 겸양합니다. 「ご案内いたします」가 더 정중합니다.|会議室へ[[ご案内します]]。|회의실로 안내해 드리겠습니다.|受付の者が[[ご案内いたします]]。|접수 담당이 안내해 드리겠습니다.|社長にお会いしたいのですが。|こちらへどうぞ。私がご案内します。|사장님을 뵙고 싶은데요. / 이쪽으로 오세요. 제가 안내해 드리겠습니다.
+使わせていただく|つかわせていただく|사용하겠습니다(겸양 허락 표현)|[겸양어] 「〜(さ)せていただく」는 상대의 허락을 받아 한다는 겸양 표현입니다. 남용하면 지나치게 공손해지므로 허락이 필요한 장면에서 씁니다.|こちらの会議室を[[使わせていただきます]]。|이 회의실을 사용하겠습니다.|写真は広告に[[使わせていただいて]]もよろしいですか。|사진을 광고에 사용해도 괜찮을까요?|すみません、そのパソコンを少しお借りできますか。|ええ、どうぞご自由にお使いください。|죄송한데 그 컴퓨터를 잠깐 빌릴 수 있을까요? / 네, 자유롭게 쓰세요.
+ございます|ございます|있습니다, 입니다|[丁寧語(정중어)] ある의 정중 표현이며 「〜でございます」로 です의 정중형도 됩니다. 서비스업에서 자주 쓰며 존경도 겸양도 아닌 듣는 사람에 대한 정중함입니다.|こちらにお手洗いが[[ございます]]。|이쪽에 화장실이 있습니다.|お会計は三千円で[[ございます]]。|계산은 3천 엔입니다.|すみません、傘はありますか。|はい、入口の横にございます。|저기요, 우산 있나요? / 네, 입구 옆에 있습니다.
+恐れ入りますが|おそれいりますが|죄송합니다만|[丁寧語·쿠션어] 부탁이나 질문을 하기 전에 붙이는 정중한 말입니다. 「すみませんが」보다 격식 있어 비즈니스나 접객에서 씁니다.|[[恐れ入りますが]]、少々お待ちいただけますか。|죄송합니다만 잠시 기다려 주실 수 있을까요?|お忙しいところ[[恐れ入りますが]]、ご確認をお願いします。|바쁘신 중에 죄송합니다만 확인 부탁드립니다.|お電話ありがとうございます。|恐れ入りますが、お名前をお願いできますか。|전화 주셔서 감사합니다. / 죄송합니다만 성함을 알려 주실 수 있을까요?
+申し上げる|もうしあげる|말씀드리다|[겸양어] 言う의 겸양어로, 말하는 상대(윗사람)를 높입니다. 「申す」보다 상대를 높이는 뜻이 분명하며 「お礼申し上げます」「お願い申し上げます」처럼 문서·인사에서 자주 씁니다.|皆様に心よりお礼[[申し上げます]]。|여러분께 진심으로 감사 말씀 드립니다.|先生に正直な意見を[[申し上げた]]。|선생님께 솔직한 의견을 말씀드렸다.|何かご意見はありますか。|では、一つ申し上げてもよろしいでしょうか。|뭔가 의견 있으신가요? / 그럼 하나 말씀드려도 될까요?
+かしこまりました|かしこまりました|알겠습니다|[겸양어·丁寧語] 「承知しました」보다 접객에서 자주 쓰는 정중한 대답입니다. 손윗사람이나 손님의 요청을 받을 때 씁니다. 「了解しました」는 윗사람에게 부적절하므로 이 표현이 안전합니다.|五時までに提出ですね。[[かしこまりました]]。|5시까지 제출이군요. 알겠습니다.|[[かしこまりました]]。すぐに準備いたします。|알겠습니다. 바로 준비하겠습니다.|急ぎで、コピーを十部お願いします。|かしこまりました。お持ちします。|급해서 그러는데 복사 10부 부탁드립니다. / 알겠습니다. 가져다드리겠습니다.
+失礼いたします|しつれいいたします|실례하겠습니다|[겸양어(丁重語)] 방에 들어가거나 나올 때, 전화를 끊을 때, 먼저 자리를 뜰 때 쓰는 인사입니다. 「失礼します」보다 정중합니다.|それでは、これで[[失礼いたします]]。|그럼 이만 실례하겠습니다.|お先に[[失礼いたします]]。|먼저 실례하겠습니다.|今日はありがとうございました。|こちらこそ。では、失礼いたします。|오늘 감사했습니다. / 저야말로요. 그럼 실례하겠습니다.
+ご確認いただく|ごかくにんいただく|확인해 주시다|[겸양어] 「ご+동작명사+いただく」형. 상대가 해 주는 행위를 내가 받는 형태로 말해 상대를 높이며, 확인을 부탁할 때 쓰는 비즈니스 정형입니다. 「ご確認いただけますでしょうか」는 매우 정중하며 「ご確認ください」보다 부드럽습니다.|添付の資料を[[ご確認いただけます]]か。|첨부 자료를 확인해 주실 수 있을까요?|契約書の内容を[[ご確認いただき]]、問題なければご署名ください。|계약서 내용을 확인해 주시고 문제없으면 서명해 주세요.|まだ資料が届いていないのですが。|失礼しました。再送しますので、ご確認いただけますでしょうか。|아직 자료가 도착하지 않았는데요. / 실례했습니다. 다시 보낼 테니 확인해 주실 수 있을까요?
+お待ちください|おまちください|기다려 주세요|[존경어] 「お+동사 ます형+ください」형의 존경 의뢰 표현. 상대의 동작(待つ)을 높여 기다려 달라고 할 때 씁니다. 「お待ちくださいませ」는 더 부드러운 접객 표현입니다.|席に座って[[お待ちください]]。|자리에 앉아서 기다려 주세요.|こちらで[[お待ちくださいませ]]。|이쪽에서 기다려 주십시오.|書類はいつできますか。|三十分ほどかかりますので、ロビーでお待ちください。|서류는 언제 되나요? / 30분 정도 걸리니 로비에서 기다려 주세요.`;/*CONV-END*/
+/* 어색한 문장 찾기 — 형식: 틀린문장|올바른문장|이유 */
+/*ERR-START*/const ERR_RAW=`私は昨日友達を会いました。|私は昨日友達に会いました。|「会う」は相手を「に」で取ります。「を」は使えません。
+学校を行きます。|学校に行きます。|「行く」の目的地は「に」か「へ」で表します。「を」は不自然です。
+図書館に本を読みます。|図書館で本を読みます。|動作が行われる場所は「で」を使います。「に」は存在や到着点に使います。
+私は日本語が勉強します。|私は日本語を勉強します。|「勉強する」の対象は「を」で表します。「が」にすると意味が通りません。
+毎朝バスを乗ります。|毎朝バスに乗ります。|「乗る」は乗り物を「に」で取ります。「を」は使いません。
+次の駅で電車で降ります。|次の駅で電車を降ります。|降りる乗り物（離れるもの）は「を」で表します。駅などの場所は「で」で問題ありませんが、乗り物に「で」を使うと不自然です。
+友達に映画を見ました。|友達と映画を見ました。|一緒に何かをする相手は「と」で表します。「に」だと相手に向けた行為になります。
+庭に猫がある。|庭に猫がいる。|生き物の存在は「いる」を使い、物には「ある」を使います。
+教室に先生があります。|教室に先生がいます。|人や動物が存在するときは「ある」ではなく「いる」です。
+ここでいます。|ここにいます。|存在する場所は「に」で表します。「で」は動作の場所に使います。
+誰は来ましたか。|誰が来ましたか。|疑問詞が主語のときは「は」ではなく「が」を使います。
+私はコーヒーを好きです。|私はコーヒーが好きです。|「好き」は対象を「が」で取る形容動詞です。「を」は不自然です。
+私は日本語を上手です。|私は日本語が上手です。|「上手だ」は対象を「が」で表します。
+友達の誕生日にプレゼントをくれました。|友達の誕生日にプレゼントをあげました。|自分が相手に渡すときは「あげる」を使います。「くれる」は相手が自分に渡すときに使います。
+日本語を分かりますか。|日本語が分かりますか。|「分かる」は対象を「が」で取ります。
+今日に学校へ行きます。|今日、学校へ行きます。|「今日」「明日」「昨日」などには普通「に」を付けません。
+ご飯を食べるました。|ご飯を食べました。|「ます」の前は連用形です。「食べる」の辞書形は付けません。
+水を飲むて、薬を飲みました。|水を飲んで、薬を飲みました。|「飲む」のて形は「飲んで」です。「む」は「んで」に変わります。
+昨日は何も食べないでした。|昨日は何も食べませんでした。|丁寧な過去否定は「食べませんでした」です。「ないでした」とは言いません。
+今日は暑くないでした。|今日は暑くなかったです。|い形容詞の過去否定は「くなかったです」です。「ないでした」は不自然です。
+昨日の映画は面白いでした。|昨日の映画は面白かったです。|い形容詞の過去は「かった」にします。「いでした」は使いません。
+行かないください。|行かないでください。|否定の依頼は「ないでください」です。
+毎日走るています。|毎日走っています。|「走る」のて形は「走って」です。辞書形に「ています」は付けません。
+高いな山に登りました。|高い山に登りました。|い形容詞は「な」を付けずにそのまま名詞を修飾します。
+静かい部屋が好きです。|静かな部屋が好きです。|「静か」はな形容詞なので、名詞の前では「静かな」になります。
+きれい花を買いました。|きれいな花を買いました。|な形容詞が名詞を修飾するときは「な」が必要です。
+今日は静かだので、勉強できます。|今日は静かなので、勉強できます。|な形容詞に「ので」が続くときは「だ」ではなく「な」にします。
+昨日は元気だったです。|昨日は元気でした。|名詞とな形容詞の丁寧な過去は「でした」です。「だったです」は不自然です。
+先生が昨日そう申しました。|先生が昨日そうおっしゃいました。|先生の行為に謙譲語の「申す」は使えません。尊敬語の「おっしゃる」を使います。
+明日、私が御社にいらっしゃいます。|明日、私が御社に伺います。|自分の行為に尊敬語の「いらっしゃる」は使えません。謙譲語の「伺う」か「参る」を使います。
+私が先生の荷物をお持ちになります。|私が先生の荷物をお持ちします。|「お持ちになる」は尊敬語です。自分の行為は「お持ちする」と謙譲語にします。
+部長、こちらの資料を拝見してください。|部長、こちらの資料をご覧ください。|「拝見する」は謙譲語なので、相手にすすめる場面では尊敬語の「ご覧になる」を使います。
+先生、あなたは来週来ますか。|先生は来週いらっしゃいますか。|目上の人に「あなた」は失礼です。名前や役職で呼び、尊敬語を使います。
+私は私の母に私のカバンを渡しました。|母にカバンを渡しました。|日本語では分かる主語や持ち主を何度も言いません。繰り返すと不自然です。
+風邪をかかりました。|風邪を引きました。|「風邪」には「引く」を使います。「かかる」なら「風邪にかかる」です。
+薬を食べます。|薬を飲みます。|薬は「食べる」ではなく「飲む」と言います。
+帽子を着ています。|帽子をかぶっています。|帽子は「着る」ではなく「かぶる」を使います。
+これは先生の本ありますか。|これは先生の本ですか。|「これは何々ですか」と聞く文に「ある」は使いません。
+毎朝公園に散歩します。|毎朝公園を散歩します。|「散歩する」は通る場所を「を」で表します。「に」は不自然です。
+ドアが開けています。|ドアが開いています。|「開ける」は他動詞なので「ドアを開ける」と言います。「ドアが」で状態を表すときは自動詞「開く」を使い「開いています」にします。`;/*ERR-END*/
+/* 격식 판별 — 형식: 상황|알맞은 문장|부적절1|부적절2|이유 */
+/*FORMAL-START*/const FORMAL_RAW=`친한 친구에게 점심을 같이 먹자고 제안할 때|昼ごはん、一緒に食べようよ。|昼食をご一緒させていただけませんでしょうか。|昼ごはん、一緒に食え。|친구 사이에는 반말이 자연스럽습니다. 첫 번째는 친구에게 너무 딱딱하고, 두 번째는 명령조라 거칩니다.
+거래처 회사에 내일 방문하겠다고 말할 때|明日、御社に伺います。|明日、御社にいらっしゃいます。|明日、御社に行くよ。|자신의 행동에는 겸양어 「伺う」를 씁니다. 「いらっしゃる」는 존경어라 틀리고, 반말은 거래처에 너무 가볍습니다.
+상사에게 점심을 드셨는지 물을 때|部長、もうお昼を召し上がりましたか。|部長、もうお昼をいただきましたか。|部長、もう昼飯食った？|상대의 행동에는 존경어 「召し上がる」를 씁니다. 「いただく」는 겸양어라 상사에게 쓰면 안 되고, 반말은 무례합니다.
+손님에게 잠시 기다려 달라고 부탁할 때|少々お待ちください。|少々お待ちしてください。|ちょっと待っててね。|상대에게 요청할 때는 「お待ちください」입니다. 「お待ちする」는 겸양 표현이라 틀리고, 반말은 손님에게 가볍습니다.
+면접에서 자기소개를 할 때|田中と申します。よろしくお願いいたします。|田中でいらっしゃいます。よろしくお願いいたします。|田中だよ。よろしくね。|자신의 이름에는 겸양어 「申す」를 씁니다. 「いらっしゃる」는 존경어라 자신에게 쓸 수 없고, 반말은 면접에 맞지 않습니다.
+어머니에게 배고프다고 말할 때|お母さん、お腹すいた。|お母様、お腹がお空きになりました。|私は空腹でございます、母上。|가족 사이에서는 반말이 자연스럽습니다. 두 번째는 자기 배고픔에 존경어를 써서 틀리고, 세 번째는 지나치게 딱딱합니다.
+선생님께 책을 빌려도 되는지 물을 때|先生、この本をお借りしてもよろしいでしょうか。|先生、この本をお借りになってもよろしいでしょうか。|先生、この本借りていい？|자신의 행동은 겸양 「お借りする」입니다. 「お借りになる」는 존경어라 틀리고, 반말은 선생님께 무례합니다.
+같은 또래 동료에게 회의 시간을 물을 때|会議、何時からだっけ？|会議は何時から開催される予定でございますでしょうか。|会議、何時からか教えろよ。|가까운 동료에게는 편한 말투가 자연스럽습니다. 두 번째는 지나치게 격식을 차렸고, 세 번째는 명령조라 거칩니다.
+손님에게 이름을 알려 달라고 할 때|お名前をお聞かせいただけますか。|お名前を申し上げてください。|お前の名前は？|상대에게 부탁할 때는 정중한 의뢰형이 알맞습니다. 「申し上げる」는 겸양어라 상대의 행동에 쓸 수 없고, 세 번째는 무례합니다.
+외부 손님에게 자기 회사 사장님이 외출했다고 말할 때|社長の山田は、ただいま外出しております。|社長の山田様は、ただいま外出されております。|社長は今いないよ。|외부 사람에게는 자기 회사 사람을 높이지 않습니다. 「様」와 존경어는 맞지 않고, 반말은 비즈니스에 너무 가볍습니다.
+가게에서 손님에게 자리에 앉으시라고 권할 때|こちらにお掛けください。|こちらにお掛けしてください。|ここ座って。|상대에게 권할 때는 「お掛けください」입니다. 「お掛けする」는 겸양 표현이라 틀리고, 반말은 손님에게 가볍습니다.
+어린 자녀에게 손 씻고 간식을 먹자고 말할 때|手を洗ってから、おやつを食べようね。|手洗いの後に間食を召し上がってください。|手洗え、おやつはそれからだ。|아이에게는 부드러운 반말이 자연스럽습니다. 두 번째는 아이에게 지나치게 딱딱하고, 세 번째는 거친 명령조입니다.
+한 해 선배에게 어제 도와줘서 고맙다고 말할 때|先輩、昨日はありがとうございました。助かりました。|先輩、昨日はサンキュー。助かった。|先輩、昨日は誠に恐縮至極に存じます。|선배에게는 정중체가 알맞습니다. 두 번째는 반말이라 선배에게 가볍고, 세 번째는 문법상 틀린 문장은 아니지만 극도로 격식을 차린 사죄조 표현이라 가까운 선배에게 하는 감사 인사로는 상황에 맞지 않습니다.
+식당에서 손님에게 음식을 드셔 보라고 권할 때|よろしければ、お召し上がりください。|よろしければ、いただいてください。|よかったら食べてみ。|손님이 먹는 행동에는 존경어 「召し上がる」를 씁니다. 「いただく」는 겸양어라 틀리고, 반말은 손님에게 무례합니다.
+상사에게 자료를 확인했다고 보고할 때|部長、資料を拝見しました。|部長、資料をご覧になりました。|部長、資料見たよ。|자신의 행동에는 겸양어 「拝見する」를 씁니다. 「ご覧になる」는 존경어라 자신에게 쓸 수 없고, 반말은 상사에게 무례합니다.
+상사가 도착했다고 다른 사람에게 알릴 때(상사를 높이는 상황)|部長がいらっしゃいました。|部長が参りました。|部長が来たぞ。|상사의 행동에는 존경어 「いらっしゃる」를 씁니다. 「参る」는 겸양어라 상사에게 맞지 않고, 반말은 무례합니다.
+거래처에 전화해서 담당자가 계신지 물을 때|恐れ入りますが、ご担当の方はいらっしゃいますか。|恐れ入りますが、ご担当の方は参りますか。|担当の人いる？|상대 쪽 사람의 존재에는 존경어 「いらっしゃる」를 씁니다. 「参る」는 겸양어라 틀리고, 반말은 전화 상대에게 가볍습니다.
+비즈니스 메일을 마무리할 때|何卒よろしくお願い申し上げます。|よろしくね！|ではでは、またねー。|비즈니스 메일의 끝인사는 격식 있는 표현이 알맞습니다. 첫 번째 오답은 가볍고, 두 번째 오답은 메일의 끝인사로 너무 캐주얼합니다.
+친구에게 일을 도와 달라고 부탁할 때|ちょっと手伝ってくれない？|お手すきの際にお手伝いを賜れれば幸甚に存じます。|ちょっと手伝え。|친구에게는 부드러운 반말 의뢰가 알맞습니다. 두 번째는 친구에게 지나치게 딱딱하고, 세 번째는 명령조라 거칩니다.
+처음 만난 연상의 이웃에게 이사 인사를 할 때|はじめまして、隣に越してきた佐藤です。どうぞよろしくお願いします。|はじめまして、隣に越してきた佐藤だよ。よろしくね。|はじめまして、隣に越してまいりました佐藤でいらっしゃいます。|처음 만난 연상의 이웃에게는 정중체가 알맞습니다. 반말은 가볍고, 세 번째는 자신에게 존경어 「いらっしゃる」를 써서 틀립니다.`;/*FORMAL-END*/
+
+/*PARSER-START*/
+/* ---------- 음성 파일명 규칙 (tools/make_audio.py와 동일해야 함) ----------
+   T = 원문에서 [[ ]] 제거 → 양끝 공백 제거 → NFC,  파일명 = "j" + FNV-1a 64bit(UTF-8 bytes of T) 소문자 16자리 hex */
+const audioKey=s=>String(s==null?"":s).replace(/\[\[|\]\]/g,"").trim().normalize("NFC");
+function fnv64(s){const by=new TextEncoder().encode(s);let h=0xcbf29ce484222325n;const PR=0x100000001b3n,M=0xffffffffffffffffn;
+  for(const b of by){h^=BigInt(b);h=(h*PR)&M}return h.toString(16).padStart(16,"0")}
+const FN_CACHE=new Map();
+function phraseFile(s){const k=audioKey(s);let n=FN_CACHE.get(k);if(!n){n="j"+fnv64(k);FN_CACHE.set(k,n)}return n}
+/* ---------- 일본어 비교용 정규화 (IME 입력 고려: NFKC · 공백 제거 · 가타카나→히라가나 동일시) ---------- */
+const kata2hira=s=>String(s).replace(/[\u30a1-\u30f6]/g,c=>String.fromCharCode(c.charCodeAt(0)-0x60));
+const nrm=s=>kata2hira(String(s==null?"":s).normalize("NFKC").toLowerCase()).replace(/\s+/g,"");
+const normAns=s=>nrm(s).replace(/[。、.,，．!?「」『』()（）…・~〜"'“”‘’]/g,"");
+function lcsLen(a,b){if(!a.length||!b.length)return 0;let prev=new Array(b.length+1).fill(0);
+  for(const ca of a){const cur=[0];for(let j=0;j<b.length;j++)cur.push(ca===b[j]?prev[j]+1:Math.max(prev[j+1],cur[j]));prev=cur}return prev[b.length]}
+/* 글자 단위 유사도(LCS, 0~1) — 공백이 없는 일본어용 (말하기 채점) */
+function charSim(target,given){const T=[...normAns(target)],G=[...normAns(given)];if(!T.length||!G.length)return 0;return 2*lcsLen(T,G)/(T.length+G.length)}
+/* 예문의 [[ ]] → 마커 제거 본문 jp + 빈칸 위치 a,b (마커 없으면 a=b=-1) */
+function splitMark(raw){raw=String(raw||"").trim();const jp=audioKey(raw),i=raw.indexOf("[["),j=i<0?-1:raw.indexOf("]]",i+2);
+  if(i<0||j<0)return {jp,a:-1,b:-1};
+  const pre=raw.slice(0,i).replace(/\[\[|\]\]/g,"").replace(/^\s+/,"").normalize("NFC"),mid=raw.slice(i+2,j).normalize("NFC");
+  let a=pre.length;if(!mid||jp.slice(a,a+mid.length)!==mid)a=mid?jp.indexOf(mid):-1;
+  return a<0?{jp,a:-1,b:-1}:{jp,a,b:a+mid.length}}
+/* ---------- 회화 데이터 파싱 (11칸) ---------- */
+function parseConv(raw){
+  const cats=[],items=[],seen=new Set();let cat=null;
+  raw.split("\n").forEach(l=>{l=l.trim();if(!l)return;
+    if(l[0]==="#"){const [k,n]=l.slice(1).split("|");cat={key:(k||"").trim(),name:(n||k||"").trim(),items:[]};cats.push(cat);return}
+    if(!cat)return;
+    const f=l.split("|").map(s=>s.trim());if(f.length!==11)console.warn(`표현 칸 수 ${f.length}/11:`,l);
+    const id="c:"+f[0].normalize("NFKC");if(!f[0]||seen.has(id))return;seen.add(id);
+    const dk=f[10]||"",cut=dk.indexOf(" / ");
+    const it={id,disp:f[0],reading:f[1]||"",ko:f[2]||"",note:f[3]||"",
+      ex:[[f[4],f[5]],[f[6],f[7]]].filter(x=>x[0]).map(([s,ko])=>({...splitMark(s),ko:ko||""})),
+      dlg:f[8]&&f[9]?[audioKey(f[8]),audioKey(f[9])]:null,
+      dlgKo:cut>=0?[dk.slice(0,cut).trim(),dk.slice(cut+3).trim()]:[dk,""],
+      si:cats.length-1,conv:true,nf:f.length};
+    cat.items.push(it);items.push(it)});
+  return {cats,items};
+}
+function parseErr(raw){return raw.split("\n").map(l=>l.trim()).filter(Boolean).map(l=>{const f=l.split("|").map(s=>s.trim());return {wrong:f[0],right:f[1],why:f[2],nf:f.length}})}
+function parseFormal(raw){return raw.split("\n").map(l=>l.trim()).filter(Boolean).map(l=>{const f=l.split("|").map(s=>s.trim());return {sit:f[0],ok:f[1],bad:[f[2],f[3]].filter(Boolean),why:f[4],nf:f.length}})}
+/*PARSER-END*/
+
+/* ==========================================================================
+   상태 · 저장 (영어 앱과 다른 키를 써서 충돌 없음)
+   ========================================================================== */
+const LS="storynihongo_v1";
+const DEF_ST=()=>({p:{},wrong:{},days:[],goal:10,today:{d:"",n:0},xp:0,scope:"all",set:{sfx:true,vol:.6,tts:true,auto:true,rate:.9,voice:"",gender:"f",vib:true,theme:"auto",qmode:"mix",qtypes:[],qlevel:"normal",furi:true},qs:{}});
+let st=(()=>{try{const s=JSON.parse(localStorage.getItem(LS)||"null");if(s){const d=DEF_ST();return {...d,...s,set:{...d.set,...(s.set||{})},today:s.today||d.today}}}catch(e){}return DEF_ST()})();
+const D=st;   // 진도 저장소 (p·wrong·today·goal·scope)
+const save=()=>{try{localStorage.setItem(LS,JSON.stringify(st))}catch(e){}};
+const DAY=864e5,GAP=[0,1,3,7,14,30],MASTER=6;
+const GAPS={easy:[0,1,2,4,8,16],normal:GAP,hard:[0,2,5,10,21,45]};  // 난이도별 복습 간격(일) — 쉬움 촘촘 / 어려움 넓게
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],app=$("#app");
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const tdy=()=>new Date().toDateString();
+const naver=w=>"https://ja.dict.naver.com/#/search?query="+encodeURIComponent(w);
+function applyTheme(){const t=st.set.theme;if(t==="auto")document.documentElement.removeAttribute("data-theme");else document.documentElement.setAttribute("data-theme",t)}
+applyTheme();
+
+/* ---------- 아이콘 (인라인 SVG) ---------- */
+const IC={
+ home:"M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z",
+ book:"M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5zM4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5",
+ list:"M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01",
+ note:"M6 3h12v18l-6-4-6 4zM9.5 8.5l5 5M14.5 8.5l-5 5",
+ sliders:"M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6",
+ vol:"M11 5 6 9H2v6h4l5 4zM15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14",
+ flame:"M12 2c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.5 1 2.5 2 3 0-3.5.5-6 1-8.5z",
+ check:"M5 12.5l4.5 4.5L19 7",x:"M6 6l12 12M18 6 6 18",
+ left:"M15 18l-6-6 6-6",right:"M9 18l6-6-6-6",
+ search:"M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM21 21l-4.35-4.35",
+ target:"M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2z",
+ refresh:"M20 11a8 8 0 0 0-14.9-3.5M4 4v4h4M4 13a8 8 0 0 0 14.9 3.5M20 20v-4h-4",
+ trash:"M4 7h16M10 11v6M14 11v6M5 7l1 13h12l1-13M9 7V4h6v3",
+ ext:"M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5",
+ star:"M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z",
+ ear:"M3 18v-6a9 9 0 0 1 18 0v6M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z",
+ pen:"M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z",
+ play:"M7 4l13 8-13 8z",
+ layers:"M12 3 2 8l10 5 10-5zM2 16l10 5 10-5M2 12l10 5 10-5",
+ bolt:"M13 2 4 14h7l-1 8 9-12h-7z",
+ trophy:"M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3",
+ info:"M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 11v6M12 7.5h.01",
+ swipe:"M9 11V5a2 2 0 0 1 4 0v6M13 10a2 2 0 0 1 4 0v2M17 11a2 2 0 0 1 4 0v4a6 6 0 0 1-6 6h-2a6 6 0 0 1-5-2.7L4.5 15a2 2 0 0 1 3.2-2.4L9 14",
+};
+const ic=(n,cls="")=>`<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true"><path d="${IC[n]}"/></svg>`;
+
+/* ==========================================================================
+   사운드: Web Audio 합성 효과음 (외부 파일 없음)
+   ========================================================================== */
+const SFX={ctx:null,out:null,
+  init(){try{if(!this.ctx){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;this.ctx=new AC();
+      const comp=this.ctx.createDynamicsCompressor();comp.threshold.value=-18;comp.ratio.value=4;
+      this.out=this.ctx.createGain();this.out.connect(comp);comp.connect(this.ctx.destination);}
+    if(this.ctx.state==="suspended")this.ctx.resume();}catch(e){}},
+  tone(f,t,d,{type="sine",g=.22,a=.006,f2=null,lp=null,det=0}={}){
+    const c=this.ctx,o=c.createOscillator(),v=c.createGain();o.type=type;o.frequency.setValueAtTime(f,t);o.detune.value=det;
+    if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+d);
+    v.gain.setValueAtTime(0.0001,t);v.gain.exponentialRampToValueAtTime(g,t+a);v.gain.exponentialRampToValueAtTime(0.0001,t+d);
+    let n=o;if(lp){const fl=c.createBiquadFilter();fl.type="lowpass";fl.frequency.value=lp;o.connect(fl);n=fl}
+    n.connect(v);v.connect(this.out);o.start(t);o.stop(t+d+.03);},
+  play(name,arg){
+    if(!st.set.sfx)return;this.init();if(!this.ctx)return;
+    this.out.gain.value=Math.max(0,Math.min(1,st.set.vol))*.55;const t=this.ctx.currentTime+.015,T=this.tone.bind(this);
+    switch(name){
+      case"tick":T(1850,t,.045,{type:"sine",g:.09,a:.002});break;
+      case"flip":T(520,t,.09,{type:"triangle",g:.08,f2:880,a:.004});break;
+      case"ok":[1046.5,1318.5,1568].forEach((f,i)=>{T(f,t+i*.075,.32,{type:"sine",g:.16});T(f*2,t+i*.075,.18,{type:"sine",g:.035})});break;
+      case"no":T(196,t,.26,{type:"triangle",g:.16,f2:165,lp:700});T(198.5,t,.26,{type:"sine",g:.1,f2:166,lp:600,det:8});break;
+      case"combo":{const k=Math.min(arg||1,12),base=659.25*Math.pow(2,k/12);T(base,t,.12,{type:"triangle",g:.1});T(base*1.5,t+.06,.16,{type:"sine",g:.09});break}
+      case"done":[523.25,659.25,783.99,1046.5].forEach((f,i)=>T(f,t+i*.11,.3,{type:"triangle",g:.14}));
+        [523.25,659.25,783.99,1046.5].forEach(f=>T(f,t+.5,.9,{type:"sine",g:.09}));T(2093,t+.5,.6,{type:"sine",g:.03});break;
+      case"level":for(let i=0;i<6;i++)T(523.25*Math.pow(2,i*4/12),t+i*.06,.22,{type:"sine",g:.11});T(1568,t+.4,.8,{type:"triangle",g:.08});T(2093,t+.45,.7,{type:"sine",g:.05});break;
+    }},
+};
+const buzz=p=>{try{if(st.set.vib&&navigator.vibrate)navigator.vibrate(p)}catch(e){}};
+["pointerdown","keydown","touchstart"].forEach(ev=>addEventListener(ev,()=>SFX.init(),{passive:true}));
+
+/* ---------- 발음: 미리 생성한 mp3 우선 → Web Speech(ja-JP) 폴백 ---------- */
+const PH=new Map();  // 미리 생성한 mp3가 있는 문장(audioKey) → Set(f|m)
+const TTS={voices:[],
+  ok:()=>"speechSynthesis" in window,
+  load(){if(!this.ok())return;this.voices=speechSynthesis.getVoices().filter(v=>/^ja[-_]/i.test(v.lang))},
+  best(){this.load();if(st.set.voice){const v=this.voices.find(v=>v.voiceURI===st.set.voice);if(v)return v}
+    const m=st.set.gender==="m",sc=v=>(/natural|neural|online/i.test(v.name)?10:0)+(/google/i.test(v.name)?3:0)
+      +((m?/keita|ichiro|daichi|naoki|male|男/i:/nanami|ayumi|haruka|sayaka|aoi|mayu|shiori|female|女/i).test(v.name)?2:0);
+    return [...this.voices].sort((a,b)=>sc(b)-sc(a))[0]||null},
+  audio:null,bad:new Set(),
+  stop(){try{if(this.audio){this.audio.pause();this.audio=null}}catch(e){}try{if(this.ok())speechSynthesis.cancel()}catch(e){}},
+  phrase(text,{g=null,force=false,onend=null}={}){ // 표현·예문·대화: audio/phrases/f|m/<j+hash>.mp3 우선
+    if(!(st.set.tts||force)){onend&&onend();return}
+    const k=audioKey(text),av=PH.get(k),want=g||(st.set.gender==="m"?"m":"f"),gg=av?(av.has(want)?want:[...av][0]):null;
+    const f=gg?`audio/phrases/${gg}/${phraseFile(k)}.mp3`:null;
+    if(!f||this.bad.has(f))return this.say(k,force,onend);
+    this.stop();let fell=false;const fb=()=>{if(fell)return;fell=true;this.bad.add(f);this.say(k,force,onend)};
+    try{const a=new Audio(f);a.playbackRate=st.set.rate;a.preservesPitch=true;this.audio=a;a.onerror=fb;if(onend)a.onended=onend;
+      const p=a.play();if(p&&p.catch)p.catch(e=>{if(e&&e.name!=="AbortError")fb()});}catch(e){fb()}},
+  say(text,force,onend){if(!this.ok()||!(st.set.tts||force)){onend&&onend();return}try{this.stop();
+    const u=new SpeechSynthesisUtterance(audioKey(text));const v=this.best();if(v){u.voice=v;u.lang=v.lang}else u.lang="ja-JP";
+    u.rate=st.set.rate;u.pitch=1;if(onend){u.onend=onend;u.onerror=onend}speechSynthesis.speak(u)}catch(e){onend&&onend()}}};
+if(TTS.ok()){TTS.load();speechSynthesis.onvoiceschanged=()=>TTS.load()}
+
+/* ---------- 컨페티 ---------- */
+const FX={c:$("#fx"),parts:[],raf:0,
+  burst(x,y,n=26,spread=1){if(RM)return;const cv=this.c;cv.width=innerWidth*devicePixelRatio;cv.height=innerHeight*devicePixelRatio;
+    const cols=["#5b5bf0","#8b5cf6","#ff8a4c","#12b886","#f5a524","#e0598b"];
+    for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,s=(3+Math.random()*6)*spread;this.parts.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-5*spread,r:3+Math.random()*4,c:cols[i%cols.length],l:60+Math.random()*30,rot:Math.random()*6})}
+    if(!this.raf)this.loop()},
+  loop(){const g=this.c.getContext("2d"),d=devicePixelRatio;g.clearRect(0,0,this.c.width,this.c.height);
+    this.parts=this.parts.filter(p=>p.l-->0);for(const p of this.parts){p.vy+=.28;p.vx*=.985;p.x+=p.vx;p.y+=p.vy;p.rot+=.15;
+      g.save();g.globalAlpha=Math.min(1,p.l/25);g.translate(p.x*d,p.y*d);g.rotate(p.rot);g.fillStyle=p.c;g.fillRect(-p.r*d,-p.r*d/2,p.r*2*d,p.r*d);g.restore()}
+    this.raf=this.parts.length?requestAnimationFrame(()=>this.loop()):(g.clearRect(0,0,this.c.width,this.c.height),0)}};
+
+/* ---------- 공통 UI ---------- */
+let KEY=null;
+addEventListener("keydown",e=>{if(KEY&&!e.altKey&&!e.ctrlKey&&!e.metaKey)KEY(e)});
+function view(html,{session=false}={}){app.className=session?"session":"";app.innerHTML=`<div class="view">${html}</div>`;$("#tabs").hidden=session;KEY=null;scrollTo(0,0)}
+function toast(msg){const t=document.createElement("div");t.className="toast";t.setAttribute("role","status");t.textContent=msg;document.body.appendChild(t);setTimeout(()=>t.remove(),1800)}
+let TAB="home";
+function tabs(){const T=[["home","홈","home"],["stories","카테고리","layers"],["words","표현장","list"],["wrong","오답노트","note"],["settings","설정","sliders"]];
+  $("#tabs").innerHTML=T.map(([k,n,i])=>`<button data-k="${k}" class="${TAB===k?"on":""}" aria-label="${n}" ${TAB===k?'aria-current="page"':""}>${ic(i)}<span>${n}</span></button>`).join("");
+  $$("#tabs button").forEach(b=>b.onclick=()=>{SFX.play("tick");go(b.dataset.k)})}
+function go(k){TAB=k;tabs();({home:scrHome,stories:scrCats,words:scrWords,wrong:scrWrong,settings:scrSettings})[k]()}
+
+/* ---------- 데이터 ---------- */
+const {cats:CATS,items:CITEMS}=parseConv(CONV_RAW);
+const ERRS=parseErr(ERR_RAW),FORMALS=parseFormal(FORMAL_RAW);
+{const add=(t,g)=>{const k=audioKey(t);if(!k)return;if(!PH.has(k))PH.set(k,new Set());PH.get(k).add(g)};
+ CITEMS.forEach(it=>{[it.disp,...it.ex.map(e=>e.jp)].forEach(t=>{add(t,"f");add(t,"m")});if(it.dlg){add(it.dlg[0],"f");add(it.dlg[1],"m")}});
+ [...ERRS.map(e=>e.right),...FORMALS.map(f=>f.ok)].forEach(t=>{add(t,"f");add(t,"m")});}
+const CAT_IC={greet:"home",shop:"trophy",travel:"target",work:"layers",request:"note",schedule:"list",phone:"ear",problem:"refresh",small:"pen",feel:"flame",idiom:"bolt",keigo:"star"};
+const CAT_HUE=["#5b5bf0","#0ea5a4","#e0598b","#f59e0b","#7c4dff","#16a34a","#ef6c3a","#3b82f6","#d946ef","#0891b2","#ca8a04","#64748b"];
+const SRC=window.SpeechRecognition||window.webkitSpeechRecognition||null;
+
+/* ---------- 진도 계산 ---------- */
+const P=id=>D.p[id];
+const isNew=w=>!D.p[w.id];
+const isMastered=w=>(D.p[w.id]?.b||0)>=MASTER;
+const isDue=w=>D.p[w.id]&&!isMastered(w)&&D.p[w.id].due<=Date.now();
+const allWords=()=>CITEMS;
+function scopeWords(sc){return sc==="all"?CITEMS:CITEMS.filter(w=>w.si===+sc)}
+function streak(){const d=new Set(st.days);let n=0,t=new Date();if(!d.has(t.toDateString()))t.setDate(t.getDate()-1);while(d.has(t.toDateString())){n++;t.setDate(t.getDate()-1)}return n}
+const level=xp=>Math.floor(Math.sqrt(xp/60))+1;
+const lvlRange=l=>[60*(l-1)**2,60*l**2];
+function rollToday(){if(D.today.d!==tdy())D.today={d:tdy(),n:0}}
+const scopeName=sc=>sc==="all"?"전체 카테고리":(CATS[+sc]?.name||"전체");
+const pctOf=(a,n)=>n?a/n*100:0;
+
+/* ---------- 표시 도우미 ---------- */
+const rb=w=>st.set.furi&&w.reading&&w.reading!==w.disp?`<ruby>${esc(w.disp)}<rt>${esc(w.reading)}</rt></ruby>`:esc(w.disp);   // 후리가나
+const wsz=w=>{const n=[...w.disp].length;return n>11?"sm":n>7?"md":""};
+const pickEx=it=>it.ex.length?it.ex[Math.random()*it.ex.length|0]:null;
+const hl=e=>e.a>=0?`${esc(e.jp.slice(0,e.a))}<mark>${esc(e.jp.slice(e.a,e.b))}</mark>${esc(e.jp.slice(e.b))}`:esc(e.jp);
+const sub2=t=>`<span class="src" style="font-size:14px;color:var(--sub)">${esc(t)}</span>`;
+const exRev=e=>e?`<div class="ex jp" lang="ja">${hl(e)}${sub2(e.ko)}</div>`:"";
+const dictLink=w=>`<a class="sub" href="${naver(w.disp)}" target="_blank" rel="noopener">네이버 일본어사전에서 보기 ${ic("ext")}</a>`;
+const sayBtn=(t,label="듣기")=>`<button class="ibtn plain" data-ph="${esc(t)}" aria-label="${label}">${ic("vol")}</button>`;
+function bindPh(root=document){root.querySelectorAll("[data-ph]").forEach(b=>b.onclick=ev=>{ev.stopPropagation();TTS.phrase(b.dataset.ph,{force:true})})}
+function playDialog(it){if(!it.dlg)return;TTS.phrase(it.dlg[0],{g:"f",force:true,onend:()=>setTimeout(()=>TTS.phrase(it.dlg[1],{g:"m",force:true}),250)})}
+// 설명의 첫 문장을 '상황'으로 사용 — 일본어가 섞여 있으면 정답 노출 위험이 있어 생략
+const sitText=it=>{const s=it.note.split(/[.。(]/)[0].trim();return /[\u3040-\u30ff\u3400-\u9fff]/.test(s)||s.length>80?"":s};
+function dlgHTML(it){return it.dlg?`<div class="dlg"><div class="row" style="margin-bottom:4px"><span class="kicker grow">${ic("ear")} 미니 대화</span><button class="btn ghost sm" data-dlg="1">${ic("play")} 대화 듣기</button></div>
+  <div class="bubble a jp" lang="ja"><b>A</b> ${esc(it.dlg[0])}${it.dlgKo[0]?`<span class="src">${esc(it.dlgKo[0])}</span>`:""}</div><div class="bubble b jp" lang="ja"><b>B</b> ${esc(it.dlg[1])}${it.dlgKo[1]?`<span class="src">${esc(it.dlgKo[1])}</span>`:""}</div></div>`:""}
+function exBlocks(it){return it.ex.map(e=>`<div class="ex jp" lang="ja"><div class="row" style="align-items:flex-start"><div class="grow">${hl(e)}</div>${sayBtn(e.jp,"예문 듣기")}</div>${sub2(e.ko)}</div>`).join("")}
+
+/* ==========================================================================
+   화면: 홈
+   ========================================================================== */
+function scrHome(){
+  rollToday();
+  const A=CITEMS,due=A.filter(isDue).length,learned=A.filter(w=>!isNew(w)).length,mast=A.filter(isMastered).length;
+  const score=A.reduce((s,w)=>s+Math.min(P(w.id)?.b||0,MASTER),0),pr=A.length?score/(A.length*MASTER)*100:0,pct=pr>0&&pr<10?+pr.toFixed(1):Math.round(pr);
+  const lv=level(st.xp),[,hi]=lvlRange(lv),sc=D.scope,goalLeft=Math.max(0,D.goal-D.today.n),C=2*Math.PI*52;
+  view(`<div class="top"><h1>스토리 일본어</h1>
+    <span class="chip fire" title="연속 학습일">${ic("flame")}${streak()}일</span><span class="chip lv" title="레벨">${ic("star")}Lv.${lv}</span></div>
+  <section class="hero" aria-label="오늘의 목표와 전체 진행률"><div class="row">
+      <div class="ring" role="img" aria-label="전체 진행률 ${pct}퍼센트"><svg viewBox="0 0 118 118"><circle class="bgc" cx="59" cy="59" r="52"/><circle class="fgc" id="ringfg" cx="59" cy="59" r="52" stroke-dasharray="${C}" stroke-dashoffset="${C}"/></svg>
+        <div class="lbl"><b>${pct}%</b><span>전체 진행</span></div></div>
+      <div class="grow col"><div style="font-size:13px;opacity:.85">오늘의 목표 · 새 표현 ${D.goal}개</div>
+        <div style="font-size:24px;font-weight:800;font-family:var(--font-en)">${Math.min(D.today.n,D.goal)} <span style="font-size:15px;opacity:.8">/ ${D.goal}</span></div>
+        <div class="bar"><i id="goalbar"></i></div><div style="font-size:12.5px;opacity:.85">${goalLeft?`목표까지 ${goalLeft}개 남았어요`:"오늘 목표 달성! 추가 학습도 좋아요"}</div></div></div>
+    <div class="stats"><div><b>${due}</b><span>복습할 표현</span></div><div><b>${learned}</b><span>학습한 표현</span></div><div><b>${mast}</b><span>암기 완료</span></div></div>
+    <div style="margin-top:14px;position:relative;z-index:1"><button class="btn white" id="start">${ic("play")} ${goalLeft||!due?"학습 시작":"복습 시작"} <span style="font-weight:600;opacity:.75;font-size:14px">· ${esc(scopeName(sc))}</span></button></div></section>
+  <div class="btns"><button class="btn alt sm" id="rev" ${due?"":"disabled"}>${ic("refresh")} 복습만 ${due}개</button><button class="btn alt sm" id="scope">${ic("target")} 카테고리 고르기</button></div>
+  <div class="card"><h3>${ic("layers")} 카테고리별 진도 <span class="mute" style="font-weight:600">· 표현 ${A.length}개</span></h3>
+    ${CATS.map((c,i)=>{const l=c.items.filter(w=>!isNew(w)).length;return `<div class="st" data-c="${i}" role="button" tabindex="0" aria-label="${esc(c.name)} 학습하기">
+      <div class="badge" style="background:${CAT_HUE[i%12]}">${ic(CAT_IC[c.key]||"star")}</div>
+      <div class="grow"><div class="nm">${esc(c.name)}</div><div class="bar"><i style="width:${pctOf(l,c.items.length)}%"></i></div></div>
+      <div class="mute" style="text-align:right;min-width:52px">${l}/${c.items.length}</div></div>`}).join("")}</div>
+  <p class="mute" style="text-align:center">Lv.${lv} · XP ${st.xp} (다음 레벨까지 ${hi-st.xp})</p>`);
+  requestAnimationFrame(()=>{const r=$("#ringfg");if(r)r.style.strokeDashoffset=C*(1-pct/100);const g=$("#goalbar");if(g)g.style.width=Math.min(100,D.today.n/D.goal*100)+"%"});
+  $("#start").onclick=()=>startSession(sc,"normal");$("#rev").onclick=()=>startSession("all","review");$("#scope").onclick=()=>{SFX.play("tick");go("stories")};
+  $$("[data-c]").forEach(el=>{const f=()=>{D.scope=String(el.dataset.c);save();SFX.play("tick");startSession(D.scope,"normal")};el.onclick=f;el.onkeydown=e=>{if(e.key==="Enter")f()}});
+}
+/* ==========================================================================
+   화면: 카테고리
+   ========================================================================== */
+function scrCats(){
+  const card=(sc,title,sub,ws,hue,icon)=>{const l=ws.filter(w=>!isNew(w)).length,m=ws.filter(isMastered).length;
+    return `<div class="card" style="${D.scope===sc?"outline:2px solid var(--pri)":""}"><div class="row"><div class="badge" style="background:${hue}">${ic(icon)}</div>
+      <div class="grow"><div style="font-weight:800">${esc(title)}</div><div class="mute jp" lang="ja">${esc(sub)}</div></div>${D.scope===sc?`<span class="pos">선택됨</span>`:""}</div>
+      <div class="bar" style="margin:12px 0 6px"><i style="width:${pctOf(l,ws.length)}%"></i></div><div class="mute">학습 ${l} · 암기 ${m} / ${ws.length}개</div>
+      <div class="btns"><button class="btn alt sm" data-pick="${sc}">${ic("target")} 학습 범위로</button><button class="btn sm" data-go="${sc}" ${ws.length?"":"disabled"}>${ic("play")} 바로 학습</button></div></div>`};
+  view(`<div class="top"><h1>카테고리</h1></div><p class="sub" style="margin-top:-6px">상황별로 일본에서 실제로 자주 쓰는 표현을 배워요 (JLPT N5~N2 실생활 회화)</p>
+    ${card("all","전체 카테고리",`${CATS.length}개 상황 모두`,CITEMS,"#171a2c","star")}
+    ${CATS.map((c,i)=>card(String(i),c.name,c.items.slice(0,3).map(x=>x.disp).join(" · ")+(c.items.length>3?" …":""),c.items,CAT_HUE[i%12],CAT_IC[c.key]||"star")).join("")}`);
+  $$("[data-pick]").forEach(b=>b.onclick=()=>{D.scope=b.dataset.pick;save();SFX.play("tick");toast(`학습 범위: ${scopeName(D.scope)}`);scrCats()});
+  $$("[data-go]").forEach(b=>b.onclick=()=>{D.scope=b.dataset.go;save();startSession(D.scope,"normal")});
+}
+
+/* ==========================================================================
+   학습 세션: 새 표현 카드 → 혼합 퀴즈 (오답은 같은 세션에서 재출제)
+   ========================================================================== */
+let SES=null;
+function startSession(sc,mode){
+  rollToday();
+  if(mode==="normal"&&st.set.qmode==="type"){   // 유형별 연습: 학습한 표현으로 선택 유형만
+    const pr=(st.set.qtypes||[]).filter(t=>QT[t]&&modeTypes().includes(t));
+    if(!pr.length){toast("설정에서 연습할 유형을 골라 주세요");return go("settings")}
+    const words=shuffle(scopeWords(sc).filter(w=>!isNew(w))).slice(0,10);
+    SES={sc,mode:"practice",fresh:[],due:words,practice:pr,ci:0,wrongSet:new Set(),correct:0,total:0,combo:0,best:0,xp0:st.xp,lv0:level(st.xp)};
+    planQueue();if(!SES.queue.length){SES=null;toast("이 유형은 학습한 표현이 있어야 해요. 먼저 혼합 학습을 해 주세요");return}
+    SFX.play("flip");return nextQ();
+  }
+  const pool=scopeWords(sc);let fresh=[],due=[];
+  if(mode==="wrong"){due=CITEMS.filter(w=>D.wrong[w.id])}
+  else{
+    due=pool.filter(isDue).sort((a,b)=>P(a.id).due-P(b.id).due).slice(0,30);
+    if(mode==="normal"){let n=Math.max(0,D.goal-D.today.n);if(!n&&!due.length)n=D.goal;fresh=pool.filter(isNew).slice(0,n)}
+  }
+  if(!fresh.length&&!due.length){toast(mode==="review"?"지금 복습할 표현이 없어요":"이 범위에 학습할 새 표현이 없어요");return}
+  SES={sc,mode,fresh,due,ci:0,wrongSet:new Set(),correct:0,total:0,combo:0,best:0,xp0:st.xp,lv0:level(st.xp)};
+  SFX.play("flip");
+  if(fresh.length)convCard();else{planQueue();nextQ()}
+}
+function sessTop(pct,label){return `<div class="stop"><button class="ibtn plain" id="quit" aria-label="학습 그만하기">${ic("x")}</button>
+  <div class="bar" role="progressbar" aria-valuenow="${Math.round(pct)}" aria-valuemin="0" aria-valuemax="100" aria-label="${label}"><i id="sbar" style="width:${pct}%"></i></div>
+  <span class="combo" id="combo">${SES.combo>=2?"×"+SES.combo:""}</span></div>`}
+function bindQuit(){$("#quit").onclick=()=>{if(confirm("학습을 그만둘까요? 이번 세션의 퀴즈 결과는 저장되지 않아요.")){TTS.stop();SES=null;go("home")}}}
+
+/* ---------- 새 표현 카드 ---------- */
+function convCard(dir=0){
+  const {fresh,ci}=SES,w=fresh[ci];
+  view(`${sessTop(ci/fresh.length*100,"새 표현 진행")}
+  <div class="row" style="margin:-6px 0 10px"><span class="kicker grow">${ic("star")} 새 표현 ${ci+1} / ${fresh.length}</span><span class="mute">${esc(CATS[w.si].name)}</span></div>
+  <div class="stage"><div class="drag" id="drag" style="${dir&&!RM?`transform:translateX(${dir*60}px);opacity:0`:""}">
+    <div class="flip tall" id="flip" role="button" tabindex="0" aria-label="카드 뒤집기: ${esc(w.disp)}">
+      <div class="face front"><span class="pos">표현</span><div class="word jp ${wsz(w)}" lang="ja">${rb(w)}</div>
+        <button class="ibtn" id="say1" aria-label="발음 듣기">${ic("vol")}</button><div class="hint">${ic("swipe")} 탭하면 뜻·예문 · 좌우로 넘기기</div></div>
+      <div class="face back"><div class="row"><div class="grow"><div class="word jp md" lang="ja" style="margin-top:0">${rb(w)}</div></div><button class="ibtn" id="say2" aria-label="발음 듣기">${ic("vol")}</button></div>
+        <div class="mean">${esc(w.ko)}</div>${dictLink(w)}<div class="note" style="margin-top:10px">${ic("info")}<div>${esc(w.note)}</div></div>
+        ${exBlocks(w)}${dlgHTML(w)}</div></div></div></div>
+  <div class="btns" style="margin-top:16px"><button class="btn alt" id="prev" ${ci?"":"disabled"} aria-label="이전 카드">${ic("left")} 이전</button>
+    <button class="btn" id="next">${ci+1<fresh.length?"다음":"퀴즈 시작"} ${ic("right")}</button></div>`,{session:true});
+  bindQuit();requestAnimationFrame(()=>{const d=$("#drag");if(d){d.style.transform="";d.style.opacity=""}});
+  const flip=$("#flip");let flipped=false;
+  const doFlip=()=>{flipped=!flipped;flip.classList.toggle("on",flipped);SFX.play("flip");buzz(8);if(flipped&&st.set.auto&&w.ex[0])TTS.phrase(w.ex[0].jp)};
+  const next=()=>{SFX.play("tick");if(SES.ci+1<fresh.length){SES.ci++;convCard(1)}else{planQueue();nextQ()}};
+  const prev=()=>{if(SES.ci>0){SFX.play("tick");SES.ci--;convCard(-1)}};
+  $("#say1").onclick=ev=>{ev.stopPropagation();TTS.phrase(w.disp,{force:true})};$("#say2").onclick=ev=>{ev.stopPropagation();TTS.phrase(w.disp,{force:true})};
+  bindPh(flip);flip.querySelectorAll("[data-dlg]").forEach(b=>b.onclick=ev=>{ev.stopPropagation();playDialog(w)});
+  flip.querySelectorAll("a").forEach(a=>a.onclick=ev=>ev.stopPropagation());
+  $("#next").onclick=next;$("#prev").onclick=prev;
+  const drag=$("#drag");let sx=null,sy=0,dx=0,moved=false;
+  flip.addEventListener("pointerdown",ev=>{if(ev.target.closest("button,a"))return;sx=ev.clientX;sy=ev.clientY;dx=0;moved=false;drag.style.transition="none"});
+  const mv=ev=>{if(sx==null)return;dx=ev.clientX-sx;if(Math.abs(dx)>8&&Math.abs(dx)>Math.abs(ev.clientY-sy))moved=true;if(moved)drag.style.transform=`translateX(${dx}px) rotate(${dx/30}deg)`};
+  addEventListener("pointermove",mv,{passive:true});
+  flip.addEventListener("pointerup",()=>{if(sx==null)return;drag.style.transition="";const d=dx;sx=null;removeEventListener("pointermove",mv);
+    if(moved&&d<-70){drag.style.transform="translateX(-120%)";drag.style.opacity="0";setTimeout(next,RM?0:180)}
+    else if(moved&&d>70&&SES.ci>0){drag.style.transform="translateX(120%)";drag.style.opacity="0";setTimeout(prev,RM?0:180)}
+    else{drag.style.transform="";if(!moved)doFlip()}});
+  flip.addEventListener("pointercancel",()=>{sx=null;drag.style.transition="";drag.style.transform=""});
+  flip.onkeydown=ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();doFlip()}};
+  KEY=ev=>{if(ev.target.tagName==="INPUT")return;if(ev.key==="ArrowRight")next();else if(ev.key==="ArrowLeft")prev();else if((ev.key===" "||ev.key==="Enter")&&ev.target===document.body){ev.preventDefault();doFlip()}else if(ev.key==="s")TTS.phrase(w.disp,{force:true})};
+  if(st.set.auto)setTimeout(()=>TTS.phrase(w.disp),RM?0:250);
+}
+
+function finish(){
+  const S=SES,now=Date.now();rollToday();
+  const all=[...S.fresh,...S.due];
+  for(const w of all){
+    const p=D.p[w.id]||(D.p[w.id]={b:0,due:0,ok:0,ng:0,first:now});
+    p.last=now;
+    if(S.wrongSet.has(w.id)){p.ng++;p.b=1;p.due=now+DAY;D.wrong[w.id]=(D.wrong[w.id]||0)+1}
+    else{p.ok++;p.b=Math.min(MASTER,(p.b||0)+1);p.due=p.b>=MASTER?now+90*DAY:now+(GAPS[st.set.qlevel]||GAP)[p.b]*DAY;if(D.wrong[w.id]&&!S.fresh.includes(w))delete D.wrong[w.id]}
+  }
+  if(S.mode==="wrong")for(const w of S.due)if(!S.wrongSet.has(w.id))delete D.wrong[w.id];
+  D.today.n+=S.fresh.length;
+  if(!st.days.includes(tdy())){st.days.push(tdy());st.days=st.days.slice(-400)}
+  const bonus=S.fresh.length*5;st.xp+=bonus;
+  save();
+  const lvUp=level(st.xp)>S.lv0,acc=S.done?Math.round(S.correct/S.done*100):100,gained=st.xp-S.xp0;
+  view(`<div style="text-align:center;padding-top:20px">
+    <div class="done-ico">${ic(lvUp?"trophy":"check")}</div>
+    <h2 style="margin:8px 0 2px;font-size:26px">${lvUp?`레벨 업! Lv.${level(st.xp)}`:"학습 완료!"}</h2>
+    <div class="sub">${D.today.n>=D.goal?"오늘의 목표를 달성했어요":"꾸준함이 실력이 돼요"} · 연속 ${streak()}일</div></div>
+    <div class="card"><div class="kv">
+      <div><b>${S.fresh.length}</b><span class="sub">새 표현</span></div><div><b>${S.due.length}</b><span class="sub">복습</span></div>
+      <div><b>${acc}%</b><span class="sub">정답률</span></div><div><b>+${gained}</b><span class="sub">XP</span></div>
+      <div><b>${S.best}</b><span class="sub">최고 콤보</span></div><div><b>${S.wrongSet.size}</b><span class="sub">틀린 표현</span></div></div>
+    ${S.wrongSet.size?`<div class="mute" style="margin-top:12px">틀린 표현은 오답노트에 담겼고 내일 다시 복습해요.</div>`:""}</div>
+    <div class="btns"><button class="btn alt" id="home">${ic("home")} 홈으로</button><button class="btn" id="more">${ic("refresh")} 한 번 더</button></div>`,{session:true});
+  SFX.play(lvUp?"level":"done");buzz([20,60,20]);
+  setTimeout(()=>{FX.burst(innerWidth/2,innerHeight*.28,70,1.2);if(lvUp)setTimeout(()=>FX.burst(innerWidth/2,innerHeight*.3,60,1.4),400)},120);
+  const sc=S.sc;SES=null;
+  $("#home").onclick=()=>go("home");$("#more").onclick=()=>startSession(sc,"normal");
+  KEY=ev=>{if(ev.key==="Enter")go("home")};
+}
+
+/* ==========================================================================
+   화면: 표현장
+   ========================================================================== */
+let WF={f:"all",q:"",s:"all"};
+function statusOf(w){if(D.wrong[w.id])return"w";if(isNew(w))return"n";if(isMastered(w))return"m";return"l"}
+function scrWords(){
+  const draw=()=>{
+    const q=WF.q.trim(),qn=nrm(q);
+    const ws=CITEMS.filter(w=>(WF.s==="all"||String(w.si)===WF.s)&&(WF.f==="all"||statusOf(w)===WF.f||(WF.f==="l"&&statusOf(w)==="w"))&&(!q||nrm(w.disp).includes(qn)||nrm(w.reading).includes(qn)||(w.ko||"").includes(q)));
+    $("#wl").innerHTML=ws.length?ws.slice(0,400).map(w=>{const s=statusOf(w),b=P(w.id)?.b||0;
+      return `<div class="wl" data-id="${esc(w.id)}" role="button" tabindex="0"><span class="dot ${s==="n"?"":s}" aria-label="${({n:"새 표현",l:"학습중",m:"암기 완료",w:"오답"})[s]}"></span>
+      <div class="grow"><b class="jp" lang="ja">${rb(w)}</b><div class="ko">${esc(w.ko)}</div></div>
+      <div class="lv" aria-label="복습 단계 ${b}">${[1,2,3,4,5,6].map(i=>`<i class="${b>=i?"on":""}"></i>`).join("")}</div>
+      <button class="ibtn plain" data-say="${esc(w.disp)}" aria-label="${esc(w.disp)} 발음">${ic("vol")}</button></div>`}).join("")+(ws.length>400?`<div class="mute" style="padding:10px">상위 400개만 표시 · 검색으로 좁혀 보세요</div>`:"")
+      :`<div class="empty">${ic("search")}<div>조건에 맞는 표현이 없어요</div></div>`;
+    $("#cnt").textContent=ws.length+"개";
+    $$("[data-say]").forEach(b=>b.onclick=e=>{e.stopPropagation();TTS.phrase(b.dataset.say,{force:true})});
+    $$(".wl").forEach(r=>{const f=()=>convSheet(CITEMS.find(w=>w.id===r.dataset.id));r.onclick=f;r.onkeydown=e=>{if(e.key==="Enter")f()}});
+  };
+  const F=[["all","전체"],["n","새 표현"],["l","학습중"],["m","암기 완료"],["w","오답"]];
+  view(`<div class="top"><h1>표현장</h1><span class="chip" id="cnt"></span></div>
+    <div class="search">${ic("search")}<input id="q" type="search" placeholder="일본어·읽기(히라가나)·한국어 뜻 검색" value="${esc(WF.q)}" aria-label="표현 검색"></div>
+    <div class="chips" role="tablist">${F.map(([k,n])=>`<button class="fchip ${WF.f===k?"on":""}" data-f="${k}" role="tab" aria-selected="${WF.f===k}">${n}</button>`).join("")}</div>
+    <select id="ss" aria-label="카테고리 필터" style="margin-top:6px"><option value="all">모든 카테고리</option>${CATS.map((c,i)=>`<option value="${i}" ${WF.s===String(i)?"selected":""}>${i+1}. ${esc(c.name)}</option>`).join("")}</select>
+    <div class="card" id="wl" style="padding:6px 14px"></div>`);
+  $("#q").oninput=e=>{WF.q=e.target.value;draw()};
+  $("#ss").onchange=e=>{WF.s=e.target.value;draw()};
+  $$("[data-f]").forEach(b=>b.onclick=()=>{WF.f=b.dataset.f;SFX.play("tick");$$("[data-f]").forEach(x=>{x.classList.toggle("on",x===b);x.setAttribute("aria-selected",x===b)});draw()});
+  draw();
+}
+function convSheet(w){
+  if(!w)return;SFX.play("tick");const p=P(w.id),bg=document.createElement("div");
+  bg.style.cssText="position:fixed;inset:0;background:rgba(10,12,30,.4);z-index:29;animation:viewIn .2s";
+  const sh=document.createElement("div");sh.className="sheet";sh.setAttribute("role","dialog");sh.setAttribute("aria-label",w.disp+" 상세");sh.style.maxHeight="84vh";sh.style.overflow="auto";
+  sh.innerHTML=`<div class="row"><div class="grow"><span class="pos">${esc(CATS[w.si].name)}</span><div class="word jp md" lang="ja">${rb(w)}</div></div><button class="ibtn" id="ws1" aria-label="발음">${ic("vol")}</button><button class="ibtn plain" id="wsx" aria-label="닫기">${ic("x")}</button></div>
+    <div class="mean">${esc(w.ko)}</div>${dictLink(w)}<div class="note" style="margin-top:8px">${ic("info")}<div>${esc(w.note)}</div></div>
+    <div class="mute" style="margin-top:8px">${p?`복습 단계 ${Math.min(p.b,MASTER)}/6 · 정답 ${p.ok} · 오답 ${p.ng} · 다음 복습 ${isMastered(w)?"암기 완료":new Date(p.due).toLocaleDateString("ko-KR")}`:"아직 학습하지 않은 표현"}</div>
+    ${exBlocks(w)}${dlgHTML(w)}
+    ${D.wrong[w.id]?`<button class="btn alt sm" id="wsw" style="margin-top:12px;width:100%">${ic("check")} 오답노트에서 빼기</button>`:""}`;
+  document.body.append(bg,sh);requestAnimationFrame(()=>sh.classList.add("show"));
+  const prevKey=KEY,close=()=>{sh.classList.remove("show");bg.remove();setTimeout(()=>sh.remove(),300);KEY=prevKey};KEY=e=>{if(e.key==="Escape")close()};
+  bg.onclick=close;sh.querySelector("#wsx").onclick=close;sh.querySelector("#ws1").onclick=()=>TTS.phrase(w.disp,{force:true});bindPh(sh);
+  sh.querySelectorAll("[data-dlg]").forEach(b=>b.onclick=()=>playDialog(w));
+  const ww=sh.querySelector("#wsw");if(ww)ww.onclick=()=>{delete D.wrong[w.id];save();close();toast("오답노트에서 뺐어요");go(TAB)};
+  sh.querySelector("#wsx").focus();
+}
+
+/* ==========================================================================
+   화면: 오답노트
+   ========================================================================== */
+function scrWrong(){
+  const ws=CITEMS.filter(w=>D.wrong[w.id]).sort((a,b)=>D.wrong[b.id]-D.wrong[a.id]);
+  view(`<div class="top"><h1>오답노트</h1><span class="chip" style="color:var(--no)">${ws.length}개</span></div>
+   <p class="sub" style="margin-top:-6px">틀린 표현이 모여요. 다음 세션에서 맞히면 자동으로 빠져요.</p>
+   <button class="btn" id="wgo" ${ws.length?"":"disabled"}>${ic("refresh")} 오답만 다시 풀기</button>
+   <div class="card" style="padding:6px 14px">${ws.length?ws.map(w=>`<div class="wl" data-id="${esc(w.id)}" role="button" tabindex="0"><span class="dot w"></span>
+     <div class="grow"><b class="jp" lang="ja">${rb(w)}</b><div class="ko">${esc(w.ko||"")}</div></div><span class="pos" style="background:var(--no-soft);color:var(--no)">${D.wrong[w.id]}회</span>
+     <button class="ibtn plain" data-say="${esc(w.disp)}" aria-label="${esc(w.disp)} 발음">${ic("vol")}</button></div>`).join("")
+     :`<div class="empty">${ic("trophy")}<div>아직 틀린 표현이 없어요</div></div>`}</div>`);
+  $("#wgo").onclick=()=>startSession("all","wrong");
+  $$("[data-say]").forEach(b=>b.onclick=e=>{e.stopPropagation();TTS.phrase(b.dataset.say,{force:true})});
+  $$(".wl").forEach(r=>{const f=()=>convSheet(CITEMS.find(w=>w.id===r.dataset.id));r.onclick=f;r.onkeydown=e=>{if(e.key==="Enter")f()}});
+}
+
+/* ==========================================================================
+   화면: 설정
+   ========================================================================== */
+const TEST_JA="こんにちは。一緒に日本語を勉強しましょう。";
+function scrSettings(){
+  TTS.load();
+  const sw=(id,on,label,sub)=>`<div class="set"><div class="grow"><b>${label}</b>${sub?`<span class="mute">${sub}</span>`:""}</div><label class="sw"><input type="checkbox" id="${id}" ${on?"checked":""} aria-label="${label}"><span></span></label></div>`;
+  view(`<div class="top"><h1>설정</h1></div>
+  <div class="card"><h3>${ic("target")} 하루 목표</h3><div class="seg" role="radiogroup" aria-label="하루 새 표현 수">${[5,10,15,20].map(n=>`<button role="radio" aria-checked="${D.goal===n}" class="${D.goal===n?"on":""}" data-g="${n}">${n}개</button>`).join("")}</div></div>
+  ${quizSettingsHTML()}
+  <div class="card"><h3>${ic("vol")} 소리</h3>
+    ${sw("sfx",st.set.sfx,"효과음","정답·오답·콤보·완료 사운드")}
+    <div class="set"><div class="grow"><b>효과음 음량</b><input type="range" id="vol" min="0" max="1" step="0.05" value="${st.set.vol}" aria-label="효과음 음량"></div></div>
+    ${sw("tts",st.set.tts,"발음(TTS)","끄면 듣기 유형(듣고 고르기·대화 듣기·따라 말하기)도 빠져요")}
+    ${sw("auto",st.set.auto,"자동 발음","카드에서 표현과 예문을 자동으로 읽어 줘요")}
+    <div class="set"><div class="grow"><b>발음 속도 <span id="rv" class="mute">${st.set.rate.toFixed(2)}×</span></b><input type="range" id="rate" min="0.5" max="1.3" step="0.05" value="${st.set.rate}" aria-label="발음 속도"></div></div>
+    <div class="set" style="display:block;padding:10px 0"><b>발음 음성 (일본어 신경망 녹음)</b>
+      <div class="seg" role="radiogroup" aria-label="발음 음성" style="margin-top:8px">${[["f","여성 · Nanami"],["m","남성 · Keita"]].map(([k,n])=>`<button role="radio" aria-checked="${st.set.gender===k}" class="${st.set.gender===k?"on":""}" data-gd="${k}">${n}</button>`).join("")}</div>
+      <div class="mute" style="margin-top:6px">표현·예문은 미리 녹음된 mp3(audio 폴더)로 재생하고, 파일이 없을 때는 아래 브라우저 음성을 써요. 대화는 A=여성, B=남성으로 들려줘요.</div></div>
+    <div class="set" style="display:block;padding:10px 0"><b>폴백용 브라우저 음성</b>
+      <select id="voice" style="margin-top:8px" aria-label="일본어 음성 선택"><option value="">자동 (ja-JP 고품질 우선)</option>${TTS.voices.map(v=>`<option value="${esc(v.voiceURI)}" ${st.set.voice===v.voiceURI?"selected":""}>${esc(v.name)} (${esc(v.lang)})</option>`).join("")}</select>
+      ${TTS.ok()&&!TTS.voices.length?`<div class="mute" style="margin-top:6px">이 기기에서 일본어 음성을 찾지 못했어요. mp3가 없는 문장은 소리가 안 날 수 있어요.</div>`:""}
+      <button class="btn alt sm" id="test" style="margin-top:8px">${ic("play")} 들어 보기</button></div>
+    ${sw("vib",st.set.vib,"진동","모바일에서 정답·오답 진동")}</div>
+  <div class="card"><h3>${ic("star")} 화면</h3>
+    ${sw("furi",st.set.furi,"후리가나(읽기) 표시","표현 위에 히라가나 읽기를 작게 보여 줘요")}
+    <div class="seg" role="radiogroup" aria-label="테마" style="margin-top:10px">${[["auto","시스템"],["light","라이트"],["dark","다크"]].map(([k,n])=>`<button role="radio" aria-checked="${st.set.theme===k}" class="${st.set.theme===k?"on":""}" data-th="${k}">${n}</button>`).join("")}</div></div>
+  <div class="card"><h3>${ic("refresh")} 학습 기록</h3><div class="sub">표현 ${CITEMS.length}개 · 카테고리 ${CATS.length}개 · 학습한 표현 ${Object.keys(D.p).length}개</div>
+    <div class="btns"><button class="btn alt sm" id="reset" style="color:var(--no)">${ic("trash")} 진도 초기화</button></div></div>
+  <p class="mute" style="text-align:center">콘텐츠는 이 앱을 위해 새로 쓴 오리지널 문장이에요 · 진도는 이 브라우저에만 저장돼요</p>`);
+  bindQuizSettings();
+  const bindSw=(id,k,after)=>{$("#"+id).onchange=e=>{st.set[k]=e.target.checked;save();SFX.play("tick");after&&after()}};
+  bindSw("sfx","sfx");bindSw("tts","tts");bindSw("auto","auto");bindSw("vib","vib",()=>buzz(20));bindSw("furi","furi");
+  $("#vol").oninput=e=>{st.set.vol=+e.target.value;save()};$("#vol").onchange=()=>SFX.play("ok");
+  $("#rate").oninput=e=>{st.set.rate=+e.target.value;$("#rv").textContent=st.set.rate.toFixed(2)+"×";save()};
+  $("#voice").onchange=e=>{st.set.voice=e.target.value;save();TTS.say(TEST_JA,true)};
+  $("#test").onclick=()=>TTS.say(TEST_JA,true);
+  $$("[data-gd]").forEach(b=>b.onclick=()=>{st.set.gender=b.dataset.gd;save();SFX.play("tick");TTS.phrase(CITEMS[0]?.disp||TEST_JA,{force:true});scrSettings()});
+  $$("[data-g]").forEach(b=>b.onclick=()=>{D.goal=+b.dataset.g;save();SFX.play("tick");scrSettings()});
+  $$("[data-th]").forEach(b=>b.onclick=()=>{st.set.theme=b.dataset.th;save();applyTheme();SFX.play("tick");scrSettings()});
+  $("#reset").onclick=()=>{if(confirm("학습 진도를 지울까요? (설정·XP·연속 학습일은 유지)")){Object.assign(D,{p:{},wrong:{},today:{d:"",n:0}});save();toast("학습 진도를 초기화했어요");go("home")}};
+}
+
+/* ==========================================================================
+   퀴즈 — 혼합 학습 플래너 + 유형 렌더러
+   cls: 0 보기형(쉬움) · 1 중간 · 2 주관식·말하기(어려움)
+   (영어 앱의 어순 배열·다중 빈칸·받아쓰기는 띄어쓰기/철자 기반이라 일본어에서 제거, 받아쓰기 → '듣고 문장 고르기')
+   ========================================================================== */
+const QT={
+  sit:{cls:0,name:"상황→표현",ic:"target"},trans:{cls:0,name:"번역 고르기",ic:"book"},dlg:{cls:0,name:"대화 완성",ic:"note"},
+  formal:{cls:0,name:"격식·말투 판별",ic:"star"},match:{cls:0,name:"짝 맞추기",ic:"layers"},
+  cloze:{cls:1,name:"빈칸 채우기(보기)",ic:"layers"},ldlg:{cls:1,name:"듣고 응답 고르기",ic:"ear"},err:{cls:1,name:"어색한 문장 찾기",ic:"x"},
+  dict:{cls:1,name:"듣고 문장 고르기",ic:"ear"},shadow:{cls:1,name:"따라 말하기",ic:"vol"},
+  typed:{cls:2,name:"주관식 빈칸",ic:"pen"},speak:{cls:2,name:"한→일 말하기",ic:"vol"},
+};
+const modeTypes=()=>Object.keys(QT).filter(t=>t!=="speak"||SRC);
+const qkey=t=>t;
+function qstat(t,ok){if(!st.qs)st.qs={};const s=st.qs[qkey(t)]||(st.qs[qkey(t)]={n:0,ok:0});s.n++;if(ok)s.ok++}
+const nOpt=()=>st.set.qlevel==="easy"?2:3;   // 오답 보기 수 — 쉬움 3지선다 · 보통/어려움 4지선다
+function convDistract(it,n=nOpt()){const same=shuffle(CITEMS.filter(x=>x.si===it.si&&x.id!==it.id)),other=shuffle(CITEMS.filter(x=>x.si!==it.si));
+  const out=[],seen=new Set([it.disp]);for(const x of [...same,...other]){if(!seen.has(x.disp)){seen.add(x.disp);out.push(x.disp)}if(out.length>=n)break}return out}
+// 다른 표현의 예문 (같은 카테고리 우선) — 번역 고르기·듣고 문장 고르기 오답
+function sentDistract(it,n=nOpt()){const same=shuffle(CITEMS.filter(x=>x.id!==it.id&&x.si===it.si)),other=shuffle(CITEMS.filter(x=>x.id!==it.id&&x.si!==it.si));
+  const out=[],seen=new Set(it.ex.map(e=>e.jp));for(const x of [...same,...other]){const e=pickEx(x);if(e&&!seen.has(e.jp)){seen.add(e.jp);out.push(e.jp)}if(out.length>=n)break}return out}
+/* 주관식 빈칸: 정답 = 문장에 표시된 활용형 원문 / 표현 표기(사전형) / 표현 읽기 / (추정 가능하면) 활용형의 히라가나 읽기 */
+function typedSpec(w){
+  const e=shuffle(w.ex.filter(e=>e.a>=0&&e.b>e.a))[0];if(!e)return null;
+  const t=e.jp.slice(e.a,e.b),acc=new Set([t,w.disp,w.reading].filter(Boolean).map(normAns)),kana=/^[\u3040-\u30ffー]*$/,r=kata2hira(w.reading||"");
+  if(r){let k=0;while(k<t.length&&k<w.disp.length&&t[k]===w.disp[k])k++;           // 持ち帰る/もちかえる → 持ち帰って ⇒ もちかえって
+    const dt=w.disp.slice(k),tt=t.slice(k);
+    if(k>0&&kana.test(dt)&&kana.test(tt)){const d=kata2hira(dt);if(r.endsWith(d))acc.add(normAns(r.slice(0,r.length-d.length)+tt))}
+    const i=t.indexOf(w.disp);                                                     // 久しぶり → お久しぶりです ⇒ おひさしぶりです
+    if(i>=0){const pre=t.slice(0,i),suf=t.slice(i+w.disp.length);if(kana.test(pre)&&kana.test(suf))acc.add(normAns(pre+r+suf))}}
+  return {text:e.jp,ko:e.ko,s:e.a,t,acc,e};
+}
+// 오답 보기에서 제외: 어떤 말에도 그럴듯한 범용 응답(맞장구·수락·사과 한마디)
+const GENERIC=/^(はい|ええ|うん|いいえ|いや|そうですね|そうだね|そうなんだ|なるほど|ありがとう(ございます)?|すみません|ごめん(なさい)?|大丈夫(です)?|了解(です)?|わかりました|分かりました|もちろん(です)?|いいですよ|いいよ)[。！!、…]*$/;
+let DLG_POOL=null;
+const dlgPool=()=>DLG_POOL||(DLG_POOL=CITEMS.filter(i=>i.dlg&&[...normAns(i.dlg[1])].length>=4&&!GENERIC.test(i.dlg[1])));
+function dlgOpts(it){const pool=dlgPool().filter(x=>x.id!==it.id&&x.dlg[1]!==it.dlg[1]),o=[...shuffle(pool.filter(x=>x.si!==it.si)),...shuffle(pool.filter(x=>x.si===it.si))];
+  return shuffle([it.dlg[1],...[...new Set(o.map(x=>x.dlg[1]))].slice(0,nOpt())])}
+function availTypes(w){
+  const t=["sit","trans"];if(w.dlg){t.push("dlg");if(st.set.tts)t.push("ldlg")}
+  if(w.ex.some(e=>e.a>=0)){t.push("cloze");if(typedSpec(w))t.push("typed")}
+  if(st.set.tts&&w.ex.length)t.push("dict","shadow");if(SRC&&w.ex.length)t.push("speak");
+  return t;
+}
+function pickType(w,{first=false,fresh=false,exclude=[]}={}){
+  let av=availTypes(w).filter(t=>!exclude.includes(t));
+  if(SES&&SES.practice){const p=av.filter(t=>SES.practice.includes(t));return p.length?shuffle(p)[0]:null}
+  if(!av.length)return availTypes(w)[0]||"sit";
+  if(first){const e=av.filter(t=>QT[t].cls===0);if(e.length)av=e}     // 첫 학습은 보기형
+  if(st.set.qlevel==="hard"&&av.includes("typed"))av=av.filter(t=>t!=="cloze");   // 어려움: 보기 빈칸 → 주관식 빈칸
+  const b=P(w.id)?.b||0,L=st.set.qlevel;
+  const wt=t=>{const c=QT[t].cls;let x=c===0?(fresh?1:Math.max(.25,1-.15*b)):c===1?1:(fresh?.3:.3+.25*b);  // 복습 단계↑ → 어려운 유형↑
+    if(L==="easy")x*=c===2?.4:c===0?1.4:1;if(L==="hard")x*=c===2?2:c===0?.6:1;
+    const s=st.qs&&st.qs[qkey(t)];if(s&&s.n>=5&&s.ok/s.n<.7)x*=1.6;   // 약한 유형(정답률 70% 미만, 5회 이상) 비중↑
+    return x};
+  const ws=av.map(wt),sum=ws.reduce((a,c)=>a+c,0);let r=Math.random()*sum;
+  for(let i=0;i<av.length;i++){r-=ws[i];if(r<=0)return av[i]}return av[av.length-1];
+}
+function matchSet(pool){const out=[],ds=new Set(),ks=new Set();
+  const add=w=>{if(out.length>=6||!w||!w.ko||ds.has(w.disp)||ks.has(w.ko))return;ds.add(w.disp);ks.add(w.ko);out.push(w)};
+  shuffle(pool).forEach(add);if(out.length<6)shuffle(CITEMS.filter(w=>!isNew(w))).forEach(add);if(out.length<6)shuffle(scopeWords(D.scope)).forEach(add);return out}
+function noConsec(q){for(let pass=0;pass<3;pass++)for(let i=1;i<q.length;i++){if(q[i].t!==q[i-1].t)continue;
+    let j=i+1;while(j<q.length&&q[j].t===q[i-1].t)j++;
+    if(j<q.length)[q[i],q[j]]=[q[j],q[i]];else if(q[i].w){const t=pickType(q[i].w,{exclude:[q[i-1].t]});if(t&&t!==q[i-1].t)q[i].t=t}}return q}
+function insertBonus(q,item){q.splice(Math.max(1,Math.floor(q.length*(.3+Math.random()*.6))),0,item)}
+function planQueue(){
+  const pr=SES.practice;let q=[];
+  if(!pr){
+    const first=SES.fresh.map(w=>({w,t:pickType(w,{first:true,fresh:true})}));
+    const rest=[...first.map(f=>({w:f.w,t:pickType(f.w,{fresh:true,exclude:[f.t]})})),...SES.due.map(w=>({w,t:pickType(w)}))];
+    q=[...shuffle(first),...shuffle(rest)];
+    const pool=[...SES.fresh,...SES.due];
+    if(pool.length>=3)insertBonus(q,{t:"match",w:null,set:matchSet(pool)});
+    if(ERRS.length)insertBonus(q,{t:"err",w:null,e:shuffle(ERRS)[0]});
+    if(FORMALS.length&&Math.random()<.6)insertBonus(q,{t:"formal",w:null,f:shuffle(FORMALS)[0]});
+  }else{
+    const words=SES.due;words.forEach(w=>{const t=pickType(w);if(t)q.push({w,t})});
+    if(pr.includes("match")&&words.length>=3){q.push({t:"match",w:null,set:matchSet(words)});if(words.length>=8)q.push({t:"match",w:null,set:matchSet(shuffle(words).slice(0,6))})}
+    if(pr.includes("err"))shuffle(ERRS).slice(0,6).forEach(e=>q.push({t:"err",w:null,e}));
+    if(pr.includes("formal"))shuffle(FORMALS).slice(0,5).forEach(f=>q.push({t:"formal",w:null,f}));
+    q=shuffle(q);
+  }
+  SES.queue=noConsec(q);SES.total=SES.queue.length;SES.done=0;
+}
+function requeue(w,t){if(!w)return;const q=SES.queue,pos=Math.min(3,q.length);let tt=t;const nb=[q[pos-1]?.t,q[pos]?.t];
+  if(nb.includes(tt)){const alt=availTypes(w).filter(x=>!nb.includes(x));if(alt.length)tt=shuffle(alt)[0]}q.splice(pos,0,{w,t:tt});SES.total++}
+function nextQ(){if(!SES)return;if(!SES.queue.length)return finish();const item=SES.queue[0];return (NEWQ[item.t]||fallbackQ)(item)}
+const fallbackQ=item=>{if(item.w){item.t="sit";return nextQ()}item.t="err";item.e=item.e||shuffle(ERRS)[0];if(!item.e)SES.queue.shift();return nextQ()};
+
+/* ---------- 공통 화면·채점 ---------- */
+function qview(item,body,opts=null,optCls=""){
+  const k=QT[item.t];
+  view(sessTop(SES.done/SES.total*100,"퀴즈 진행")+`<div class="kicker">${ic(k.ic)} ${k.name}</div>`+body+
+    (opts?`<div class="opts" role="group" aria-label="보기">${opts.map((o,i)=>`<button class="opt ${optCls}" data-i="${i}"${/\bjp\b/.test(optCls)?' lang="ja"':""}><span class="k">${i+1}</span><span>${esc(o)}</span></button>`).join("")}</div>`:"")+
+    `<div class="sheet" id="sheet" role="status" aria-live="assertive"></div>`,{session:true});
+  bindQuit();if(SES.combo>=2)$("#combo").textContent="×"+SES.combo;SES._ans=false;
+}
+function bindOpts(item,opts,correct,reveal,extra={}){
+  const bs=$$(".opt");
+  const pick=i=>{if(SES._ans)return;const ok=opts[i]===correct;
+    bs.forEach((c,j)=>{c.disabled=true;if(opts[j]===correct)c.classList.add("ok");else if(j!==i)c.classList.add("dim")});if(!ok)bs[i].classList.add("no");
+    settle(item,ok,{reveal:reveal(ok,opts[i]),...extra})};
+  bs.forEach((b,i)=>b.onclick=()=>pick(i));
+  KEY=ev=>{const n=+ev.key;if(n>=1&&n<=opts.length&&!SES._ans){ev.preventDefault();pick(n-1)}};
+}
+function settle(item,ok,o={}){
+  if(SES._ans)return;SES._ans=true;const w=item.w;
+  SES.done++;$("#sbar").style.width=(SES.done/SES.total*100)+"%";qstat(item.t,ok);
+  if(ok){SES.correct++;SES.combo++;SES.best=Math.max(SES.best,SES.combo);st.xp+=Math.max(2,Math.round((10+Math.min(SES.combo,10))*(o.xpMul??1)));
+    SFX.play("ok");if(SES.combo>=3){const cb=SES.combo;setTimeout(()=>SFX.play("combo",cb),260)}buzz(15);
+    const c=$("#combo");c.textContent=SES.combo>=2?"×"+SES.combo:"";c.classList.remove("bump");void c.offsetWidth;c.classList.add("bump");
+    const tgt=document.querySelector(".opt.ok,.spell.ok,.mgrid")||$(".qcard");if(tgt){const r=tgt.getBoundingClientRect();FX.burst(r.left+r.width/2,r.top+Math.min(r.height/2,180),SES.combo>=5?34:18,.8)}
+    $(".qcard")?.classList.add("green-flash");SES.queue.shift();}
+  else{SES.combo=0;$("#combo").textContent="";if(w)SES.wrongSet.add(w.id);SFX.play("no");buzz([30,40,30]);$(".qcard")?.classList.add("shake");
+    SES.queue.shift();if(w&&!o.noRequeue)requeue(w,item.t);}
+  const sh=$("#sheet");sh.className="sheet show "+(ok?"ok":"no");
+  sh.innerHTML=`<div class="ttl">${ic(ok?"check":"x")} ${ok?(SES.combo>=3?`정답! ${SES.combo}연속`:"정답!"):"아쉬워요"}</div>
+    ${w?`<div style="margin:6px 0 2px"><b class="jp" lang="ja" style="font-size:18px">${rb(w)}</b> <span class="sub">${esc(w.ko||"")}</span></div>`:""}${o.reveal||""}
+    ${!ok&&w&&!o.noRequeue?`<div class="mute" style="margin-top:6px">이 표현은 조금 뒤에 다시 나와요</div>`:""}
+    <button class="btn ${ok?"ok":"no"}" id="cont" style="margin-top:12px">계속 <span class="mute" style="color:inherit;opacity:.7;font-weight:600">(Enter)</span></button>`;
+  if(o.say)o.say();
+  $("#cont").onclick=()=>{SFX.play("tick");nextQ()};$("#cont").focus({preventScroll:true});
+  if(ok&&!RM)SES._t=setTimeout(()=>{if(SES&&$("#cont"))nextQ()},2600);
+  KEY=ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();if(!SES)return;clearTimeout(SES._t);nextQ()}};
+}
+function recognize(target,onBest,onFail){   // 음성 인식(ja-JP) → 후보 중 글자 일치율 최고
+  try{const r=new SRC();r.lang="ja-JP";r.interimResults=false;r.maxAlternatives=3;
+    r.onresult=e=>{const best=[...e.results[0]].map(a=>[a.transcript,charSim(target,a.transcript)]).sort((a,b)=>b[1]-a[1])[0];onBest(best[0],best[1])};
+    r.onerror=e=>onFail("음성 인식을 쓸 수 없어요 ("+e.error+")");r.start();return true}catch(e){onFail("음성 인식을 시작하지 못했어요");return false}}
+
+/* ---------- 유형 렌더러 ---------- */
+const NEWQ={
+  sit(item){const w=item.w,ex=pickEx(w),s=sitText(w),opts=shuffle([w.disp,...convDistract(w)]);
+    qview(item,`<div class="qcard" style="margin-top:10px;text-align:left">${s?`<div class="mute">상황</div><div style="font-weight:700;margin-bottom:10px">${esc(s)}</div>`:""}<div class="mute">하고 싶은 말</div><div class="mean" style="font-size:19px">${esc(ex?ex.ko:w.ko)}</div></div>`,opts,"jp");
+    bindOpts(item,opts,w.disp,()=>exRev(ex),{say:()=>TTS.phrase(w.disp)})},
+  cloze(item){const w=item.w,ex=shuffle(w.ex.filter(e=>e.a>=0))[0];if(!ex){item.t="sit";return nextQ()}
+    const opts=shuffle([w.disp,...convDistract(w)]),L=st.set.qlevel;
+    qview(item,`<div class="qcard" style="margin-top:10px;text-align:left"><div class="ex jp" lang="ja" style="margin-top:0">${esc(ex.jp.slice(0,ex.a))}<span class="blank" aria-label="빈칸"></span>${esc(ex.jp.slice(ex.b))}</div>
+      <div class="mute" style="margin-top:10px">${esc(ex.ko)} · 빈칸에 들어갈 표현을 사전형으로 고르세요${L!=="hard"&&w.ko?` · 힌트: ${esc(w.ko)}`:""}${L==="easy"?` · 첫 글자: <b class="jp" lang="ja">${esc([...ex.jp.slice(ex.a,ex.b)][0])}</b>`:""}</div></div>`,opts,"jp");
+    bindOpts(item,opts,w.disp,()=>exRev(ex),{say:()=>TTS.phrase(ex.jp)})},
+  dlg(item){const it=item.w;if(!it||!it.dlg)return fallbackQ(item);const opts=dlgOpts(it);if(opts.length<2)return fallbackQ(item);
+    qview(item,`<div class="qcard" style="margin-top:10px;text-align:left"><div class="mute">A의 말에 이어질 B의 알맞은 대답은?</div>
+      <div class="bubble a jp" lang="ja" style="margin-top:8px"><b>A</b> ${esc(it.dlg[0])}</div><div class="bubble b" style="opacity:.55"><b>B</b> …</div>${st.set.qlevel==="easy"&&it.dlgKo[0]?`<div class="mute">A: ${esc(it.dlgKo[0])}</div>`:""}</div>`,opts,"jp trans");
+    bindOpts(item,opts,it.dlg[1],()=>`<div class="ex jp" lang="ja"><div class="bubble a"><b>A</b> ${esc(it.dlg[0])}</div><div class="bubble b"><b>B</b> ${esc(it.dlg[1])}</div>${sub2(it.dlgKo.filter(Boolean).join(" / "))}</div>`,{say:()=>playDialog(it)})},
+  ldlg(item){const it=item.w;if(!it||!it.dlg)return fallbackQ(item);const opts=dlgOpts(it),play=()=>TTS.phrase(it.dlg[0],{g:"f",force:true});if(opts.length<2)return fallbackQ(item);
+    qview(item,`<div class="qcard" style="margin-top:10px"><div class="mute">A의 말을 듣고(글자 없이) B의 알맞은 대답을 고르세요</div>
+      <button class="big-play" id="pa" aria-label="A의 말 듣기">${ic("ear")}</button><div class="sub">여러 번 들어도 돼요</div></div>`,opts,"jp trans");
+    $("#pa").onclick=play;setTimeout(play,300);
+    bindOpts(item,opts,it.dlg[1],()=>`<div class="ex jp" lang="ja"><div class="bubble a"><b>A</b> ${esc(it.dlg[0])}</div><div class="bubble b"><b>B</b> ${esc(it.dlg[1])}</div>${sub2(it.dlgKo.filter(Boolean).join(" / "))}</div>`,{say:()=>TTS.phrase(it.dlg[1],{g:"m"})})},
+  trans(item){const it=item.w,e=pickEx(it);if(!e){item.t="sit";return nextQ()}const opts=shuffle([e.jp,...sentDistract(it)]);if(opts.length<2){item.t="sit";return nextQ()}
+    qview(item,`<div class="qcard" style="margin-top:10px"><div class="mute">이 한국어 문장에 맞는 일본어 문장은?</div><div class="mean" style="font-size:20px;margin-top:6px">${esc(e.ko)}</div></div>`,opts,"jp trans");
+    bindOpts(item,opts,e.jp,()=>exRev(e),{say:()=>TTS.phrase(e.jp)})},
+  dict(item){const it=item.w,e=it&&pickEx(it);if(!e){item.t="sit";return nextQ()}const opts=shuffle([e.jp,...sentDistract(it)]);if(opts.length<2){item.t="sit";return nextQ()}
+    const play=()=>TTS.phrase(e.jp,{force:true});
+    qview(item,`<div class="qcard" style="margin-top:10px"><div class="mute">문장을 듣고(글자 없이) 들은 문장을 고르세요</div>
+      <button class="big-play" id="pa" aria-label="다시 듣기">${ic("ear")}</button><div class="btns"><button class="btn alt sm" id="slow">${ic("ear")} 느리게 듣기</button></div></div>`,opts,"jp trans");
+    $("#pa").onclick=play;$("#slow").onclick=()=>{const r=st.set.rate;st.set.rate=Math.max(.5,r*.7);play();st.set.rate=r};setTimeout(play,300);
+    bindOpts(item,opts,e.jp,()=>exRev(e),{say:play})},
+  typed(item){const w=item.w,sp=w&&typedSpec(w);if(!sp)return fallbackQ(item);
+    SES._key=sp.t;const base=st.set.qlevel==="easy"?2:0;let hint=base;const T=[...sp.t],L=T.length;
+    const hintHTML=()=>hint===0?"":hint===1?`첫 글자: <b class="jp" lang="ja">${esc(T[0])}</b>`:`<b class="jp" lang="ja" style="letter-spacing:3px">${esc(T[0])}${"＿".repeat(L-1)}</b> (${L}글자)`;
+    qview(item,`<div class="qcard" style="margin-top:10px;text-align:left"><div class="ex jp" lang="ja" style="margin-top:0">${esc(sp.text.slice(0,sp.s))}<span class="blank" aria-label="빈칸"></span>${esc(sp.text.slice(sp.s+sp.t.length))}</div>
+      <div class="mute" style="margin-top:8px">${sp.ko?esc(sp.ko)+" · ":""}${st.set.qlevel!=="hard"?`뜻: ${esc(w.ko||"")}`:""}</div>
+      <div class="mute" style="margin-top:4px">문장에 맞게 활용한 형태로 입력하세요 (예: 持ち帰る → 持ち帰って) · 히라가나·가타카나 구분 없음</div>
+      <div id="hint" class="sub" style="margin-top:8px;min-height:22px">${hintHTML()}</div>
+      <input class="spell jp" lang="ja" id="spell" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="빈칸에 들어갈 말 입력" placeholder="빈칸에 들어갈 말">
+      <div class="btns"><button class="btn alt sm" id="hb">${ic("info")} 힌트 (점수↓)</button><button class="btn sm" id="chk">확인</button></div></div>`);
+    const inp=$("#spell");setTimeout(()=>inp.focus(),200);
+    $("#hb").onclick=()=>{if(hint<2){hint++;$("#hint").innerHTML=hintHTML();SFX.play("tick")}if(hint>=2)$("#hb").disabled=true;inp.focus()};if(hint>=2)$("#hb").disabled=true;
+    const chk=()=>{if(SES._ans)return;const v=inp.value.trim();if(!v){inp.classList.add("shake");setTimeout(()=>inp.classList.remove("shake"),400);return}
+      const ok=sp.acc.has(normAns(v));inp.classList.add(ok?"ok":"no");inp.disabled=true;
+      settle(item,ok,{xpMul:[1,.7,.4][hint-base]??.4,reveal:`${!ok?`<div class="sub">내 답: <span class="jp" lang="ja">${esc(v)}</span> · 정답: <b class="jp" lang="ja">${esc(sp.t)}</b></div>`:""}<div class="ex jp" lang="ja">${esc(sp.text.slice(0,sp.s))}<mark>${esc(sp.t)}</mark>${esc(sp.text.slice(sp.s+sp.t.length))}</div>`,say:()=>TTS.phrase(sp.text)})};
+    $("#chk").onclick=chk;inp.onkeydown=ev=>{if(ev.key==="Enter"&&!ev.isComposing&&ev.keyCode!==229){ev.preventDefault();ev.stopPropagation();chk()}}},
+  speak(item){const w=item.w,e=w&&pickEx(w);if(!SRC||!e){item.t="sit";return nextQ()}
+    qview(item,`<div class="qcard" style="margin-top:10px"><div class="mute">이 말을 일본어로 해 보세요 (힌트: <span class="jp" lang="ja">${esc(w.disp)}</span>)</div><div class="mean" style="font-size:19px;margin:8px 0">${esc(e.ko)}</div>
+      <button class="big-play" id="mic" aria-label="말하기 시작">${ic("vol")}</button><div class="sub" id="heard">마이크 버튼을 누르고 말하세요</div>
+      <div class="btns"><button class="btn alt sm" id="skip">건너뛰기</button><button class="btn alt sm" id="hearit">${ic("ear")} 정답 듣기</button></div></div>`);
+    $("#hearit").onclick=()=>TTS.phrase(e.jp,{force:true});
+    $("#skip").onclick=()=>{if(SES._ans)return;SES._ans=true;SES.queue.shift();SES.done++;nextQ()};
+    $("#mic").onclick=()=>{$("#heard").textContent="듣는 중… 말씀하세요";recognize(e.jp,(heard,sim)=>{const pct=Math.round(sim*100);
+        settle(item,sim>=.7,{reveal:`<div class="sub">인식: "<span class="jp" lang="ja">${esc(heard)}</span>" · 글자 일치율 ${pct}% (70% 이상 통과)</div>${exRev(e)}`,say:()=>TTS.phrase(e.jp)})},
+      msg=>{$("#heard").textContent=msg+". 건너뛰기를 눌러 주세요."})}},
+  shadow(item){const it=item.w;if(!it||!it.ex.length)return fallbackQ(item);const e=[...it.ex].sort((a,b)=>a.jp.length-b.jp.length)[0],play=()=>TTS.phrase(e.jp,{force:true});
+    qview(item,`<div class="qcard" style="margin-top:10px"><div class="mute">듣고 소리 내어 똑같이 따라 말해 보세요</div>
+      <div class="ex jp" lang="ja" style="text-align:left">${hl(e)}${sub2(e.ko)}</div>
+      <div class="btns"><button class="btn alt sm" id="play">${ic("play")} 듣기</button>${SRC?`<button class="btn sm" id="mic">${ic("vol")} 말하고 채점</button>`:""}</div>
+      <div class="sub" id="heard" style="margin-top:8px">${SRC?"마이크로 채점하거나, 따라 한 뒤 아래에서 스스로 체크하세요":"따라 말한 뒤 아래에서 스스로 체크하세요 (이 브라우저는 음성 인식 미지원)"}</div>
+      <div class="btns"><button class="btn alt sm" id="hard">어려웠어요</button><button class="btn ok sm" id="did">${ic("check")} 따라 말했어요</button></div></div>`);
+    $("#play").onclick=play;setTimeout(play,300);
+    $("#did").onclick=()=>settle(item,true,{xpMul:.6,reveal:`<div class="mute">스스로 체크한 결과예요. 자신 있게 반복해 보세요.</div>`});
+    $("#hard").onclick=()=>settle(item,false,{reveal:exRev(e)});
+    KEY=ev=>{if(SES._ans)return;if(ev.key==="1"){ev.preventDefault();$("#hard").click()}else if(ev.key==="2"||ev.key==="Enter"){ev.preventDefault();$("#did").click()}};
+    if(SRC&&$("#mic"))$("#mic").onclick=()=>{$("#heard").textContent="듣는 중… 말씀하세요";recognize(e.jp,(heard,sim)=>{const pct=Math.round(sim*100);
+        if(sim>=.7)settle(item,true,{reveal:`<div class="sub">인식: "<span class="jp" lang="ja">${esc(heard)}</span>" · 글자 일치율 ${pct}%</div>`});else $("#heard").textContent=`인식: "${heard}" · 일치율 ${pct}% (70% 이상이면 통과) — 다시 해 보거나 스스로 체크하세요`},
+      msg=>{$("#heard").textContent=msg+". 아래 버튼으로 스스로 체크하세요."})}},
+  formal(item){const f=item.f||shuffle(FORMALS)[0];if(!f){item.t="err";return nextQ()}const opts=shuffle([f.ok,...f.bad]);
+    qview(item,`<div class="qcard" style="margin-top:10px;text-align:left"><div class="mute">이 상황에 가장 알맞은 말은?</div><div style="font-weight:800;font-size:18px;margin-top:6px">${esc(f.sit)}</div></div>`,opts,"jp trans");
+    bindOpts(item,opts,f.ok,()=>`<div class="ex jp" lang="ja">${esc(f.ok)}${sub2(f.why)}</div>`,{say:()=>TTS.phrase(f.ok)})},
+  err(item){const e=item.e||shuffle(ERRS)[0];if(!e){SES.queue.shift();return nextQ()}const opts=shuffle([e.right,e.wrong]);
+    qview(item,`<div class="qcard" style="margin-top:10px"><div class="mute">일본인이 듣기에 자연스러운 문장을 고르세요</div><div class="sub" style="margin-top:4px">하나에는 학습자가 자주 하는 실수가 들어 있어요</div></div>`,opts,"jp trans");
+    bindOpts(item,opts,e.right,()=>`<div class="ex jp" lang="ja"><div>${ic("check")} <b>${esc(e.right)}</b></div><div style="text-decoration:line-through;opacity:.6;margin-top:4px">${esc(e.wrong)}</div>${sub2(e.why)}</div>`,{say:()=>TTS.phrase(e.right)})},
+  match(item){const set=item.set&&item.set.length>=3?item.set:matchSet([...SES.fresh,...SES.due]);if(set.length<3){SES.queue.shift();return nextQ()}
+    const Lc=shuffle(set),Rc=shuffle(set),sessIds=new Set([...SES.fresh,...SES.due].map(x=>x.id));let sel=null,done=0,miss=0;const missed=new Set(),t0=Date.now();
+    qview(item,`<div class="row" style="justify-content:space-between;margin:8px 0"><span class="sub">일본어 표현과 뜻을 짝지어 보세요</span><span class="chip" id="mt" aria-live="off">0.0초</span></div>
+      <div class="mgrid"><div class="mcol">${Lc.map(w=>`<button class="mcard jp" lang="ja" data-l="${esc(w.id)}">${esc(w.disp)}</button>`).join("")}</div>
+      <div class="mcol">${Rc.map(w=>`<button class="mcard" data-r="${esc(w.id)}">${esc(w.ko)}</button>`).join("")}</div></div>`);
+    const tm=setInterval(()=>{const e=$("#mt");if(!e)return clearInterval(tm);e.textContent=((Date.now()-t0)/1000).toFixed(1)+"초"},100);
+    const side=b=>b.dataset.l!=null?"l":"r",idOf=b=>b.dataset.l??b.dataset.r;
+    const click=b=>{if(SES._ans||b.classList.contains("done"))return;
+      if(!sel||side(sel)===side(b)){$$(".mcard.sel").forEach(x=>x.classList.remove("sel"));sel=b;b.classList.add("sel");SFX.play("tick");return}
+      const a=sel;sel=null;a.classList.remove("sel");
+      if(idOf(a)===idOf(b)){[a,b].forEach(x=>{x.classList.add("done");x.disabled=true});done++;SFX.play("combo",Math.min(done,10));buzz(10);
+        if(done===set.length){clearInterval(tm);const sec=((Date.now()-t0)/1000).toFixed(1),ok=miss===0;
+          missed.forEach(id=>{if(sessIds.has(id))SES.wrongSet.add(id)});
+          settle(item,ok,{noRequeue:true,xpMul:ok?1.5:.6,reveal:`<div class="sub" style="margin-top:4px">${set.length}쌍 · ${sec}초 · 실수 ${miss}회</div>${missed.size?`<div class="mute">헷갈린 것: <span class="jp" lang="ja">${[...missed].map(id=>esc(set.find(x=>x.id===id)?.disp||"")).join(", ")}</span></div>`:""}`})}}
+      else{miss++;missed.add(idOf(a));missed.add(idOf(b));[a,b].forEach(x=>{x.classList.add("bad");setTimeout(()=>x.classList.remove("bad"),450)});SFX.play("no");buzz([20,30,20])}};
+    $$(".mcard").forEach(b=>b.onclick=()=>click(b));KEY=null},
+};
+
+/* ---------- 설정: 퀴즈 방식 · 난이도 · 유형별 정답률 ---------- */
+function quizSettingsHTML(){
+  const types=modeTypes(),sel=new Set(st.set.qtypes||[]);
+  const rows=types.map(t=>{const s=st.qs&&st.qs[qkey(t)],acc=s&&s.n?Math.round(s.ok/s.n*100):null,weak=s&&s.n>=5&&s.ok/s.n<.7;
+    return `<div class="set" style="min-height:48px"><div class="grow"><b style="font-size:14px">${QT[t].name}${weak?` <span class="pos" style="background:var(--no-soft);color:var(--no)">약점·비중↑</span>`:""}</b>
+      <div class="bar" style="height:6px;margin-top:6px"><i style="width:${acc??0}%"></i></div></div><div class="mute" style="min-width:76px;text-align:right">${s?`${acc}% · ${s.n}회`:"기록 없음"}</div></div>`}).join("");
+  return `<div class="card"><h3>${ic("layers")} 퀴즈 방식</h3>
+    <div class="seg" role="radiogroup" aria-label="퀴즈 방식">${[["mix","혼합 학습"],["type","유형별 연습"]].map(([k,n])=>`<button role="radio" aria-checked="${st.set.qmode===k}" class="${st.set.qmode===k?"on":""}" data-qm="${k}">${n}</button>`).join("")}</div>
+    <div class="mute" style="margin:8px 0">${st.set.qmode==="mix"?"유형이 골고루 섞이고 같은 유형은 연속으로 나오지 않아요. 새 표현은 보기형부터, 복습할수록 주관식·말하기가 늘어요.":"고른 유형만 학습한 표현(최대 10개)으로 연습해요. 어색한 문장 찾기·격식 판별은 학습 전에도 가능해요."}</div>
+    ${st.set.qmode==="type"?`<div class="chips" style="flex-wrap:wrap">${types.map(t=>`<button class="fchip ${sel.has(t)?"on":""}" data-qt="${t}" aria-pressed="${sel.has(t)}">${QT[t].name}</button>`).join("")}</div>`:""}
+    <b style="display:block;margin-top:10px">난이도</b>
+    <div class="seg" role="radiogroup" aria-label="난이도" style="margin-top:6px">${[["easy","쉬움"],["normal","보통"],["hard","어려움"]].map(([k,n])=>`<button role="radio" aria-checked="${st.set.qlevel===k}" class="${st.set.qlevel===k?"on":""}" data-ql="${k}">${n}</button>`).join("")}</div>
+    <div class="mute" style="margin-top:6px">쉬움: 보기 3개·첫 글자/뜻 힌트·주관식 힌트·복습 간격 촘촘(1·2·4·8·16일) · 보통: 보기 4개·뜻 힌트·1·3·7·14·30일 · 어려움: 빈칸이 직접 입력(보기 없음)·뜻 힌트 숨김·복습 간격 넓게(2·5·10·21·45일)</div></div>
+  <div class="card"><h3>${ic("trophy")} 유형별 정답률</h3>${rows}
+    <div class="mute" style="margin-top:8px">5회 이상 풀었는데 정답률이 70% 미만인 유형은 혼합 학습에서 더 자주 나와요.</div></div>`;
+}
+function bindQuizSettings(){
+  $$("[data-qm]").forEach(b=>b.onclick=()=>{st.set.qmode=b.dataset.qm;save();SFX.play("tick");scrSettings()});
+  $$("[data-ql]").forEach(b=>b.onclick=()=>{st.set.qlevel=b.dataset.ql;save();SFX.play("tick");scrSettings()});
+  $$("[data-qt]").forEach(b=>b.onclick=()=>{const t=b.dataset.qt,s=new Set(st.set.qtypes||[]);s.has(t)?s.delete(t):s.add(t);st.set.qtypes=[...s];save();SFX.play("tick");scrSettings()});
+}
+
+TAB="home";tabs();scrHome();
+</script>
+<script>if("serviceWorker"in navigator&&location.protocol==="https:"){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}</script>
+</body>
+</html>
