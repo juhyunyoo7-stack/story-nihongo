@@ -1523,7 +1523,8 @@ function bindQuizSettings(){
 }
 
 /* ---------- 뒤로가기 실수로 앱이 닫히지 않게: 종료 확인 창(예/아니오) ----------
-   모바일 Chrome 은 사용자 조작 없이 쌓은 기록을 뒤로가기에서 건너뛰므로, 첫 터치·키 입력 때 보호용 기록을 쌓고
+   모바일 Chrome 은 사용자 조작 없이 쌓은 기록을 뒤로가기에서 건너뛰고, 터치에서는 pointerdown/touchstart 가 조작으로 인정되지 않으므로
+   조작으로 인정되는 pointerup/touchend/click/keydown 때 보호용 기록을 쌓고
    "아니오"를 누를 때(사용자 조작) 다시 쌓는다. */
 const EXIT_NAME="스토리 일본어";
 let EXIT_ARMED=false,EXIT_OPEN=false,EXIT_LEAVING=false;
@@ -1540,7 +1541,7 @@ function exitAsk(){
   d.addEventListener("click",e=>{if(e.target===d)exitStay()});
   document.getElementById("exitno").focus();
 }
-["pointerdown","touchstart","keydown"].forEach(t=>addEventListener(t,exitArm,{passive:true}));
+["pointerup","touchend","click","keydown"].forEach(t=>addEventListener(t,exitArm,{passive:true}));
 addEventListener("popstate",()=>{if(EXIT_LEAVING||!EXIT_ARMED)return;if(EXIT_OPEN){try{history.pushState({g:"guard"},"")}catch(e){}return}exitAsk()});
 addEventListener("keydown",e=>{if(EXIT_OPEN&&e.key==="Escape"){e.preventDefault();exitStay()}},true);
 
