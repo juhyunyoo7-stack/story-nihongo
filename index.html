@@ -4042,6 +4042,16 @@ addEventListener("keydown",e=>{if(EXIT_OPEN&&e.key==="Escape"){e.preventDefault(
 
 TAB="home";tabs();scrHome();
 </script>
-<script>if("serviceWorker"in navigator&&location.protocol==="https:"){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}</script>
+<script>/* 자동 업데이트: 새 버전 감지(실행 시·앱으로 돌아올 때·30분마다) → 학습 중이 아니면 즉시 새로고침, 학습 중이면 하단 띠로 안내 */
+if("serviceWorker"in navigator&&location.protocol==="https:"){addEventListener("load",()=>{
+  const had=!!navigator.serviceWorker.controller;let done=false;
+  navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(reg=>{
+    const chk=()=>reg.update().catch(()=>{});
+    document.addEventListener("visibilitychange",()=>{if(!document.hidden)chk()});setInterval(chk,30*60*1000);chk()}).catch(()=>{});
+  navigator.serviceWorker.addEventListener("controllerchange",()=>{if(!had||done)return;done=true;
+    if(!document.querySelector("#quit")){location.reload();return}
+    const b=document.createElement("button");b.textContent="새 버전이 있어요 · 눌러서 적용";
+    b.style.cssText="position:fixed;left:12px;right:12px;bottom:12px;z-index:99;padding:14px;border:0;border-radius:14px;background:#5b5bf0;color:#fff;font:700 15px sans-serif";
+    b.onclick=()=>location.reload();document.body.appendChild(b)})})}</script>
 </body>
 </html>
