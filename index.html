@@ -101,6 +101,18 @@ svg.i{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-widt
 .badge{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff;font-weight:800;font-family:var(--font-en);flex:none}
 .st .nm{font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .st .bar{height:6px;margin-top:6px}
+.greet{font-size:19px;font-weight:800;margin:0 2px 10px;color:var(--ink)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.ctile{background:var(--card2);border:1px solid var(--line);border-radius:16px;padding:12px;cursor:pointer;display:flex;flex-direction:column;gap:8px;min-height:104px}
+.ctile:active{transform:scale(.98)}
+.ctile .t1{display:flex;align-items:center;justify-content:space-between}
+.ctile .pc{font-weight:800;color:var(--pri);font-size:13px}
+.ctile .nm{font-weight:800;font-size:14px;line-height:1.3;white-space:normal}
+.ctile .bar{height:6px;margin-top:auto}
+.ctile .cnt{font-size:12px;color:var(--mute)}
+.tipcard{display:flex;gap:12px;align-items:flex-start;background:var(--acc-soft);border-radius:16px;padding:14px;margin:12px 0}
+.tipcard b{display:block;font-size:13px;color:var(--acc);margin-bottom:2px}
+.hlseg{margin:12px 0 4px}
 .seg{display:flex;background:var(--bg2);border-radius:14px;padding:4px;gap:4px}
 .seg button{flex:1;border:0;background:transparent;border-radius:10px;min-height:40px;font-weight:700;color:var(--sub);font-size:14px}
 .seg button.on{background:var(--card);color:var(--pri);box-shadow:var(--shadow)}
@@ -3538,6 +3550,7 @@ function scrHome(){
   const lv=level(st.xp),[,hi]=lvlRange(lv),sc=D.scope,goalLeft=Math.max(0,D.goal-D.today.n),C=2*Math.PI*52;
   view(`<div class="top"><h1>스토리 일본어</h1>
     <span class="chip fire" title="연속 학습일">${ic("flame")}${streak()}일</span><span class="chip lv" title="레벨">${ic("star")}Lv.${lv}</span></div>
+  <p class="greet">오늘도 한 걸음 👋</p>
   <section class="hero" aria-label="오늘의 목표와 전체 진행률"><div class="row">
       <div class="ring" role="img" aria-label="전체 진행률 ${pct}퍼센트"><svg viewBox="0 0 118 118"><circle class="bgc" cx="59" cy="59" r="52"/><circle class="fgc" id="ringfg" cx="59" cy="59" r="52" stroke-dasharray="${C}" stroke-dashoffset="${C}"/></svg>
         <div class="lbl"><b>${pct}%</b><span>전체 진행</span></div></div>
@@ -3547,15 +3560,15 @@ function scrHome(){
     <div class="stats"><div><b>${due}</b><span>복습할 표현</span></div><div><b>${learned}</b><span>학습한 표현</span></div><div><b>${mast}</b><span>암기 완료</span></div></div>
     <div style="margin-top:14px;position:relative;z-index:1"><button class="btn white" id="start">${ic("play")} ${goalLeft||!due?"학습 시작":"복습 시작"} <span style="font-weight:600;opacity:.75;font-size:14px">· ${esc(scopeName(sc))}</span></button></div></section>
   <div class="btns"><button class="btn alt sm" id="rev" ${due?"":"disabled"}>${ic("refresh")} 복습만 ${due}개</button><button class="btn alt sm" id="scope">${ic("target")} 카테고리 고르기</button></div>
+  <div class="seg hlseg" role="radiogroup" aria-label="난이도">${[["easy","쉬움"],["normal","보통"],["hard","어려움"]].map(([k,n])=>`<button role="radio" aria-checked="${st.set.qlevel===k}" class="${st.set.qlevel===k?"on":""}" data-hl="${k}">${n}</button>`).join("")}</div>
+  ${(()=>{const t=A.length?A[Math.floor((Date.now()-new Date().getTimezoneOffset()*6e4)/864e5)%A.length]:null;return t?`<div class="tipcard"><div class="badge" style="background:var(--acc)">${ic("star")}</div><div><b>오늘의 한마디</b><span class="jp" lang="ja">${esc(t.disp)}</span> · ${esc(t.ko)}</div></div>`:""})()}
   <div class="card"><h3>${ic("layers")} 카테고리별 진도 <span class="mute" style="font-weight:600">· 표현 ${A.length}개</span></h3>
-    ${CATS.map((c,i)=>{const ci=c.items.filter(inLv),l=ci.filter(w=>!isNew(w)).length;return `<div class="st" data-c="${i}" role="button" tabindex="0" aria-label="${esc(c.name)} 학습하기">
-      <div class="badge" style="background:${CAT_HUE[i%CAT_HUE.length]}">${ic(CAT_IC[c.key]||"star")}</div>
-      <div class="grow"><div class="nm">${esc(c.name)}</div><div class="bar"><i style="width:${pctOf(l,ci.length)}%"></i></div></div>
-      <div class="mute" style="text-align:right;min-width:52px">${l}/${ci.length}</div></div>`}).join("")}</div>
+    <div class="cgrid">${CATS.map((c,i)=>{const ci=c.items.filter(inLv),l=ci.filter(w=>!isNew(w)).length;return `<div class="ctile" data-c="${i}" role="button" tabindex="0" aria-label="${esc(c.name)} 학습하기"><div class="t1"><div class="badge" style="background:${CAT_HUE[i%CAT_HUE.length]}">${ic(CAT_IC[c.key]||"star")}</div><span class="pc">${Math.round(l/(ci.length||1)*100)}%</span></div><div class="nm">${esc(c.name)}</div><div class="bar"><i style="width:${l/(ci.length||1)*100}%"></i></div><div class="cnt">${l}/${ci.length}</div></div>`}).join("")}</div></div>
   <p class="mute" style="text-align:center">Lv.${lv} · XP ${st.xp} (다음 레벨까지 ${hi-st.xp})</p>`);
   requestAnimationFrame(()=>{const r=$("#ringfg");if(r)r.style.strokeDashoffset=C*(1-pct/100);const g=$("#goalbar");if(g)g.style.width=Math.min(100,D.today.n/D.goal*100)+"%"});
   $("#start").onclick=()=>startSession(sc,"normal");$("#rev").onclick=()=>startSession("all","review");$("#scope").onclick=()=>{SFX.play("tick");go("stories")};
   $$("[data-c]").forEach(el=>{const f=()=>{D.scope=String(el.dataset.c);save();SFX.play("tick");startSession(D.scope,"normal")};el.onclick=f;el.onkeydown=e=>{if(e.key==="Enter")f()}});
+  $$("[data-hl]").forEach(b=>b.onclick=()=>{st.set.qlevel=b.dataset.hl;save();SFX.play("tick");scrHome()});
 }
 /* ==========================================================================
    화면: 카테고리
